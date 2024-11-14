@@ -1,14 +1,14 @@
 /* Allgemeine Stileinstellungen */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #000000;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #3498db;
+    background-color: #FFFFFF;
     color: white;
     text-align: center;
     padding: 20px 0;
