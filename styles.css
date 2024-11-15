@@ -9,6 +9,8 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Standard Hintergrundfarbe */
     color: #333;
+    min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
+    padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
 /* Spezifische Seiten-Hintergrundfarben */
@@ -139,10 +141,14 @@ nav a:hover {
 /* Footer Section */
 footer {
     text-align: center;
-    background-color: #59ff27;
+    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
     color: white;
     padding: 10px 0;
-    position: relative;
+    position: fixed; /* Footer am unteren Rand fixieren */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Footer auf volle Breite setzen */
+    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
 }
 
 /* Galerie Anpassung auf der "photo" Seite */
