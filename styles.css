@@ -164,8 +164,8 @@ footer {
     max-width: 400px; /* Maximale Breite der Bilder */
     height: auto; /* Höhe bleibt im Verhältnis zur Breite */
     margin: 10px; /* Abstand zwischen den Bildern */
-    border-radius: 8px; /* Abgerundete Ecken */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
+    border-radius: 0px; /* Abgerundete Ecken */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
 }
 
 /* Responsive Design für mobile Geräte */
