@@ -95,7 +95,7 @@ nav a:hover {
     position: fixed;
     right: 0;
     top: 500px;
-    background-color: rgba(89, 255, 39, 0.8); /* Transparenter Grünton */
+    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
     padding: 20px;
     border-radius: 0;
