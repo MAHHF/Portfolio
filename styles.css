@@ -13,35 +13,39 @@ body {
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
-}
-
-/* Spezifische Stile für die MAHF-Seite */
+/* Container für Bild und Text */
 #mahf .image-text-section {  
     width: 80%;  /* Breite des Containers */
     max-width: 800px;  /* Maximale Breite des Containers */
-    text-align: justify;  /* Text um das Bild herum ausrichten */
+    text-align: justify;  /* Text wird im Container ausgerichtet */
     display: flex;  /* Flexbox aktivieren */
     flex-wrap: wrap;  /* Text soll um das Bild fließen */
-    align-items: center;  /* Bild und Text vertikal ausrichten */
+    align-items: flex-start;  /* Bild und Text vertikal ausrichten */
     justify-content: center;  /* Zentriert den gesamten Inhalt */
     margin: 0 auto;  /* Container zentrieren */
+    padding: 20px; /* Optional: Abstand zum Rand des Containers */
 }
 
-#mahf .centered-image {  
+/* Bild-Styling */
+#mahf .centered-image {
     width: 200px;  /* Bildbreite */
     height: 200px;  /* Bildhöhe */
     object-fit: cover;  /* Bild wird zugeschnitten, um den Container zu füllen */
-    margin-right: 20px;  /* Abstand zwischen Bild und Text */
-    margin-bottom: 20px;  /* Abstand unter dem Bild */
-    border-radius: 0px;  /* Abgerundete Ecken des Bildes */
+    margin-right: 20px;  /* Abstand zum Text */
+    margin-bottom: 20px;  /* Abstand nach unten */
+    border-radius: 8px;  /* Abgerundete Ecken des Bildes */
+    float: left;  /* Bild nach links fließen lassen */
 }
 
-#mahf .text {  
-    width: 100%;  /* Textbereich nimmt die ganze Breite ein */
+/* Text-Styling */
+#mahf .text {
+    width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
     font-size: 16px;  /* Schriftgröße */
     line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
     color: #333;  /* Textfarbe */
+    padding-left: 20px;  /* Optional: Abstand zum Bild */
 }
+
 
 }
 
