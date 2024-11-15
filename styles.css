@@ -44,8 +44,8 @@ header {
 }
 
 header .logo img {
-    max-width: 150px; /* Logo wird automatisch skaliert */
-    height: auto;
+    max-width: auto; /* Logo wird automatisch skaliert */
+    height: 150px;
 }
 
 nav ul {
@@ -122,7 +122,7 @@ nav a:hover {
 /* Footer Section */
 footer {
     text-align: center;
-    background-color: #333;
+    background-color: #FFFFFF;
     color: white;
     padding: 10px 0;
     position: relative;
