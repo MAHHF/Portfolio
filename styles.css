@@ -14,20 +14,20 @@ body {
 }
 
 /* Container für Bild und Text */
-#mahf .image-text-section {  
+#MAHF .image-text-section {  
     width: 80%;  /* Breite des Containers */
     max-width: 800px;  /* Maximale Breite des Containers */
     text-align: justify;  /* Text wird im Container ausgerichtet */
     display: flex;  /* Flexbox aktivieren */
     flex-wrap: wrap;  /* Text soll um das Bild fließen */
     align-items: flex-start;  /* Bild und Text vertikal ausrichten */
-    justify-content: center;  /* Zentriert den gesamten Inhalt */
+    justify-content: flex-start;  /* Zentriert den gesamten Inhalt */
     margin: 0 auto;  /* Container zentrieren */
     padding: 20px; /* Optional: Abstand zum Rand des Containers */
 }
 
 /* Bild-Styling */
-#mahf .centered-image {
+#MAHF .centered-image {
     width: 200px;  /* Bildbreite */
     height: 200px;  /* Bildhöhe */
     object-fit: cover;  /* Bild wird zugeschnitten, um den Container zu füllen */
@@ -38,15 +38,24 @@ body {
 }
 
 /* Text-Styling */
+#MAHF .text {
+    width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
+    font-size: 16px;  /* Schriftgröße */
+    line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
+    color: #fff;  /* Textfarbe weiß, um auf dem schwarzen Hintergrund sichtbar zu sein */
+    padding-left: 20px;  /* Optional: Abstand zum Bild */
+}
+
+
+/* Text-Styling */
 #mahf .text {
     width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
     font-size: 16px;  /* Schriftgröße */
     line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
     color: #333;  /* Textfarbe */
     padding-left: 20px;  /* Optional: Abstand zum Bild */
-
-
 }
+
 
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
