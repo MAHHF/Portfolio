@@ -97,12 +97,12 @@ nav a:hover {
     top: 800px;
     background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
-    padding: 100px;
+    padding: 20px;
     border-radius: 0;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
     z-index: 1000;
     width: 300px;
-    height: 60px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
+    height: 100px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
     max-width: 350px;
     transition: width 0.2s ease;
     display: flex; /* Flexbox aktivieren */
