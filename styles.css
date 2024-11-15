@@ -17,7 +17,7 @@ body {
 }
 
 #photo {
-    background-color: #000000
+    background-color: #000000; /* Schwarz für die Photo-Seite */
 }
 
 #art {
@@ -145,8 +145,29 @@ footer {
     position: relative;
 }
 
-/* Responsive Design */
+/* Galerie Anpassung auf der "photo" Seite */
+#photo .gallery {
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
+    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
+    padding: 20px;
+}
+
+#photo .photo-img {
+    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
+    max-width: 400px; /* Maximale Breite der Bilder */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    margin: 10px; /* Abstand zwischen den Bildern */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
+}
+
+/* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
+    #photo .photo-img {
+        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
+    }
+
     header {
         flex-direction: column;
         padding: 20px;
@@ -176,6 +197,10 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    #photo .photo-img {
+        max-width: 100%; /* Bild auf volle Breite skalieren */
+    }
+
     .hero h1 {
         font-size: 24px;
     }
