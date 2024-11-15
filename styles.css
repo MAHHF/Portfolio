@@ -37,7 +37,7 @@ header {
     left: 0;
     width: 100%; /* Header auf volle Breite setzen */
     height: 100px; /* Feste Höhe des Headers */
-    background-color: rgba(89, 255, 39, 0.2); /* 20% transparente grüne Farbe */
+    background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
     display: flex;
     align-items: center;
     padding: 0 20px; /* Etwas Platz an den Seiten */
@@ -63,7 +63,7 @@ header .logo img {
 nav {
     position: absolute; /* Absolute Position innerhalb des Headers */
     top: 50%; /* Vertikal zentrieren */
-    right: 20px; /* Abstand vom rechten Rand */
+    left: 20px; /* Abstand vom rechten Rand */
     transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
 }
 
