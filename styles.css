@@ -1,14 +1,14 @@
 /* Allgemeine Stileinstellungen */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #000000;
+    background-color: #3498db;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -16,6 +16,33 @@ header {
 
 h1 {
     margin: 0;
+}
+
+/* Navigationsmenü */
+nav {
+    text-align: center;
+    background-color: #2980b9;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 section {
@@ -27,14 +54,14 @@ a {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #000000;
+    background-color: #3498db;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 a:hover {
-    background-color: #000000;
+    background-color: #2980b9;
 }
 
 footer {
