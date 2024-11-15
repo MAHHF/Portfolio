@@ -20,9 +20,9 @@ header .logo {
 }
 
 header .logo img {
-    width: auto; /* Das Logo behält seine Proportionen */
+    width: 100%; /* Das Logo behält seine Proportionen */
     height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
-    max-height: 100%; /* Verhindert, dass das Logo größer wird als der Header */
+    max-height: auto; /* Verhindert, dass das Logo größer wird als der Header */
 }
 
 /* Navigation Styling */
