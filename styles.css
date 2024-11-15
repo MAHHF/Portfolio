@@ -8,35 +8,38 @@ body {
 }
 
 header {
-    background-color: #3498db;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+    background-color: #59ff27;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1 {
-    margin: 0;
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
 }
 
-/* Navigationsmenü */
 nav {
-    text-align: center;
-    background-color: #2980b9;
-    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
 nav a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 18px;
 }
@@ -50,20 +53,6 @@ section {
     text-align: center;
 }
 
-a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-a:hover {
-    background-color: #2980b9;
-}
-
 footer {
     text-align: center;
     background-color: #333;
@@ -72,4 +61,55 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
+
+    a {
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 5px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
 }
