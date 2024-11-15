@@ -44,27 +44,27 @@ body {
     line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
     color: #333;  /* Textfarbe */
     padding-left: 20px;  /* Optional: Abstand zum Bild */
-}
 
 
 }
 
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
-    background-color: #A600D8; /* Weiß für die Startseite */
+    background-color: #A600D8;
 }
 
-#photo {    
-    background-color: #000000; /* Schwarz für die Photo-Seite */
+#photo {
+    background-color: #000000;
 }
 
 #art {
-    background-color: #000000; /* Helles Rosa für die Art-Seite */
+    background-color: #000000;
 }
 
 #MAHF {
-    background-color: #000000; /* Helles Orange für die Motion-Seite */
+    background-color: #000000;
 }
+
 
 /* Header Styling */
 header {
