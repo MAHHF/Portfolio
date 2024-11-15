@@ -69,16 +69,16 @@ nav a:hover {
 /* Schwebendes Element */
 .floating-element {
     position: fixed;               /* Fixiert das Element an einer festen Position auf der Seite */
-    right: 10px;                   /* Positioniert das Element 10px vom rechten Rand */
-    top: 100px;                    /* Setzt das Element 100px von der oberen Seite ab (du kannst diesen Wert anpassen) */
+    right: 0px;                   /* Positioniert das Element 10px vom rechten Rand */
+    top: 800px;                    /* Setzt das Element 100px von der oberen Seite ab (du kannst diesen Wert anpassen) */
     background-color: #59ff27;     /* Farbcode für das Element */
-    color: white;                  /* Textfarbe im schwebenden Element */
+    color: black;                  /* Textfarbe im schwebenden Element */
     padding: 20px;                 /* Innenabstand um den Inhalt */
-    border-radius: 10px;           /* Abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Schattierung für einen 3D-Effekt */
+    border-radius: 0px;           /* Abgerundete Ecken */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);  /* Schattierung für einen 3D-Effekt */
     z-index: 1000;                 /* Stellt sicher, dass das Element oben auf anderen Elementen liegt */
     width: 200px;                  /* Anfangsbreite des schwebenden Elements */
-    height: auto;                  /* Höhe wird automatisch angepasst */
+    height: 75;                  /* Höhe wird automatisch angepasst */
     max-width: 300px;              /* Maximale Breite des Elements */
     transition: width 0.3s ease;    /* Fügt eine sanfte Übergangsanimation hinzu */
 }
