@@ -11,6 +11,23 @@ body {
     color: #333;
 }
 
+/* Spezifische Seiten-Hintergrundfarben */
+#home {
+    background-color: #ffffff; /* Weiß für die Startseite */
+}
+
+#photo {
+    background-color: #e0f7fa; /* Hellblau für die Photo-Seite */
+}
+
+#art {
+    background-color: #fce4ec; /* Helles Rosa für die Art-Seite */
+}
+
+#motion {
+    background-color: #fff3e0; /* Helles Orange für die Motion-Seite */
+}
+
 /* Header Styling */
 header {
     position: fixed;
