@@ -16,13 +16,12 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px; /* Feste Breite des Headers */
+    width: 100%; /* Volle Breite des Headers */
     height: 90px; /* Feste Höhe des Headers */
     background: linear-gradient(to right, #59ff27 0%, #59ff27 50%, transparent 50%); /* Hintergrund nur auf der linken Seite */
     display: flex;
-    justify-content: space-between; /* Verhindert, dass sich die Elemente übereinander stapeln */
     align-items: center;
-    padding: 10px;
+    padding: 0 20px; /* Etwas Platz an den Seiten */
     z-index: 10;
     box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
@@ -32,7 +31,6 @@ header .logo {
     flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 header .logo img {
@@ -44,8 +42,9 @@ header .logo img {
 /* Navigation Styling */
 nav {
     position: absolute; /* Absolute Position innerhalb des Headers */
-    top: 10px; /* Abstand vom oberen Rand */
-    right: 10px; /* Abstand vom rechten Rand */
+    top: 50%; /* Vertikal zentrieren */
+    right: 20px; /* Abstand vom rechten Rand */
+    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
 }
 
 nav ul {
@@ -89,7 +88,7 @@ nav a:hover {
 }
 
 .floating-element:hover {
-    width: 350px; /* Vergrößert das Element beim Hover */
+    width: 250px; /* Vergrößert das Element beim Hover */
 }
 
 /* Hero Section */
