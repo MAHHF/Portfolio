@@ -98,14 +98,14 @@ nav a:hover {
     border-radius: 0;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    width: 300px;
-    height: 90px;
-    max-width: 300px;
-    transition: width 0.3s ease;
+    width: 250px;
+    height: 75px;
+    max-width: 350px;
+    transition: width 0.2s ease;
 }
 
 .floating-element:hover {
-    width: 250px; /* Vergrößert das Element beim Hover */
+    width: 350px; /* Vergrößert das Element beim Hover */
 }
 
 /* Hero Section */
