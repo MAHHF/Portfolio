@@ -13,35 +13,83 @@ body {
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
+/* Spezifische Seiten-Hintergrundfarben */
+#home {
+    background-color: #ffffff; /* Weiß für die Startseite */
+}
+
+#photo {
+    background-color: #000000; /* Schwarz für die Photo-Seite */
+}
+
+#art {
+    background-color: #fce4ec; /* Helles Rosa für die Art-Seite */
+}
+
+#motion {
+    background-color: #fff3e0; /* Helles Orange für die Motion-Seite */
+}
+
 /* Header Styling */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100px;
+    width: 100%; /* Header auf volle Breite setzen */
+    height: 100px; /* Feste Höhe des Headers */
     background-color: #000000; /* Hintergrund schwarz */
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 20px; /* Etwas Platz an den Seiten */
     z-index: 10;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
 
 /* Logo Styling */
 header .logo {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
     display: flex;
     align-items: center;
 }
 
 header .logo img {
-    height: 100%;
-    width: auto;
-    max-height: 90px;
+    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
+    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
+    max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
 }
 
-/* Schwebendes Element Styling */
+/* Navigation Styling */
+nav {
+    position: absolute; /* Absolute Position innerhalb des Headers */
+    top: 50%; /* Vertikal zentrieren */
+    right: 20px; /* Abstand vom rechten Rand */
+    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Entfernt Margins */
+}
+
+nav ul li {
+    margin-left: 20px; /* Abstand zwischen den Listenelementen */
+}
+
+nav a {
+    color: #59ff27; /* Schriftfarbe auf Grün (#59ff27) ändern */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Schwebendes Element */
 .floating-element {
     position: fixed;
     right: 0;
@@ -49,36 +97,121 @@ header .logo img {
     background-color: #59ff27;
     color: black;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     width: 250px;
     height: 75px;
     max-width: 350px;
     transition: width 0.2s ease;
-    display: flex;
-    justify-content: center; /* Zentriert den Inhalt horizontal */
-    align-items: center;     /* Zentriert den Inhalt vertikal */
 }
 
 .floating-element:hover {
-    width: 350px;
+    width: 350px; /* Vergrößert das Element beim Hover */
 }
 
-/* Logo Styling im Floating Element */
-.floating-element .logo {
-    max-height: 60px; /* Setze eine maximale Höhe für das Logo im schwebenden Element */
-    display: block;  /* Stelle sicher, dass es als Blockelement behandelt wird */
+/* Hero Section */
+.hero {
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
+    height: 100vh; /* Volle Höhe des Bildschirms */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
+    color: white;
+    padding: 10px 0;
+    position: fixed; /* Footer am unteren Rand fixieren */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Footer auf volle Breite setzen */
+    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
+}
+
+/* Galerie Anpassung auf der "photo" Seite */
+#photo .gallery {
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
+    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
+    padding: 20px;
+}
+
+#photo .photo-img {
+    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
+    max-width: 400px; /* Maximale Breite der Bilder */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    margin: 10px; /* Abstand zwischen den Bildern */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
 }
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
-    /* Anpassungen für kleinere Bildschirme */
-    .floating-element {
-        width: 200px; /* Verkleinerung des schwebenden Elements auf kleineren Bildschirmen */
+    #photo .photo-img {
+        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
     }
 
-    .floating-element .logo img {
-        max-height: 50px; /* Kleinere Logos auf mobilen Geräten */
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #photo .photo-img {
+        max-width: 100%; /* Bild auf volle Breite skalieren */
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
     }
 }
