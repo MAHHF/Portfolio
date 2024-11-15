@@ -13,12 +13,39 @@ body {
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
+}
+
+/* Spezifische Stile für die MAHF-Seite */
+#mahf .image-text-section {  /* Diese Stile gelten nur auf der MAHF-Seite */
+    width: 80%;  /* Breite des Containers */
+    max-width: 800px;  /* Maximale Breite des Containers */
+    text-align: justify;  /* Text um das Bild herum ausrichten */
+    display: flex;  /* Flexbox aktivieren */
+    flex-direction: column;  /* Bild oben, Text unten */
+    align-items: center;  /* Zentriert den Inhalt */
+}
+
+#mahf .centered-image {  /* Diese Stile gelten nur für das Bild auf der MAHF-Seite */
+    width: 200px;  /* Bildbreite */
+    height: 200px;  /* Bildhöhe */
+    object-fit: cover;  /* Bild wird zugeschnitten, um den Container zu füllen */
+    margin-bottom: 20px;  /* Abstand unter dem Bild */
+    border-radius: 8px;  /* Abgerundete Ecken des Bildes */
+}
+
+#mahf .text {  /* Diese Stile gelten nur für den Text auf der MAHF-Seite */
+    width: 100%;  /* Textbereich nimmt die ganze Breite ein */
+    font-size: 16px;  /* Schriftgröße */
+    line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
+    color: #333;  /* Textfarbe */
+}
+
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
     background-color: #ffffff; /* Weiß für die Startseite */
 }
 
-#photo {
+#photo {    
     background-color: #000000; /* Schwarz für die Photo-Seite */
 }
 
@@ -27,7 +54,7 @@ body {
 }
 
 #MAHF {
-    background-color: #fff3e0; /* Helles Orange für die Motion-Seite */
+    background-color: #000000; /* Helles Orange für die Motion-Seite */
 }
 
 /* Header Styling */
