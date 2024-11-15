@@ -13,6 +13,94 @@ body {
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
+/* Hamburger-Menü */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger-menu .line {
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* Navigationsmenü */
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #59ff27;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Menünavigation verstecken */
+#menu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu.open {
+    display: block;  /* Menü sichtbar machen */
+}
+
+/* Mobile Ansicht */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex; /* Hamburger-Menü auf mobilen Geräten anzeigen */
+    }
+    
+    nav {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        display: none;
+    }
+
+    #menu.open {
+        display: block; /* Menü anzeigen, wenn geöffnet */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
 
 /* Text-Styling */
 #mahf .text {
