@@ -102,93 +102,102 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Hamburger Menü (für mobile Ansicht) */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 11;
+/* Schwebendes Element */
+.floating-element {
+    position: fixed;
+    right: 0;
+    top: 800px;
+    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
+    color: black;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    height: 90px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
+    max-width: 350px;
+    transition: width 0.2s ease;
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
 }
 
-.hamburger-menu div {
-    width: 100%;
-    height: 4px;
-    background-color: #333;
-    transition: all 0.3s ease;
+/* Logo im schwebenden Element */
+.floating-logo {
+    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
+    object-fit: contain; /* Verhindert Verzerrungen */
 }
 
-/* Hamburger Menü Animation */
-.hamburger-menu.open div:nth-child(1) {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
+
+.floating-element:hover {
+    width: 350px; /* Vergrößert das Element beim Hover */
 }
 
-.hamburger-menu.open div:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.open div:nth-child(3) {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-}
-
-/* Menü anzeigen (standardmäßig verborgen auf mobilen Geräten) */
-#menu {
-    display: none;
-    position: absolute;
-    top: 100px; /* Platz unterhalb des Headers */
-    left: 0;
-    width: 100%;
-    background-color: #333;
+/* Hero Section */
+.hero {
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
+    height: 100vh; /* Volle Höhe des Bildschirms */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    z-index: 1;
-    padding: 10px 0;
-}
-
-/* Menü anzeigen, wenn es die "open" Klasse hat */
-#menu.open {
-    display: block;
-}
-
-/* Menü-Styling */
-#menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
     text-align: center;
+    position: relative;
 }
 
-#menu ul li {
-    margin: 15px 0;
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
+    padding: 20px;
+    border-radius: 10px;
 }
 
-#menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+.hero h1 {
+    font-size: 50px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Mobile Ansicht */
+.hero p {
+    font-size: 20px;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
+    color: white;
+    padding: 10px 0;
+    position: fixed; /* Footer am unteren Rand fixieren */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Footer auf volle Breite setzen */
+    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
+}
+
+/* Galerie Anpassung auf der "photo" Seite */
+#photo .gallery {
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
+    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
+    padding: 20px;
+}
+
+#photo .photo-img {
+    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
+    max-width: 400px; /* Maximale Breite der Bilder */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    margin: 10px; /* Abstand zwischen den Bildern */
+    border-radius: 0px; /* Abgerundete Ecken */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
+    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
+}
+
+
+/* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
-    /* Hamburger-Menü sichtbar machen */
-    .hamburger-menu {
-        display: flex;
-    }
-
-    /* Navigation auf mobilen Geräten ausblenden */
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    /* Menü anzeigen, wenn die Klasse "open" hinzugefügt wird */
-    #menu.open {
-        display: flex;
+    #photo .photo-img {
+        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
     }
 
     header {
