@@ -112,8 +112,8 @@ nav a:hover {
 
 /* Logo im schwebenden Element */
 .floating-logo {
-    max-width: 50%; /* Logo passt sich an die Breite des Containers an */
-    max-height: 50%; /* Verhindert, dass das Logo die Höhe überschreitet */
+    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
