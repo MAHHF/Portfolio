@@ -17,7 +17,7 @@ header {
     top: 0;
     left: 0;
     width: 100%; /* Header auf volle Breite setzen */
-    height: 90px; /* Feste Höhe des Headers */
+    height: 500px; /* Feste Höhe des Headers */
     background-color: #59ff27; /* Einfarbiger Hintergrund (grün) */
     display: flex;
     align-items: center;
