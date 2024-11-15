@@ -58,12 +58,14 @@ header .logo img {
     max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
 }
 
-/* Navigation Styling */
+/* Navigation Styling - nach links oben verschieben */
 nav {
-    position: absolute; /* Absolute Position innerhalb des Headers */
-    top: 50%; /* Vertikal zentrieren */
-    right: 20px; /* Abstand vom rechten Rand */
-    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    position: absolute;
+    top: 20px; /* Abstand von oben */
+    left: 20px; /* Abstand von links */
+    background-color: #59ff27; /* Grün wie der Header */
+    padding: 10px; /* Etwas Platz rund um die Navigation */
+    border-radius: 5px; /* Abgerundete Ecken für die Navigation */
 }
 
 nav ul {
@@ -89,11 +91,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Schwebendes Element */
+/* Schwebendes Element - Logos hierhin verschieben */
 .floating-element {
     position: fixed;
-    right: 0;
-    top: 800px;
+    right: 20px;
+    bottom: 20px; /* Direkt unten rechts */
     background-color: #59ff27;
     color: black;
     padding: 20px;
@@ -108,6 +110,20 @@ nav a:hover {
 
 .floating-element:hover {
     width: 350px; /* Vergrößert das Element beim Hover */
+}
+
+.floating-element .logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.floating-element .logo img {
+    height: 100%; /* Logo innerhalb des schwebenden Elements anpassen */
+    width: auto;
+    max-height: 60px; /* Maximale Höhe des Logos im schwebenden Element */
 }
 
 /* Hero Section */
