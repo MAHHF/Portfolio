@@ -7,7 +7,7 @@ header {
     height: 90px; /* Feste Höhe des Headers */
     background: linear-gradient(to right, #59ff27 0%, #59ff27 50%, transparent 50%);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Linksbündig ausgerichtet */
     align-items: center;
     padding: 10px; /* Etwas Platz um die Elemente im Header */
     z-index: 10;
@@ -27,7 +27,9 @@ header .logo img {
 
 /* Navigation Styling */
 nav {
-    flex-grow: 1; /* Die Navigation nimmt den verbleibenden Platz im Header ein */
+    position: absolute; /* Positioniert die Navigation absolut im Header */
+    right: 20px; /* Abstandsregelung von der rechten Seite */
+    top: 10px; /* Abstandsregelung vom oberen Rand des Headers */
 }
 
 nav ul {
@@ -35,7 +37,6 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0; /* Entfernt unerwünschte Margins */
-    justify-content: flex-start; /* Linksbündige Navigation */
 }
 
 nav ul li {
