@@ -42,7 +42,7 @@ body {
     width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
     font-size: 16px;  /* Schriftgröße */
     line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
-    color: #fff;  /* Textfarbe weiß, um auf dem schwarzen Hintergrund sichtbar zu sein */
+    color: #ffffff;  /* Textfarbe weiß, um auf dem schwarzen Hintergrund sichtbar zu sein */
     padding-left: 20px;  /* Optional: Abstand zum Bild */
 }
 
