@@ -40,18 +40,37 @@
     <p>Willkommen in meiner Foto-Galerie! Hier sind einige meiner Lieblingsbilder.</p>
 
     <!-- Galerie mit Bildern -->
-    <div class="gallery">
-        <img src="images/photo1.jpg" alt="Bild 1" class="photo-img">
-        <img src="images/photo2.jpg" alt="Bild 2" class="photo-img">
-        <img src="images/photo3.jpg" alt="Bild 3" class="photo-img">
-        <!-- Weitere Bilder hinzufügen -->
-    </div>
+    <div class="gallery" id="gallery"></div>
 </section>
 
 <!-- Footer Section -->
 <footer>
     <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
 </footer>
+
+<!-- JavaScript -->
+<script>
+    // Array von Bildpfaden
+    const imagePaths = [
+        'images/photo1.jpg',
+        'images/photo2.jpg',
+        'images/photo3.jpg',
+        'images/photo4.jpg',
+        'images/photo5.jpg'  // Weitere Bilder hier hinzufügen
+    ];
+
+    // Referenz auf das Gallery-Div
+    const gallery = document.getElementById('gallery');
+
+    // Schleife durch das Array und füge die Bilder zur Galerie hinzu
+    imagePaths.forEach((path) => {
+        const imgElement = document.createElement('img');
+        imgElement.src = path;
+        imgElement.alt = 'Bild';
+        imgElement.classList.add('photo-img'); // CSS-Klasse hinzufügen
+        gallery.appendChild(imgElement);
+    });
+</script>
 
 </body>
 </html>
