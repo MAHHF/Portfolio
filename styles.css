@@ -37,13 +37,14 @@ header {
     left: 0;
     width: 100%; /* Header auf volle Breite setzen */
     height: 100px; /* Feste Höhe des Headers */
-    background-color: #000000; /* Hintergrund schwarz */
+    background-color: rgba(89, 255, 39, 0.2); /* 20% transparente grüne Farbe */
     display: flex;
     align-items: center;
     padding: 0 20px; /* Etwas Platz an den Seiten */
     z-index: 10;
     box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
+
 
 /* Logo Styling */
 header .logo {
@@ -166,7 +167,9 @@ footer {
     margin: 10px; /* Abstand zwischen den Bildern */
     border-radius: 0px; /* Abgerundete Ecken */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
+    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
 }
+
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
