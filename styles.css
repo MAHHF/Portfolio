@@ -33,24 +33,28 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 300px; /* Feste Breite des Headers */
+    height: 90px; /* Feste Höhe des Headers */
     background: linear-gradient(to right, #59ff27 0%, #59ff27 50%, transparent 50%); /* Hintergrund nur auf der linken Seite */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
     z-index: 10;
-    height: 80px; /* Einheitliche Höhe des Headers */
 }
 
+/* Logo Styling */
 header .logo img {
-    max-width: auto; /* Logo wird automatisch skaliert */
-    height: 150px;
+    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt */
+    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
+    max-height: 100%; /* Verhindert, dass das Logo größer wird als der Header */
 }
 
+/* Navigation Styling */
 nav ul {
     display: flex;
     list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
@@ -71,24 +75,23 @@ nav a:hover {
 
 /* Schwebendes Element */
 .floating-element {
-    position: fixed;               /* Fixiert das Element an einer festen Position auf der Seite */
-    right: 0px;                   /* Positioniert das Element 10px vom rechten Rand */
-    top: 800px;                    /* Setzt das Element 100px von der oberen Seite ab (du kannst diesen Wert anpassen) */
-    background-color: #59ff27;     /* Farbcode für das Element */
-    color: black;                  /* Textfarbe im schwebenden Element */
-    padding: 20px;                 /* Innenabstand um den Inhalt */
-    border-radius: 0px;           /* Abgerundete Ecken */
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);  /* Schattierung für einen 3D-Effekt */
-    z-index: 1000;                 /* Stellt sicher, dass das Element oben auf anderen Elementen liegt */
-    width: 200px;                  /* Anfangsbreite des schwebenden Elements */
-    height: 75;                  /* Höhe wird automatisch angepasst */
-    max-width: 300px;              /* Maximale Breite des Elements */
-    transition: width 0.3s ease;    /* Fügt eine sanfte Übergangsanimation hinzu */
+    position: fixed;
+    right: 0;
+    top: 800px;
+    background-color: #59ff27;
+    color: black;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    height: 90px;
+    max-width: 300px;
+    transition: width 0.3s ease;
 }
 
-/* Optional: Hover-Effekt für das schwebende Element */
 .floating-element:hover {
-    width: 250px;                  /* Vergrößert das Element beim Hover */
+    width: 250px; /* Vergrößert das Element beim Hover */
 }
 
 /* Hero Section */
