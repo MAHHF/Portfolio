@@ -1,18 +1,17 @@
-// Warten, bis das DOM geladen ist
 document.addEventListener('DOMContentLoaded', function () {
     // Alle Links im Navigationsmenü finden
     const navLinks = document.querySelectorAll('nav a');
-
-    // Funktion zum Hinzufügen und Entfernen der 'active' Klasse
+    
+    // Den aktuellen URL-Pfad ermitteln
+    const currentPath = window.location.pathname.split('/').pop(); // Nur der Dateiname ohne Verzeichnisse
+    
+    // Iteriere durch alle Links und vergleiche sie mit dem aktuellen Pfad
     navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            // Entfernt die 'active' Klasse von allen Links
-            navLinks.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            // Fügt die 'active' Klasse dem angeklickten Link hinzu
-            event.target.classList.add('active');
-        });
+        // Wenn der Link mit dem aktuellen Pfad übereinstimmt, setze die 'active' Klasse
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 });
