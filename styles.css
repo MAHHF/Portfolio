@@ -7,161 +7,43 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Standard Hintergrundfarbe */
+    background-color: #f4f4f4;
     color: #333;
-    min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
-    padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
+    min-height: 100vh;
+    padding-bottom: 80px; /* Platz für den Footer */
 }
 
-
-/* Header-Styling */
+/* Header */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 100;
-}
-
-/* Hamburger-Menü */
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.hamburger-menu .line {
-    background: white;
-    height: 3px;
-    border-radius: 2px;
-}
-
-/* Navigation */
-nav {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #333;
-    color: white;
-    width: 200px;
-    display: none; /* Versteckt das Menü standardmäßig */
-    flex-direction: column;
-}
-
-nav.open {
-    display: flex; /* Zeigt das Menü an, wenn die Klasse 'open' hinzugefügt wird */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    border-bottom: 1px solid #555;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    text-align: center;
-}
-
-nav ul li a:hover {
-    background: #444;
-}
-
-
-/* Text-Styling */
-#mahf .text {
-    width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
-    font-size: 16px;  /* Schriftgröße */
-    line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
-    color: #333;  /* Textfarbe */
-    padding-left: 20px;  /* Optional: Abstand zum Bild */
-}
-
-
-/* Spezifische Seiten-Hintergrundfarben */
-#home {
-    background-color: #A600D8;
-}
-
-#photo {
-    background-color: #000000;
-}
-
-#art {
-    background-color: #000000;
-}
-
-#MAHF {
-    background-color: #000000;
-}
-
-
-/* Header Styling */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Header auf volle Breite setzen */
-    height: 100px; /* Feste Höhe des Headers */
-    background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
+    height: 100px;
+    background-color: rgba(89, 255, 39, 0.2); /* 20% transparente grüne Farbe */
     display: flex;
     align-items: center;
-    padding: 0 20px; /* Etwas Platz an den Seiten */
+    padding: 0 20px;
     z-index: 10;
-    box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
-}
-
-
-/* Logo Styling */
-header .logo {
-    flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
-    display: flex;
-    align-items: center;
 }
 
 header .logo img {
-    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
-    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
-    max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
+    max-height: 90px;
+    object-fit: contain;
 }
 
-/* Navigation Styling */
 nav {
-    position: absolute; /* Absolute Position innerhalb des Headers */
-    top: 50%; /* Vertikal zentrieren */
-    left: 20px; /* Abstand vom rechten Rand */
-    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    margin-left: auto; /* Schiebt die Navigation nach rechts */
 }
 
 nav ul {
     display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Entfernt Margins */
-}
-
-nav ul li {
-    margin-left: 20px; /* Abstand zwischen den Listenelementen */
+    list-style: none;
+    gap: 20px;
 }
 
 nav a {
-    color: #59ff27; /* Schriftfarbe auf Grün (#59ff27) ändern */
+    color: #59ff27;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -172,42 +54,48 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Hamburger-Menü */
+.hamburger-menu {
+    display: none; /* Standardmäßig versteckt */
+}
+
+.hamburger-menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 /* Schwebendes Element */
 .floating-element {
     position: fixed;
-    right: 0;
+    right: 10px;
     top: 800px;
-    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
+    background-color: rgba(89, 255, 39, 0.8); /* 80% Transparenz */
     color: black;
     padding: 20px;
-    border-radius: 0;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    width: 300px;
-    height: 90px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
     max-width: 350px;
-    transition: width 0.2s ease;
-    display: flex; /* Flexbox aktivieren */
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
+    transition: width 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-/* Logo im schwebenden Element */
-.floating-logo {
-    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
-    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
-    object-fit: contain; /* Verhindert Verzerrungen */
-}
-
 
 .floating-element:hover {
-    width: 350px; /* Vergrößert das Element beim Hover */
+    width: 350px;
+}
+
+.floating-logo {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
-    height: 100vh; /* Volle Höhe des Bildschirms */
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,7 +105,7 @@ nav a:hover {
 }
 
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
@@ -225,68 +113,35 @@ nav a:hover {
 .hero h1 {
     font-size: 50px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 20px;
 }
 
-/* Footer Section */
+/* Footer */
 footer {
     text-align: center;
-    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
+    background-color: #000000;
     color: white;
     padding: 10px 0;
-    position: fixed; /* Footer am unteren Rand fixieren */
+    position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%; /* Footer auf volle Breite setzen */
-    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
+    width: 100%;
+    z-index: 10;
 }
 
-/* Galerie Anpassung auf der "photo" Seite */
-#photo .gallery {
-    display: flex;
-    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
-    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
-    padding: 20px;
-}
-
-#photo .photo-img {
-    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
-    max-width: 400px; /* Maximale Breite der Bilder */
-    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
-    margin: 10px; /* Abstand zwischen den Bildern */
-    border-radius: 0px; /* Abgerundete Ecken */
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
-    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
-}
-
-
-/* Responsive Design für mobile Geräte */
+/* Responsives Design */
 @media screen and (max-width: 768px) {
-    #photo .photo-img {
-        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
-    }
-
     header {
         flex-direction: column;
-        padding: 20px;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
+        padding: 10px;
     }
 
     nav ul {
         flex-direction: column;
-        margin-top: 10px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
+        gap: 10px;
     }
 
     .hero h1 {
@@ -299,8 +154,8 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    #photo .photo-img {
-        max-width: 100%; /* Bild auf volle Breite skalieren */
+    .floating-element {
+        width: 250px; /* Kleinere Breite für schwebendes Element */
     }
 
     .hero h1 {
