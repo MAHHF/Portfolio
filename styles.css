@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Standard Hintergrundfarbe */
@@ -11,14 +12,7 @@ body {
     min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
-/* Text-Styling */
-#mahf .text {
-    width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
-    font-size: 16px;  /* Schriftgröße */
-    line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
-    color: #333;  /* Textfarbe */
-    padding-left: 20px;  /* Optional: Abstand zum Bild */
-}
+
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
     background-color: #A600D8;
@@ -32,6 +26,7 @@ body {
 #MAHF {
     background-color: #000000;
 }
+
 /* Header Styling */
 header {
     position: fixed;
@@ -46,6 +41,7 @@ header {
     z-index: 10;
     box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
+
 /* Logo Styling */
 header .logo {
     flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
@@ -57,6 +53,7 @@ header .logo img {
     width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
     max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
 }
+
 /* Navigation Styling */
 nav {
     position: absolute; /* Absolute Position innerhalb des Headers */
@@ -64,25 +61,30 @@ nav {
     left: 20px; /* Abstand vom rechten Rand */
     transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
 }
+
 nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0; /* Entfernt Margins */
 }
+
 nav ul li {
     margin-left: 20px; /* Abstand zwischen den Listenelementen */
 }
+
 nav a {
     color: #59ff27; /* Schriftfarbe auf Grün (#59ff27) ändern */
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
+
 nav a:hover {
     color: white;
     text-decoration: underline;
 }
+
 /* Schwebendes Element */
 .floating-element {
     position: fixed;
@@ -102,15 +104,18 @@ nav a:hover {
     justify-content: center; /* Zentriert horizontal */
     align-items: center; /* Zentriert vertikal */
 }
+
 /* Logo im schwebenden Element */
 .floating-logo {
     max-width: 100%; /* Logo passt sich an die Breite des Containers an */
     max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
     object-fit: contain; /* Verhindert Verzerrungen */
 }
+
 .floating-element:hover {
     width: 350px; /* Vergrößert das Element beim Hover */
 }
+
 /* Hero Section */
 .hero {
     background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
@@ -122,19 +127,23 @@ nav a:hover {
     text-align: center;
     position: relative;
 }
+
 .hero-content {
     background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
     padding: 20px;
     border-radius: 10px;
 }
+
 .hero h1 {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .hero p {
     font-size: 20px;
 }
+
 /* Footer Section */
 footer {
     text-align: center;
@@ -147,6 +156,7 @@ footer {
     width: 100%; /* Footer auf volle Breite setzen */
     z-index: 10; /* Stellt sicher, dass der Footer oben ist */
 }
+
 /* Galerie Anpassung auf der "photo" Seite */
 #photo .gallery {
     display: flex;
@@ -154,6 +164,7 @@ footer {
     justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
     padding: 20px;
 }
+
 #photo .photo-img {
     width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
     max-width: 400px; /* Maximale Breite der Bilder */
@@ -163,55 +174,53 @@ footer {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
 }
+
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
+    /* Galerie für mobile Ansicht */
     #photo .photo-img {
         max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
     }
+
+    /* Header für mobile Ansicht */
     header {
         flex-direction: column;
         padding: 20px;
     }
+
     header .logo {
         margin-bottom: 10px;
     }
-    nav ul {
-        flex-dir
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art - MAHF Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body id="home">
-<!-- Schwebendes Element -->
-<div class="floating-element">
-    <img src="logos/MAHF_Signature.png" alt="MAHF Art Logo" class="floating-logo">
-    
-    <!-- Navigationsbereich (wird ein- oder ausgeblendet) -->
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Zuhause</a></li>
-            <li><a href="photo.html">35mm</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="mahf.html">MAHF</a></li>
-        </ul>
-    </nav>
-</header>
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Art</h1>
-        <p>Meine Kunstwerke und kreativen Projekte.</p>
-    </div>
-</section>
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
-</footer>
 
-    
-</body>
-</html>
+    /* Navigation für mobile Ansicht */
+    nav ul {
+        display: block; /* Stellt sicher, dass jedes Listenelement auf einer neuen Zeile ist */
+        margin-top: 50px; /* Verschiebt das Menü etwas nach unten */
+        text-align: justify; /* Blocksatz für die Listenelemente */
+    }
+
+    nav ul li {
+        display: block; /* Listenelemente als Block darstellen */
+        margin: 10px 0; /* Abstand zwischen den Listenelementen */
+        text-align: center; /* Zentriert den Text */
+    }
+
+    nav a {
+        display: block; /* Stellt sicher, dass der Link den gesamten Platz einnimmt */
+        padding: 10px; /* Etwas Abstand zu den Rändern */
+        text-decoration: none; /* Entfernt die Unterstreichung */
+        color: #59ff27; /* Farbe der Links */
+        font-weight: bold;
+    }
+
+    /* Optional: Effekt für den Hover-Zustand */
+    nav a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    /* Header anpassen */
+    header {
+        padding-top: 20px; /* Sorgt für etwas Abstand nach oben */
+    }
+}
