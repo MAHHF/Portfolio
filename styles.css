@@ -105,7 +105,7 @@ nav a:hover {
 .floating-element {
     position: fixed;
     right: 0;
-    top: 600px;
+    top: 680px;
     background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
     padding: 20px;
@@ -130,7 +130,7 @@ nav a:hover {
 
 
 .floating-element:hover {
-    width: 600px; /* Vergrößert das Element beim Hover */
+    width: 350px; /* Vergrößert das Element beim Hover */
 }
 
 /* Hero Section */
