@@ -1,22 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Alle Links im Navigationsmenü finden
-    const navLinks = document.querySelectorAll('nav a');
-    
-    // Den aktuellen URL-Pfad ermitteln (wir wollen nur den Dateinamen, nicht den gesamten Pfad)
-    const currentPath = window.location.pathname.split('/').pop(); 
+document.addEventListener("DOMContentLoaded", function() {
+    // Holen des Body-IDs, um die aktuelle Seite zu bestimmen
+    var bodyId = document.body.id;
 
-    // Iteriere durch alle Links und vergleiche sie mit dem aktuellen Pfad
-    navLinks.forEach(function(link) {
-        // Wenn der Link mit dem aktuellen Pfad übereinstimmt, setze die 'active' Klasse
-        if (link.getAttribute('href') === currentPath) {
+    // Überprüfen, ob wir uns auf der "photo"-Seite befinden
+    if (bodyId === "photo") {
+        // Der Link für "Photo" wird zu "35mm" geändert
+        document.querySelector('a[href="photo.html"]').textContent = "35mm";
+    }
+
+    // Überprüfen, ob wir uns auf der "mahf"-Seite befinden
+    if (bodyId === "MAHF") {
+        // Der Link für "About" wird zu "MAHF" geändert
+        document.querySelector('a[href="mahf.html"]').textContent = "MAHF";
+    }
+
+    // Füge den aktiven Link zur Navigation hinzu, wie du es schon vorher wolltest
+    var links = document.querySelectorAll('nav a');
+    links.forEach(function(link) {
+        // Wenn der Link der aktuellen Seite entspricht, wird er mit 'active' markiert
+        if (link.href.includes(bodyId)) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
     });
-
-    // Optionale Anpassung der Bezeichner für "35mm" Seite
-    if (currentPath === 'photo.html') {
-        document.getElementById('photo-link').textContent = '35mm'; // Text ändern für "35mm" Seite
-    }
 });
