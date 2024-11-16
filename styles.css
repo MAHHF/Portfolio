@@ -37,6 +37,7 @@ header {
     background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Stellt sicher, dass Logo und Navigation Platz haben */
     padding: 0 20px; /* Etwas Platz an den Seiten */
     z-index: 10;
     box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
@@ -56,14 +57,14 @@ header .logo img {
 
 /* Navigation Styling */
 nav {
-    position: absolute; /* Absolute Position innerhalb des Headers */
-    top: 50%; /* Vertikal zentrieren */
-    left: 20px; /* Abstand vom rechten Rand */
-    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Zentriert die Navigationselemente horizontal */
+    align-items: center; /* Optional: Vertikale Zentrierung */
+    width: 100%; /* Stellt sicher, dass das nav die gesamte Breite nutzt */
 }
 
 nav ul {
-    display: flex;
+    display: flex; /* Die Listenelemente in einer Reihe darstellen */
     list-style-type: none;
     padding: 0;
     margin: 0; /* Entfernt Margins */
@@ -74,7 +75,7 @@ nav ul li {
 }
 
 nav a {
-    color: #59ff27; /* Schriftfarbe auf Grün (#59ff27) ändern */
+    color: #59ff27; /* Schriftfarbe auf Grün ändern */
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -198,6 +199,13 @@ footer {
     }
 
     /* Navigation für mobile Ansicht */
+    nav {
+        flex-direction: column; /* Stellt sicher, dass das Menü vertikal ist */
+        justify-content: center; /* Zentriert das Menü vertikal */
+        align-items: center; /* Zentriert das Menü horizontal */
+        width: 100%; /* Menü auf volle Breite */
+    }
+
     nav ul {
         display: block; /* Stellt sicher, dass jedes Listenelement auf einer neuen Zeile ist */
         margin-top: 50px; /* Verschiebt das Menü etwas nach unten */
