@@ -58,7 +58,7 @@ header .logo img {
 /* Navigation Styling */
 nav {
     display: flex; /* Flexbox aktivieren */
-    justify-content: center; /* Zentriert die Navigationselemente horizontal */
+    justify-content: space-between; /* Stellt sicher, dass die Navigationselemente auf beiden Seiten bleiben */
     align-items: center; /* Optional: Vertikale Zentrierung */
     width: 100%; /* Stellt sicher, dass das nav die gesamte Breite nutzt */
 }
