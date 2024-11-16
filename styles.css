@@ -69,7 +69,7 @@ nav a:hover {
 .floating-element {
     position: fixed;
     right: 10px;
-    top: 800px;
+    top: 600px;
     background-color: rgba(89, 255, 39, 0.8); /* 80% Transparenz */
     color: black;
     padding: 20px;
