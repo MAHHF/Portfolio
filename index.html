@@ -3,50 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art - MAHF Portfolio</title>
+    <title>MAHF - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body id="home">
+<body id="MAHF"> <!-- ID für die MAHF-Seite -->
 
-<!-- Schwebendes Element -->
-<div class="floating-element">
-    <img src="logos/MAHF_Signature.png" alt="MAHF Art Logo" class="floating-logo">
-</div>
+    <header>
+        <div class="logo">
+            <img src="logos/MAHF_Signature.png" alt="MAHF Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photo.html">35MM</a></li>
+                <li><a href="art.html">Art</a></li>
+                <li><a href="mahf.html">MAHF</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Header mit Hamburger-Menü -->
-<header>
-    <!-- Navigation -->
-    <nav id="mobileMenu">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <section id="mahf">
+        <!-- Container für Bild und Text -->
+        <div class="image-text-section">
+            <img src="image.jpg" alt="Beispielbild" class="centered-image">
+            <div class="text">
+                <h2>Willkommen auf der MAHF-Seite</h2>
+                <p>Dies ist eine Beispielbeschreibung für die MAHF-Seite, und der Text sollte um das Bild fließen.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Art</h1>
-        <p>Meine Kunstwerke und kreativen Projekte.</p>
-    </div>
-</section>
+    <footer>
+        <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
+    </footer>
 
-<!-- Main Content -->
-<main>
-    <h1>Willkommen</h1>
-    <p>Dies ist ein Beispiel für ein einfaches Hamburger-Menü.</p>
-</main>
-
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
-</footer>
-
- <!-- JavaScript einfügen -->
-    <script src="script.js"></script>
-    
 </body>
 </html>
