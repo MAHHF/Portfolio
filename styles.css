@@ -200,38 +200,36 @@ footer {
 
     /* Navigation für mobile Ansicht */
     nav {
-        flex-direction: column; /* Stellt sicher, dass das Menü vertikal ist */
-        justify-content: center; /* Zentriert das Menü vertikal */
-        align-items: center; /* Zentriert das Menü horizontal */
+        display: flex; /* Flexbox aktivieren */
+        justify-content: center; /* Menü horizontal zentrieren */
+        align-items: center; /* Menü vertikal zentrieren */
         width: 100%; /* Menü auf volle Breite */
     }
 
     nav ul {
-        display: block; /* Stellt sicher, dass jedes Listenelement auf einer neuen Zeile ist */
-        margin-top: 50px; /* Verschiebt das Menü etwas nach unten */
-        text-align: center; /* Zentriert das Menü */
+        display: flex; /* Listenelemente in einer Reihe darstellen */
+        list-style-type: none;
+        padding: 0;
+        margin: 0; /* Entfernt Margins */
     }
 
     nav ul li {
-        display: block; /* Listenelemente als Block darstellen */
-        margin: 10px 0; /* Abstand zwischen den Listenelementen */
+        margin-left: 20px; /* Abstand zwischen den Listenelementen */
     }
 
     nav a {
-        display: block; /* Stellt sicher, dass der Link den gesamten Platz einnimmt */
-        padding: 10px; /* Etwas Abstand zu den Rändern */
-        text-decoration: none; /* Entfernt die Unterstreichung */
-        color: #59ff27; /* Farbe der Links */
+        color: #59ff27; /* Schriftfarbe auf Grün ändern */
+        text-decoration: none;
+        font-size: 18px;
         font-weight: bold;
     }
 
-    /* Optional: Effekt für den Hover-Zustand */
     nav a:hover {
         color: white;
         text-decoration: underline;
     }
 
-    /* Header anpassen */
+    /* Optional: Header anpassen */
     header {
         padding-top: 20px; /* Sorgt für etwas Abstand nach oben */
     }
