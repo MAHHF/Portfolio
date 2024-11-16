@@ -188,6 +188,13 @@ footer {
         padding: 20px;
     }
 
+      }
+
+    /* Stelle sicher, dass das schwebende Element weiterhin oben bleibt */
+    .floating-element {
+        top: 610px; /* Behalte die Position bei */
+    }
+
     header .logo {
         margin-bottom: 10px;
     }
