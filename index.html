@@ -14,25 +14,39 @@
 </div>
 
 
-    <!-- Header Section -->
-<header>
-    <!-- Hamburger Menü Button -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    
-    <!-- Navigationsbereich (wird ein- oder ausgeblendet) -->
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Zuhause</a></li>
-            <li><a href="photo.html">35mm</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="mahf.html">MAHF</a></li>
-        </ul>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einfaches Hamburger-Menü</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header mit Hamburger-Menü -->
+    <header>
+        <div class="hamburger-menu" id="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <nav id="mobileMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Willkommen</h1>
+        <p>Dies ist ein Beispiel für ein einfaches Hamburger-Menü.</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
 
 <!-- Hero Section -->
 <section class="hero">
