@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('a[href="mahf.html"]').textContent = "MAHF";
     }
 
+ // Überprüfen, ob wir uns auf der "mahf"-Seite befinden
+    if (bodyId === "home") {
+        // Der Link für "About" wird zu "MAHF" geändert
+        document.querySelector('a[href="mahf.html"]').textContent = "Zuhause";
+    }
+    
     // Füge den aktiven Link zur Navigation hinzu, wie du es schon vorher wolltest
     var links = document.querySelectorAll('nav a');
     links.forEach(function(link) {
