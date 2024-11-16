@@ -74,11 +74,20 @@ nav ul li {
     margin-left: 20px; /* Abstand zwischen den Listenelementen */
 }
 
+/* Standard-Link-Stile */
 nav a {
     color: #59ff27; /* Schriftfarbe auf Grün ändern */
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+}
+
+/* **Aktiver Link mit eigener Schriftart und Farbe** */
+nav a.active {
+    font-family: 'Pattaya', sans-serif; /* **Aktive Schriftart** */
+    color: #A600D8; /* **Lila Farbton für aktiven Link** */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    font-size: 1.2rem; /* **Größere Schriftgröße für den aktiven Punkt** */
 }
 
 nav a:hover {
