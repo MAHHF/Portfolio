@@ -188,15 +188,6 @@ footer {
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
 }
 
-/* Canvas Styling */
-#waveCanvas {
-    display: none; /* Canvas standardmäßig unsichtbar */
-}
-
-/* Wenn man auf das übergeordnete #photo-Element hovert, wird der Canvas sichtbar */
-#photo:hover #waveCanvas {
-    display: block;
-}
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
