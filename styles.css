@@ -22,7 +22,6 @@ body {
     padding-left: 20px;  /* Optional: Abstand zum Bild */
 }
 
-
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
     background-color: #A600D8;
@@ -40,7 +39,6 @@ body {
     background-color: #000000;
 }
 
-
 /* Header Styling */
 header {
     position: fixed;
@@ -55,7 +53,6 @@ header {
     z-index: 10;
     box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
-
 
 /* Logo Styling */
 header .logo {
@@ -128,7 +125,6 @@ nav a:hover {
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
-
 .floating-element:hover {
     width: 350px; /* Vergrößert das Element beim Hover */
 }
@@ -192,6 +188,15 @@ footer {
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
 }
 
+/* Canvas Styling */
+#waveCanvas {
+    display: none; /* Canvas standardmäßig unsichtbar */
+}
+
+/* Wenn man auf das übergeordnete #photo-Element hovert, wird der Canvas sichtbar */
+#photo:hover #waveCanvas {
+    display: block;
+}
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
@@ -209,34 +214,4 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #photo .photo-img {
-        max-width: 100%; /* Bild auf volle Breite skalieren */
-    }
-
-    .hero h1 {
-        font-size: 24px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-}
+        flex-dir
