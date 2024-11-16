@@ -1,208 +1,44 @@
-/* Allgemeine Stileinstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art - MAHF Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="home">
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Standard Hintergrundfarbe */
-    color: #333;
-    min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
-    padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
-}
+<!-- Schwebendes Element -->
+<div class="floating-element">
+    <img src="logos/MAHF_Signature.png" alt="MAHF Art Logo" class="floating-logo">
 
-/* Text-Styling */
-#mahf .text {
-    width: calc(100% - 220px);  /* Textbereich nimmt die restliche Breite ein (Bildbreite + Margin) */
-    font-size: 16px;  /* Schriftgröße */
-    line-height: 1.6;  /* Zeilenhöhe für besseren Lesefluss */
-    color: #333;  /* Textfarbe */
-    padding-left: 20px;  /* Optional: Abstand zum Bild */
-}
+    
+    <!-- Navigationsbereich (wird ein- oder ausgeblendet) -->
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html">Zuhause</a></li>
+            <li><a href="photo.html">35mm</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="mahf.html">MAHF</a></li>
+        </ul>
+    </nav>
+</header>
 
-/* Spezifische Seiten-Hintergrundfarben */
-#home {
-    background-color: #A600D8;
-}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Art</h1>
+        <p>Meine Kunstwerke und kreativen Projekte.</p>
+    </div>
+</section>
 
-#photo {
-    background-color: #000000;
-}
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
+</footer>
 
-#art {
-    background-color: #000000;
-}
-
-#MAHF {
-    background-color: #000000;
-}
-
-/* Header Styling */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Header auf volle Breite setzen */
-    height: 100px; /* Feste Höhe des Headers */
-    background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
-    display: flex;
-    align-items: center;
-    padding: 0 20px; /* Etwas Platz an den Seiten */
-    z-index: 10;
-    box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
-}
-
-/* Logo Styling */
-header .logo {
-    flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
-    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
-    max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
-}
-
-/* Navigation Styling */
-nav {
-    position: absolute; /* Absolute Position innerhalb des Headers */
-    top: 50%; /* Vertikal zentrieren */
-    left: 20px; /* Abstand vom rechten Rand */
-    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Entfernt Margins */
-}
-
-nav ul li {
-    margin-left: 20px; /* Abstand zwischen den Listenelementen */
-}
-
-nav a {
-    color: #59ff27; /* Schriftfarbe auf Grün (#59ff27) ändern */
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-/* Schwebendes Element */
-.floating-element {
-    position: fixed;
-    right: 0;
-    top: 610px;
-    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
-    color: black;
-    padding: 20px;
-    border-radius: 0;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 300px;
-    height: 90px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
-    max-width: 350px;
-    transition: width 0.2s ease;
-    display: flex; /* Flexbox aktivieren */
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
-}
-
-/* Logo im schwebenden Element */
-.floating-logo {
-    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
-    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
-    object-fit: contain; /* Verhindert Verzerrungen */
-}
-
-.floating-element:hover {
-    width: 350px; /* Vergrößert das Element beim Hover */
-}
-
-/* Hero Section */
-.hero {
-    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
-    height: 100vh; /* Volle Höhe des Bildschirms */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.hero h1 {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 20px;
-}
-
-/* Footer Section */
-footer {
-    text-align: center;
-    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
-    color: white;
-    padding: 10px 0;
-    position: fixed; /* Footer am unteren Rand fixieren */
-    bottom: 0;
-    left: 0;
-    width: 100%; /* Footer auf volle Breite setzen */
-    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
-}
-
-/* Galerie Anpassung auf der "photo" Seite */
-#photo .gallery {
-    display: flex;
-    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
-    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
-    padding: 20px;
-}
-
-#photo .photo-img {
-    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
-    max-width: 400px; /* Maximale Breite der Bilder */
-    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
-    margin: 10px; /* Abstand zwischen den Bildern */
-    border-radius: 0px; /* Abgerundete Ecken */
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
-    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
-}
-
-
-/* Responsive Design für mobile Geräte */
-@media screen and (max-width: 768px) {
-    #photo .photo-img {
-        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
-    }
-
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    nav ul {
-        flex-dir
+<!-- Am Ende des <body>-Tags die JS-Datei einfügen -->
+<script src="script.js"></script>
+    
+</body>
+</html>
