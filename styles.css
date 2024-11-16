@@ -13,112 +13,74 @@ body {
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
 }
 
-/* Hamburger-Menü */
+
+/* Header-Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
 /* Hamburger-Menü */
 .hamburger-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 30px;
-    height: 25px;
+    height: 20px;
     cursor: pointer;
-    z-index: 100; /* Sicherstellen, dass es immer oben ist */
 }
 
 .hamburger-menu .line {
-    height: 4px;
-    width: 100%;
-    background-color: #333;
-    border-radius: 10px;
+    background: white;
+    height: 3px;
+    border-radius: 2px;
 }
 
-/* Navigationsmenü */
+/* Navigation */
 nav {
-    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    color: white;
+    width: 200px;
+    display: none; /* Versteckt das Menü standardmäßig */
+    flex-direction: column;
+}
+
+nav.open {
+    display: flex; /* Zeigt das Menü an, wenn die Klasse 'open' hinzugefügt wird */
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin-left: 20px;
+    border-bottom: 1px solid #555;
 }
 
-nav a {
-    color: #59ff27;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-nav a:hover {
+nav ul li a {
     color: white;
-    text-decoration: underline;
-}
-
-/* Menünavigation verstecken und richtig positionieren */
-#menu {
-    display: none;
-    position: absolute;
-    top: 100px;
-    right: 0;
-    background-color: #333;
+    text-decoration: none;
     padding: 10px;
-    border-radius: 5px;
-    width: 100%; /* Menü nimmt jetzt volle Breite ein */
+    display: block;
+    text-align: center;
 }
 
-/* Menü sichtbar machen, wenn es geöffnet wird */
-#menu.open {
-    display: block; /* Menü sichtbar machen */
-}
-
-/* Mobile Ansicht */
-@media screen and (max-width: 768px) {
-    .hamburger-menu {
-        display: flex; /* Hamburger-Menü auf mobilen Geräten anzeigen */
-    }
-
-    nav {
-        display: none; /* Verhindert, dass das normale Menü sichtbar ist */
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 100%;
-        background-color: #333;
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column; /* Vertikale Ausrichtung der Navigation */
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    /* Das Menü erscheint, wenn es mit JS geöffnet wird */
-    #menu.open nav {
-        display: block;
-    }
-
-    /* Verhindern, dass das Logo zu groß wird */
-    header .logo img {
-        max-height: 80px;
-    }
-}
-
-/* Sicherstellen, dass in der mobilen Ansicht das Hamburger-Menü immer oben ist */
-@media screen and (max-width: 480px) {
-    .hamburger-menu {
-        width: 40px;
-        height: 30px;
-    }
+nav ul li a:hover {
+    background: #444;
 }
 
 
