@@ -188,8 +188,6 @@ footer {
         padding: 20px;
     }
 
-      }
-
     /* Stelle sicher, dass das schwebende Element weiterhin oben bleibt */
     .floating-element {
         top: 610px; /* Behalte die Position bei */
@@ -203,13 +201,12 @@ footer {
     nav ul {
         display: block; /* Stellt sicher, dass jedes Listenelement auf einer neuen Zeile ist */
         margin-top: 50px; /* Verschiebt das Menü etwas nach unten */
-        text-align: justify; /* Blocksatz für die Listenelemente */
+        text-align: center; /* Zentriert das Menü */
     }
 
     nav ul li {
         display: block; /* Listenelemente als Block darstellen */
         margin: 10px 0; /* Abstand zwischen den Listenelementen */
-        text-align: center; /* Zentriert den Text */
     }
 
     nav a {
