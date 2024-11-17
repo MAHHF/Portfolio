@@ -260,10 +260,12 @@ footer {
     }
 
     #photo .photo-img {
-        width: 100vw; /* Bilder in voller Breite des Bildschirms */
+        width: 100; /* Bilder in voller Breite des Bildschirms */
+        height: auto;
         max-width: none; /* Keine Begrenzung der maximalen Breite */
         margin: 0; /* Keine Abstände zwischen Bildern */
         border-radius: 0; /* Ecken nicht abrunden */
+        object-fit: contain;
     }
 
     /* Positioniere das schwebende Element höher für mobile Ansicht */
