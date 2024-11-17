@@ -220,8 +220,8 @@ footer {
 
 /* Kombination mehrerer Verzerrungseffekte */
 #photo .photo-img:hover {
-    transform: scale(1.7) skew(45deg, 10deg) rotate(45deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
-    filter: blur(0px) contrast(0); /* Unschärfe und Kontrast für den Effekt */
+    transform: scale(1.7) skew(20deg, 15deg) rotate(90deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
+    filter: blur(0.1px) contrast(0.5); /* Unschärfe und Kontrast für den Effekt */
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
