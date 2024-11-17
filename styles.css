@@ -231,6 +231,26 @@ footer {
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
+ nav {
+        width: 100%; /* Die Navigation nimmt 100% der Breite des Bildschirms ein */
+        display: flex; /* Aktiviert Flexbox */
+        justify-content: center; /* Zentriert die Navigationselemente horizontal */
+        align-items: center; /* Optional: Vertikale Zentrierung */
+        padding: 0; /* Entfernt extra Padding */
+    }
+
+    nav ul {
+        display: flex; /* Listenelemente in einer Reihe anordnen */
+        justify-content: center; /* Listenelemente zentrieren */
+        padding: 0; /* Entfernt Padding von den Listenelementen */
+        margin: 0; /* Entfernt Margin, um sicherzustellen, dass nichts verspringt */
+    }
+
+    nav ul li {
+        margin-left: 20px; /* Abstand zwischen den Listenelementen */
+        margin-right: 20px; /* (Optional) Etwas Abstand rechts hinzufügen, falls gewünscht */
+    }
+    
     /* Galerie für mobile Ansicht */
     #photo .gallery {
         display: flex;
