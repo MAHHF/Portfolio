@@ -246,6 +246,25 @@ footer {
         border-radius: 0; /* Ecken nicht abrunden */
     }
 
+       /* Navigation zentrieren für mobile Ansicht */
+    nav {
+        width: 100%; /* Stellt sicher, dass die Navigation die volle Breite des Bildschirms einnimmt */
+        justify-content: center; /* Zentriert die Navigationselemente horizontal */
+        align-items: center; /* Optional: Zentriert die Navigationselemente vertikal */
+        padding: 0; /* Entfernt extra Padding */
+    }
+
+    nav ul {
+        display: flex; /* Setzt Flexbox für die Listenelemente */
+        justify-content: center; /* Zentriert die Listenelemente */
+        width: auto; /* Verhindert, dass die Liste zu breit wird */
+    }
+
+    nav ul li {
+        margin-left: 20px; /* Abstand zwischen den Listenelementen */
+    }
+}
+
    /* Positioniere das schwebende Element höher für mobile Ansicht */
     .floating-element {
         top: 500px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
