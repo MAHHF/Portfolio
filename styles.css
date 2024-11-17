@@ -211,7 +211,16 @@ footer {
     border-radius: 0px; /* Abgerundete Ecken */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Sanfter Übergang für Hover */
 }
+
+/* Wellenförmiger Verzerrungseffekt beim Hover */
+#photo .photo-img:hover {
+    transform: skew(10deg, 5deg); /* Wellenförmige Verzerrung */
+    filter: blur(2px); /* Optional: leichter Unschärfe-Effekt für mehr Dynamik */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Erhöht den Schatten beim Hover */
+}
+
 
 /* Hover-Effekt */
 #photo .photo-img:hover {
