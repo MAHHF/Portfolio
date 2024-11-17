@@ -22,10 +22,6 @@ a:active {
     cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor im aktiven Zustand */
 }
 
-/* Cursoränderung, wenn der gesamte Body aktiv ist (z.B. beim Klicken irgendwo im Body) */
-body:active {
-    cursor: url('logos/MAHF_Cursor_active.png'), auto; /* Benutzerdefinierter Cursor für aktiven Body */
-}
 
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
