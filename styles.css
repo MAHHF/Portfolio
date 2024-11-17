@@ -214,15 +214,27 @@ footer {
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Sanfter Übergang für Hover */
     overflow: hidden; /* Verhindert, dass der Effekt über das Bild hinausgeht */
     position: relative; /* Positionierung für z-index */
+    max-height: 400px; /* Begrenze die Höhe auf die gleiche Höhe wie die max-width */
+    flex: 1 1 30%; /* Die Bilder können nicht größer als 30% des Containers werden */
 }
 
 /* Kombination mehrerer Verzerrungseffekte */
 #photo .photo-img:hover {
-    transform: scale(1.2) skew(15deg, 10deg) rotate(15deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
-    filter: blur(3px) contrast(1.5); /* Unschärfe und Kontrast für den Effekt */
+    transform: scale(1.1) skew(10deg, 10deg) rotate(10deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
+    filter: blur(2px) contrast(1.3); /* Unschärfe und Kontrast für den Effekt */
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Mobile Ansicht */
+@media screen and (max-width: 768px) {
+    #photo .photo-img {
+        max-width: 100%; /* Maximale Breite auf 100% für kleine Bildschirme */
+        max-height: 300px; /* Maximale Höhe für kleinere Bildschirme */
+        margin: 5px; /* Reduzierter Abstand für kleinere Bildschirme */
+    }
+}
+
 
 
 
