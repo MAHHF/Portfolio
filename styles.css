@@ -220,12 +220,14 @@ footer.fixed {
 }
 
 /* Stärkere Verzerrung mit `skew` */
-<!-- #photo .photo-img:hover {
-    transform: skew(35deg, 20deg) scale(2.9); /* Stärkere Verzerrung */
-    filter: blur(0px); /* Leichte Unschärfe */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Schatten */
+/*
+#photo .photo-img:hover {
+    transform: skew(35deg, 20deg) scale(2.9); 
+    filter: blur(0px); /* Leichte Unschärfe 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-} -->
+} 
+*/
 
 
 
