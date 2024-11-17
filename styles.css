@@ -248,7 +248,7 @@ footer {
 
     /* Positioniere das schwebende Element höher für mobile Ansicht */
     .floating-element {
-        top: 250px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
+        top: 500px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
     }
 
     /* Logo im schwebenden Element */
