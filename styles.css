@@ -83,9 +83,9 @@ header .logo img {
 /* Navigation Styling */
 nav {
     display: flex; /* Flexbox aktivieren */
-    justify-content: space-between; /* Stellt sicher, dass die Navigationselemente auf beiden Seiten bleiben */
+    justify-content: flex-start; /* Die Navigation wird am linken Rand ausgerichtet */
     align-items: center; /* Optional: Vertikale Zentrierung */
-    width: 100%; /* Stellt sicher, dass das nav die gesamte Breite nutzt */
+    width: auto; /* Verhindert, dass die Navigation zu breit wird */
 }
 
 nav ul {
@@ -113,9 +113,6 @@ nav a.active {
     color: #59ff27; /* Lila Farbton für aktiven Link */
     text-decoration: none; /* Entfernt Unterstreichung */
     font-size: 1.6rem; /* Größere Schriftgröße für den aktiven Punkt */
-}
-
-
 }
 
 nav a:hover {
@@ -226,16 +223,6 @@ footer {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten beim Hover */
 }
 
-
-
-
-
-
-
-
-
-}
-
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
     /* Galerie für mobile Ansicht */
@@ -252,57 +239,4 @@ footer {
         margin: 0; /* Keine Abstände zwischen Bildern */
         border-radius: 0; /* Ecken nicht abrunden */
     }
-}
 
-
-    /* Header für mobile Ansicht */
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    /* Stelle sicher, dass das schwebende Element weiterhin oben bleibt */
-    .floating-element {
-        top: 610px; /* Behalte die Position bei */
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    /* Navigation für mobile Ansicht */
-    nav {
-        display: flex; /* Flexbox aktivieren */
-        justify-content: center; /* Menü horizontal zentrieren */
-        align-items: center; /* Menü vertikal zentrieren */
-        width: 100%; /* Menü auf volle Breite */
-    }
-
-    nav ul {
-        display: flex; /* Listenelemente in einer Reihe darstellen */
-        list-style-type: none;
-        padding: 0;
-        margin: 0; /* Entfernt Margins */
-    }
-
-    nav ul li {
-        margin-left: 20px; /* Abstand zwischen den Listenelementen */
-    }
-
-    nav a {
-        color: #59ff27; /* Schriftfarbe auf Grün ändern */
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    nav a:hover {
-        color: white;
-        text-decoration: underline;
-    }
-
-    /* Optional: Header anpassen */
-    header {
-        padding-top: 20px; /* Sorgt für etwas Abstand nach oben */
-    }
-}
