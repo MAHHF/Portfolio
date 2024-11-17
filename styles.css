@@ -211,19 +211,6 @@ footer {
     border-radius: 0px; /* Abgerundete Ecken */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); /* Schatten für die Bilder */
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Sanfter Übergang für Hover */
-    overflow: hidden; /* Verhindert, dass der Effekt über das Bild hinausgeht */
-    position: relative; /* Positionierung für z-index */
-    max-height: 400px; /* Begrenze die Höhe auf die gleiche Höhe wie die max-width */
-    flex: 1 1 30%; /* Die Bilder können nicht größer als 30% des Containers werden */
-}
-
-/* Kombination mehrerer Verzerrungseffekte */
-#photo .photo-img:hover {
-    transform: scale(1.1) skew(10deg, 10deg) rotate(10deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
-    filter: blur(2px) contrast(1.3); /* Unschärfe und Kontrast für den Effekt */
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Mobile Ansicht */
