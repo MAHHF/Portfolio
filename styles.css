@@ -216,16 +216,11 @@ footer {
 
 /* Wellenförmiger Verzerrungseffekt beim Hover */
 #photo .photo-img:hover {
-    transform: skew(30deg, 180deg); /* Wellenförmige Verzerrung */
+    transform: skew(30deg, 70deg); /* Wellenförmige Verzerrung */
     filter: blur(0px); /* Optional: leichter Unschärfe-Effekt für mehr Dynamik */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Erhöht den Schatten beim Hover */
 }
 
-
-/* Hover-Effekt */
-#photo .photo-img:hover {
-    transform: scale(0); /* Leichtes Vergrößern */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten beim Hover */
 }
 
 /* Responsive Design für mobile Geräte */
