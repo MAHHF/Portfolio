@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+/* Schriftarten importieren */
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Standard Hintergrundfarbe */
