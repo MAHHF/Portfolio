@@ -186,7 +186,7 @@ footer {
     background-color: #000000; /* Schwarzer Hintergrund für den Footer */
     color: white;
     padding: 10px 0;
-    position: absolute; /* Footer am unteren Rand fixieren */
+    position: static; /* Footer am unteren Rand fixieren */
     bottom: 0;
     left: 0;
     width: 100%; /* Footer auf volle Breite setzen */
