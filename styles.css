@@ -184,16 +184,14 @@ nav a:hover {
 }
 
 /* Footer Section */
-footer {
-    text-align: center;
-    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
-    color: white;
-    padding: 10px 0;
-    position: static; /* Footer am unteren Rand fixieren */
+footer.fixed {
+    position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%; /* Footer auf volle Breite setzen */
-    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    z-index: 1000;
 }
 
 /* Galerie Anpassung auf der "photo" Seite */
