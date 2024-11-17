@@ -87,7 +87,7 @@ nav a.active {
     font-family: 'Pattaya', sans-serif; /* **Aktive Schriftart** */
     color: #A600D8; /* **Lila Farbton für aktiven Link** */
     text-decoration: none; /* Entfernt Unterstreichung */
-    font-size: 1.4rem; /* **Größere Schriftgröße für den aktiven Punkt** */
+    font-size: 1.2rem; /* **Größere Schriftgröße für den aktiven Punkt** */
 }
 
 nav a:hover {
