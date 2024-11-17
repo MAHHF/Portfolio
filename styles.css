@@ -121,11 +121,11 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* Schwebendes Element */
+/* Schwebendes Element für Desktop */
 .floating-element {
     position: fixed;
     right: 0;
-    top: 610px;
+    top: 610px; /* Desktop: 610px von oben */
     background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
     padding: 20px;
@@ -141,6 +141,11 @@ nav a:hover {
     align-items: center; /* Zentriert vertikal */
 }
 
+/* Hover-Effekt für das schwebende Element */
+.floating-element:hover {
+    width: 350px; /* Vergrößert das Element beim Hover */
+}
+
 /* Logo im schwebenden Element */
 .floating-logo {
     max-width: 100%; /* Logo passt sich an die Breite des Containers an */
@@ -148,9 +153,7 @@ nav a:hover {
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
-.floating-element:hover {
-    width: 350px; /* Vergrößert das Element beim Hover */
-}
+
 
 /* Hero Section */
 .hero {
