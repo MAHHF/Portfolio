@@ -222,9 +222,21 @@ footer {
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
     /* Galerie für mobile Ansicht */
-    #photo .photo-img {
-        max-width: 300px; /* Bilder werden auf kleineren Bildschirmen kleiner */
+    #photo .gallery {
+        display: flex;
+        flex-wrap: wrap; /* Bilder umbrechen */
+        justify-content: center; /* Bilder zentrieren */
+        padding: 0; /* Entfernt äußeren Abstand */
     }
+
+    #photo .photo-img {
+        width: 100vw; /* Bilder in voller Breite des Bildschirms */
+        max-width: none; /* Keine Begrenzung der maximalen Breite */
+        margin: 0; /* Keine Abstände zwischen Bildern */
+        border-radius: 0; /* Ecken nicht abrunden */
+    }
+}
+
 
     /* Header für mobile Ansicht */
     header {
