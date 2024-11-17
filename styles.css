@@ -218,13 +218,14 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
 }
 
-/* Perspektivische Verzerrung */
+/* Stärkere Verzerrung mit `skew` */
 #photo .photo-img:hover {
-    transform: perspective(500px) rotateY(20deg) rotateX(20deg); /* 3D-Verzerrung */
-    filter: blur(2px); /* Optionaler Unschärfe-Effekt */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten */
+    transform: skew(30deg, 15deg); /* Stärkere Verzerrung */
+    filter: blur(3px); /* Leichte Unschärfe */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Schatten */
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 
 
