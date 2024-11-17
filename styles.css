@@ -70,34 +70,14 @@ header {
 
 /* Logo Styling */
 header .logo {
-    position: relative; /* Ermöglicht das Platzieren des Hintergrunds hinter dem Logo */
     flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
     display: flex;
     align-items: center;
-    overflow: hidden; /* Verhindert, dass das invertierte Bild über das Logo hinausgeht */
 }
-
 header .logo img {
     height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
     width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
     max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
-    position: relative; /* Das Logo bleibt über dem invertierten Hintergrund */
-    z-index: 1; /* Das Logo bleibt über dem Hintergrundbild */
-}
-
-/* Pseudoelement für das Hintergrundbild */
-header .logo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('your-background-image.jpg'); /* Ersetze mit deinem Bild */
-    background-size: cover; /* Bild skalieren */
-    background-position: center; /* Positioniere das Bild im Container */
-    filter: invert(1); /* Invertiert das Bild hinter dem Logo */
-    z-index: -1; /* Das Hintergrundbild bleibt hinter dem Logo */
 }
 
 
