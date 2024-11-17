@@ -216,15 +216,14 @@ footer {
     position: relative; /* Positionierung für z-index */
 }
 
-/* Wellenförmiger Verzerrungseffekt beim Hover */
-
+/* Kombination mehrerer Verzerrungseffekte */
 #photo .photo-img:hover {
-    transform: scale(1.1);
-    clip-path: polygon(50% 0%, 100% 25%, 75% 75%, 25% 75%, 0% 25%); /* Verzerrte Form */
-    filter: blur(2px);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, clip-path 0.3s ease, filter 0.3s ease;
+    transform: scale(1.2) skew(15deg, 10deg) rotate(15deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
+    filter: blur(3px) contrast(1.5); /* Unschärfe und Kontrast für den Effekt */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 
 
