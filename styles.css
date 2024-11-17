@@ -217,13 +217,15 @@ footer {
 }
 
 /* Wellenförmiger Verzerrungseffekt beim Hover */
-/* Perspektivische Verzerrung */
+
 #photo .photo-img:hover {
-    transform: perspective(500px) rotateY(20deg) rotateX(20deg); /* 3D-Verzerrung */
-    filter: blur(2px); /* Optionaler Unschärfe-Effekt */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten */
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    clip-path: polygon(50% 0%, 100% 25%, 75% 75%, 25% 75%, 0% 25%); /* Verzerrte Form */
+    filter: blur(2px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, clip-path 0.3s ease, filter 0.3s ease;
 }
+
 
 
 
