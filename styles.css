@@ -14,6 +14,7 @@ body {
     color: #333;
     min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
+    cursor: url('logos/MAHF_Cursor.png'), auto;
 }
 
 /* Spezifische Seiten-Hintergrundfarben */
