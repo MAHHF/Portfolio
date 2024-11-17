@@ -193,13 +193,6 @@ footer {
 }
 
 /* Galerie Anpassung auf der "photo" Seite */
-#photo .gallery {
-    display: flex;
-    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
-    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
-    padding: 20px;
-}
-
 #photo .photo-img-container {
     position: relative; /* Erforderlich für den overflow */
     width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
@@ -214,8 +207,15 @@ footer {
     width: 100%; /* Skaliert die Bilder auf die volle Breite des Containers */
     height: auto; /* Höhe bleibt im Verhältnis zur Breite */
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), clip-path 0.6s ease; /* Übergangseffekte */
 }
+
+/* Wirbel-Effekt beim Hover */
+#photo .photo-img-container:hover .photo-img {
+    transform: rotate(360deg) scale(1.2); /* Dreht das Bild und vergrößert es */
+    clip-path: circle(50% at center); /* Erstellt einen Kreis, um das Bild zu maskieren */
+}
+
 
 /* Hover-Effekt */
 #photo .photo-img-container:hover .photo-img {
