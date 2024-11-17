@@ -180,18 +180,25 @@ nav a:hover {
     font-size: 20px;
 }
 
-/* Footer Section */
-footer {
-    text-align: center;
-    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
-    color: white;
-    padding: 10px 0;
-    position: fixed; /* Footer am unteren Rand fixieren */
-    bottom: 0;
+/* Footer immer am unteren Rand der Seite */
+footer.fixed {
+    position: fixed;
+    bottom: -100px; /* Anfangszustand: Der Footer ist außerhalb des Viewports */
     left: 0;
-    width: 100%; /* Footer auf volle Breite setzen */
-    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    transition: bottom 0.3s ease; /* Sanfte Animation, wenn der Footer sichtbar wird */
+    z-index: 1000;
+    padding: 10px 0; /* Padding für den Footer */
+    text-align: center;
 }
+
+/* Footer sichtbar, wenn der Benutzer unten angekommen ist */
+footer.fixed.visible {
+    bottom: 0; /* Der Footer wird sichtbar, wenn er am unteren Rand des Viewports ist */
+}
+
 
 /* Galerie Anpassung auf der "photo" Seite */
 #photo .gallery {
