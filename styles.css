@@ -213,6 +213,12 @@ footer {
     object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
 }
 
+/* Hover-Effekt */
+#photo .photo-img:hover {
+    transform: scale(1.55); /* Leichtes Vergrößern */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten beim Hover */
+}
+
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
     /* Galerie für mobile Ansicht */
