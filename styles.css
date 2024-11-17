@@ -217,12 +217,14 @@ footer {
 }
 
 /* Wellenförmiger Verzerrungseffekt beim Hover */
+/* Perspektivische Verzerrung */
 #photo .photo-img:hover {
-    transform: skew(10deg, 5deg) scale(1.05); /* Wellenförmige Verzerrung und leichte Vergrößerung */
-    filter: blur(2px); /* Optional: leichter Unschärfe-Effekt für mehr Dynamik */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Erhöht den Schatten beim Hover */
-    border-radius: 0px; /* Beibehaltung des Rechtecks oder Anpassung für abgerundete Ecken */
+    transform: perspective(500px) rotateY(20deg) rotateX(20deg); /* 3D-Verzerrung */
+    filter: blur(2px); /* Optionaler Unschärfe-Effekt */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 
 
