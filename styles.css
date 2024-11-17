@@ -218,11 +218,14 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
 }
 
-/* Hover-Effekt */
-#photo .photo-img-container:hover .photo-img {
-    transform: scale(1.8); /* Leichtes Vergrößern */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Schatten beim Hover */
+/* Kombination mehrerer Verzerrungseffekte */
+#photo .photo-img:hover {
+    transform: scale(1.2) skew(15deg, 10deg) rotate(15deg); /* Kombination aus Skalierung, Verzerrung und Rotation */
+    filter: blur(3px) contrast(1.5); /* Unschärfe und Kontrast für den Effekt */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
