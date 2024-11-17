@@ -121,11 +121,11 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* Schwebendes Element für Desktop */
+/* Schwebendes Element */
 .floating-element {
     position: fixed;
     right: 0;
-    top: 610px; /* Desktop: 610px von oben */
+    top: 610px;
     background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
     padding: 20px;
@@ -141,11 +141,6 @@ nav a:hover {
     align-items: center; /* Zentriert vertikal */
 }
 
-/* Hover-Effekt für das schwebende Element */
-.floating-element:hover {
-    width: 350px; /* Vergrößert das Element beim Hover */
-}
-
 /* Logo im schwebenden Element */
 .floating-logo {
     max-width: 100%; /* Logo passt sich an die Breite des Containers an */
@@ -153,7 +148,9 @@ nav a:hover {
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
-
+.floating-element:hover {
+    width: 350px; /* Vergrößert das Element beim Hover */
+}
 
 /* Hero Section */
 .hero {
@@ -184,14 +181,16 @@ nav a:hover {
 }
 
 /* Footer Section */
-footer.fixed {
-    position: fixed;
+footer {
+    text-align: center;
+    background-color: #000000; /* Schwarzer Hintergrund für den Footer */
+    color: white;
+    padding: 10px 0;
+    position: fixed; /* Footer am unteren Rand fixieren */
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    z-index: 1000;
+    width: 100%; /* Footer auf volle Breite setzen */
+    z-index: 10; /* Stellt sicher, dass der Footer oben ist */
 }
 
 /* Galerie Anpassung auf der "photo" Seite */
@@ -219,16 +218,14 @@ footer.fixed {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
 }
 
-/* Stärkere Verzerrung mit `skew` */
-/*
+/* 
 #photo .photo-img:hover {
     transform: skew(35deg, 20deg) scale(2.9); 
-    filter: blur(0px); /* Leichte Unschärfe 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+    filter: blur(0px); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-} 
+}
 */
-
 
 
 
@@ -249,28 +246,9 @@ footer.fixed {
         border-radius: 0; /* Ecken nicht abrunden */
     }
 
-       /* Navigation zentrieren für mobile Ansicht */
-    nav {
-        width: 100%; /* Stellt sicher, dass die Navigation die volle Breite des Bildschirms einnimmt */
-        justify-content: center; /* Zentriert die Navigationselemente horizontal */
-        align-items: center; /* Optional: Zentriert die Navigationselemente vertikal */
-        padding: 0; /* Entfernt extra Padding */
-    }
-
-    nav ul {
-        display: flex; /* Setzt Flexbox für die Listenelemente */
-        justify-content: center; /* Zentriert die Listenelemente */
-        width: auto; /* Verhindert, dass die Liste zu breit wird */
-    }
-
-    nav ul li {
-        margin-left: 20px; /* Abstand zwischen den Listenelementen */
-    }
-}
-
-   /* Positioniere das schwebende Element höher für mobile Ansicht */
+    /* Positioniere das schwebende Element höher für mobile Ansicht */
     .floating-element {
-        top: 500px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
+        top: 250px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
     }
 
     /* Logo im schwebenden Element */
