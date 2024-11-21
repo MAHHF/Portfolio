@@ -253,9 +253,10 @@ footer.fixed.visible {
 
 /* Hier fügst du dann die spezifischen Stile für #art ein */
 #art .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column; /* Bilder vertikal anordnen */
+    align-items: center; /* Zentriert die Bilder */
+    justify-content: center; /* Vertikal zentrieren */
     padding: 20px;
 }
 
@@ -264,7 +265,8 @@ footer.fixed.visible {
     height: auto;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    ext-align: center; /* Text unter den Bildern zentrieren */
+   
 }
 
 #art .gallery-item img {
@@ -273,12 +275,7 @@ footer.fixed.visible {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
-    max-width: 300px;
-}
-
-#art .gallery-item img:hover {
-    transform: scale(1.05); /* Hover-Effekt */
-}
+    max-width: 1080px;
 
 
 /* Text unter den Bildern */
