@@ -138,7 +138,7 @@ nav a:hover {
 }
 
 /* Beispiel für Hero-Section mit Bild */
-.hero {
+#home .hero {
     background: url('images/MAHF_IG_QR_Code_Green.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
