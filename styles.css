@@ -264,17 +264,16 @@ footer.fixed.visible {
 
 #art .gallery-item {
     width: 80%; /* Breite der Galerie-Elemente anpassen */
-    margin: 20px 0; /* Abstand zwischen den Bildern */
+    margin: 60px 0; /* Abstand zwischen den Bildern */
     text-align: center; /* Text unter den Bildern zentrieren */
 }
 
 #art .gallery-item img {
     width: 100%; /* Das Bild passt sich der Breite des Containers an */
-    max-width: 600px; /* Maximale Bildbreite einstellen */
+    max-width: 650px; /* Maximale Bildbreite einstellen */
     height: auto; /* Höhe bleibt im Verhältnis zur Breite */
     object-fit: contain; /* Das Bild wird vollständig innerhalb des Containers angezeigt */
-    border-radius: 8px; /* Abgerundete Ecken für die Bilder */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatteneffekt für die Bilder */
+    border-radius: 0px; /* Abgerundete Ecken für die Bilder */
 }
 
 /* Stil für den Text unter den Bildern */
@@ -289,10 +288,6 @@ footer.fixed.visible {
     transition: background-color 0.3s ease;
 }
 
-#art .gallery-caption:hover {
-    background-color: #A600D8;
-    color: white;
-}
 
 
 /* Responsive Design für mobile Geräte */
