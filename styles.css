@@ -130,11 +130,14 @@ nav a:hover {
 #art nav a.active {
     color: #A600D8; /* Farbe für den aktiven Link */
     font-weight: bold; /* Fettgedruckter Text */
+    font-size: 1.6rem;
 }
 
 #art nav a:hover {
     color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
 }
+
+
 
 
 /* Schwebendes Element */
