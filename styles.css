@@ -202,15 +202,26 @@ nav a:hover {
 /* Footer immer am unteren Rand der Seite */
 footer.fixed {
     position: fixed;
-    bottom: -100px; /* Anfangszustand: Der Footer ist außerhalb des Viewports */
+    bottom: 0; /* Footer soll immer am unteren Rand des Viewports bleiben */
     left: 0;
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    transition: bottom 0.3s ease; /* Sanfte Animation, wenn der Footer sichtbar wird */
+    width: 100%; /* Breite des Footers soll den gesamten Viewport abdecken */
+    background-color: #000000; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    padding: 10px 0; /* Vertikales Padding für den Footer */
     z-index: 1000;
-    padding: 10px 0; /* Padding für den Footer */
-    text-align: center;
+    display: flex; /* Flexbox für die Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    text-align: center; /* Text im Footer zentrieren */
+}
+
+/* Option für die Änderung der Textfarbe */
+footer.fixed.color-change {
+    color: #A600D8; /* Beispiel für eine grüne Textfarbe */
+}
+
+/* Option für die Änderung der Textgröße */
+footer.fixed.large-text {
+    font-size: 12px; /* Beispiel für eine größere Schriftgröße */
 }
 
 /* Footer sichtbar, wenn der Benutzer unten angekommen ist */
