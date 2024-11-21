@@ -281,6 +281,24 @@ footer.fixed.visible {
 }
 
 
+/* Text unter den Bildern */
+#art .gallery-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333; /* Textfarbe */
+    font-weight: normal;
+    padding: 5px 10px;
+    background-color: #f9f9f9; /* Hintergrundfarbe für den Text */
+    border-radius: 4px; /* Abgerundete Ecken */
+    transition: background-color 0.3s ease; /* Weicher Übergang für den Hintergrund */
+}
+
+#art .gallery-caption:hover {
+    background-color: #A600D8; /* Hintergrundfarbe beim Hover */
+    color: #fff; /* Textfarbe beim Hover */
+}
+
+
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
  nav {
