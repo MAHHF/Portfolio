@@ -255,10 +255,9 @@ footer.fixed.visible {
 #art .gallery {
     display: flex;
     flex-direction: column; /* Bilder vertikal anordnen */
-    align-items: center; /* Horizontale Zentrierung */
-    justify-content: center; /* Vertikale Zentrierung */
-    height: 100vh; /* Nimmt die volle Höhe des Viewports ein */
-    width: 100%; /* Nimmt die volle Breite des Containers ein */
+    align-items: center; /* Bilder horizontal zentrieren */
+    justify-content: flex-start; /* Beginnt den Inhalt am oberen Rand */
+    min-height: 100vh; /* Stellt sicher, dass der Container mindestens die Höhe des Viewports einnimmt */
     padding: 20px;
     box-sizing: border-box; /* Sorgt dafür, dass Padding nicht das Layout beeinflusst */
 }
