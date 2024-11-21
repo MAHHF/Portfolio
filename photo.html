@@ -74,9 +74,35 @@
 </section>
 
 <!-- Footer Section -->
+
 <footer>
     <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
 </footer>
 
+<!-- Masonry.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+<!-- Optional: ImagesLoaded (für besseres Layout) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+
+<script>
+    // Initialisiere Masonry
+    document.addEventListener("DOMContentLoaded", function () {
+        const gallery = document.querySelector('.gallery');
+
+        // Überprüfen, ob die Galerie vorhanden ist
+        if (gallery) {
+            // Nutze ImagesLoaded, um sicherzustellen, dass alle Bilder geladen sind
+            imagesLoaded(gallery, function () {
+                new Masonry(gallery, {
+                    itemSelector: '.photo-img-container', // Jedes Bild als Item
+                    columnWidth: '.photo-img-container', // Spaltenbreite basiert auf dem Bild
+                    percentPosition: true // Responsives Layout
+                });
+            });
+        }
+    });
+</script>
+    
 </body>
 </html>
