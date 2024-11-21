@@ -137,7 +137,17 @@ nav a:hover {
     color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
 }
 
-
+/* Beispiel für Hero-Section mit Bild */
+.hero {
+    background: url('images/MAHF_IG_QR_Code_Green.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
 
 
 /* Schwebendes Element */
