@@ -121,6 +121,22 @@ nav a:hover {
     text-decoration: none;
 }
 
+/* Navigation Styling für die #art Seite */
+#art nav a {
+    color: #000000; 
+    font-size: 18px; /* Beibehaltung der Schriftgröße */
+}
+
+#art nav a.active {
+    color: #A600D8; /* Farbe für den aktiven Link */
+    font-weight: bold; /* Fettgedruckter Text */
+}
+
+#art nav a:hover {
+    color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
+}
+
+
 /* Schwebendes Element */
 .floating-element {
     position: fixed;
