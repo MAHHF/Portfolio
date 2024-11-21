@@ -251,48 +251,48 @@ footer.fixed.visible {
 */
 
 
-/* Hier fügst du dann die spezifischen Stile für #art ein */
+/* Galerie-Stile für die #art-Seite */
 #art .gallery {
     display: flex;
     flex-direction: column; /* Bilder vertikal anordnen */
-    align-items: center; /* Zentriert die Bilder */
-    justify-content: center; /* Vertikal zentrieren */
+    align-items: center; /* Horizontale Zentrierung */
+    justify-content: center; /* Vertikale Zentrierung */
+    height: 100vh; /* Nimmt die volle Höhe des Viewports ein */
+    width: 100%; /* Nimmt die volle Breite des Containers ein */
     padding: 20px;
+    box-sizing: border-box; /* Sorgt dafür, dass Padding nicht das Layout beeinflusst */
 }
 
 #art .gallery-item {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 8px;
-    ext-align: center; /* Text unter den Bildern zentrieren */
-   
+    width: 80%; /* Breite der Galerie-Elemente anpassen */
+    margin: 20px 0; /* Abstand zwischen den Bildern */
+    text-align: center; /* Text unter den Bildern zentrieren */
 }
 
 #art .gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    max-width: 1080px;
+    width: 100%; /* Das Bild passt sich der Breite des Containers an */
+    max-width: 600px; /* Maximale Bildbreite einstellen */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    object-fit: contain; /* Das Bild wird vollständig innerhalb des Containers angezeigt */
+    border-radius: 8px; /* Abgerundete Ecken für die Bilder */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatteneffekt für die Bilder */
+}
 
-
-/* Text unter den Bildern */
+/* Stil für den Text unter den Bildern */
 #art .gallery-caption {
     margin-top: 10px;
     font-size: 16px;
-    color: #333; /* Textfarbe */
+    color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    background-color: #f9f9f9; /* Hintergrundfarbe für den Text */
-    border-radius: 4px; /* Abgerundete Ecken */
-    transition: background-color 0.3s ease; /* Weicher Übergang für den Hintergrund */
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 #art .gallery-caption:hover {
-    background-color: #A600D8; /* Hintergrundfarbe beim Hover */
-    color: #fff; /* Textfarbe beim Hover */
+    background-color: #A600D8;
+    color: white;
 }
 
 
