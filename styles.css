@@ -251,6 +251,35 @@ footer.fixed.visible {
 */
 
 
+/* Hier fügst du dann die spezifischen Stile für #art ein */
+#art .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#art .gallery-item {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#art .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+#art .gallery-item img:hover {
+    transform: scale(1.05); /* Hover-Effekt */
+}
+
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
