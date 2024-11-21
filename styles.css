@@ -284,7 +284,7 @@ footer.fixed.visible {
     color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    background-color: #f9f9f9;
+    background-color: #FFFDF8;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
