@@ -320,7 +320,7 @@ footer.fixed.visible {
     align-items: center; /* Vertikale Zentrierung */
     flex-direction: column; /* Stapelt Bild und Text vertikal */
     height: 100vh; /* Füllt die gesamte Bildschirmhöhe */
-    text-align: center; /* Zentriert den Text */
+    text-align: justify; /* BLOCKSATZ */
     /* Stil für den Textbereich in der About-Sektion */
     max-width: 600px; /* Setzt die maximale Breite des Textbereichs auf 600px */
     margin: 0 auto; /* Zentriert das Element horizontal */
