@@ -314,7 +314,7 @@ footer.fixed.visible {
 
 
 /* Stile nur für die #MAHF-Seite */
-#mahf .centered-container {
+#MAHF .centered-container {
     display: flex; /* Flexbox-Layout aktivieren */
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center; /* Vertikale Zentrierung */
@@ -323,7 +323,7 @@ footer.fixed.visible {
     text-align: center; /* Zentriert den Text */
 }
 
-#mahf .centered-image {
+#MAHF .centered-image {
     width: 600px; /* Anpassbare Breite über CSS-Variable */
     max-width: 100%; /* Responsiv sicherstellen */
     margin-bottom: 20px; /* Abstand zum Text */
