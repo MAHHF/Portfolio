@@ -324,7 +324,7 @@ footer.fixed.visible {
 }
 
 #MAHF .centered-image {
-    width: var(--image-width, 50%); /* Anpassbare Breite über CSS-Variable */
+    width: 600px; /* Anpassbare Breite über CSS-Variable */
     max-width: 100%; /* Responsiv sicherstellen */
     margin-bottom: 20px; /* Abstand zum Text */
 }
