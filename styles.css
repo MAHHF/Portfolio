@@ -313,6 +313,23 @@ footer.fixed.visible {
 }
 
 
+/* Stile nur für die #MAHF-Seite */
+#MAHF .centered-container {
+    display: flex; /* Flexbox-Layout aktivieren */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    flex-direction: column; /* Stapelt Bild und Text vertikal */
+    height: 100vh; /* Füllt die gesamte Bildschirmhöhe */
+    text-align: center; /* Zentriert den Text */
+}
+
+#MAHF .centered-image {
+    width: var(--image-width, 50%); /* Anpassbare Breite über CSS-Variable */
+    max-width: 100%; /* Responsiv sicherstellen */
+    margin-bottom: 20px; /* Abstand zum Text */
+}
+
+
 
 /* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
