@@ -5,16 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art - MAHF Portfolio</title>
     
-    
     <!-- Dein Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Container für den Hauptinhalt */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px; /* Abstand zwischen den Texten und der Slideshow */
+            margin: 20px;
+        }
+
+        /* Textcontainer */
+        .text-container {
+            flex: 1; /* Passt sich an die Breite an */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
         /* Container für die Slideshow */
         #slideshow-container {
             position: relative;
             width: 600px;
             height: 800px;
-            margin: 20px auto;
             overflow: hidden;
             border: 0px solid #fff; /* Optionaler Rahmen */
         }
@@ -59,7 +73,7 @@
     <!-- Hauptinhalt -->
     <div class="content">
         <!-- Linker Textcontainer -->
-        <div class="text-container left">
+        <div class="text-container">
             <p>Willkommen, wie auch immer du deinen Weg hierher gefunden hast!</p>
             <p>Dies ist kein typisches Portfolio. Es ist ein Raum, der sich den Regeln entzieht – ein Ort, an dem meine Kreativität frei atmen kann. Hier leben Ideen, Experimente und Momente, die festgehalten werden wollen.</p>
             <p>Viele der Dinge, die du hier findest, tragen einen dokumentarischen Charakter. Sie spiegeln das Leben wider, wie ich es sehe, erlebe und festhalte – bei Tag, aber vor allem bei Nacht, wenn die Welt eine andere wird.</p>
@@ -86,6 +100,14 @@
             <img class="slide" src="images/202411_Marlon_26_Geburtstag_004.jpg" alt="Bild 15">
             <img class="slide" src="images/202411_Marlon_26_Geburtstag_036.jpg" alt="Bild 16">
             <img class="slide" src="images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg" alt="Bild 17">
+        </div>
+
+        <!-- Rechter Textcontainer -->
+        <div class="text-container">
+            <p>Hier könnten zusätzliche Informationen oder Eindrücke zu den Bildern oder Projekten stehen. Zum Beispiel, wie bestimmte Arbeiten entstanden sind, oder was mich inspiriert hat.</p>
+            <p>Jedes Bild ist ein Zeugnis einer kreativen Reise, die sich in Momenten und Details zeigt. Ob durch Farben, Formen oder Licht, jedes Foto ist ein Ausdruck meiner Sichtweise und meines Erlebens.</p>
+            <p>Diese Sammlung ist ein Versuch, verschiedene Perspektiven und Einflüsse zu kombinieren, die meine kreative Arbeit prägen. Ein Aufeinandertreffen von Intuition und Technik.</p>
+            <p>Ich lade dich ein, diese Reise mit mir zu teilen, durch die Linse zu blicken und vielleicht das Eine oder Andere zu entdecken, was du vorher nicht bemerkt hast.</p>
         </div>
     </div>
 
@@ -114,7 +136,7 @@
         }
 
         // Start der Slideshow
-        setInterval(nextSlide, 2000); // Wechselt alle 2 Sekunden
+        setInterval(nextSlide, 200); // Wechselt alle 2 Sekunden
     </script>
 </body>
 </html>
