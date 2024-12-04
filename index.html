@@ -11,101 +11,31 @@
     <!-- Dein Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Allgemeine Stile für die Seite */
-        body {
-            margin: 0;
-            font-family: 'Pattaya', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-        }
-
-        /* Header und Navigation */
-        header {
-            width: 100%;
-            padding: 10px 0;
-            background-color: #333;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        nav ul li a.active {
-            border-bottom: 2px solid #fff;
-        }
-
-        /* Logo */
-        .floating-element {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .floating-logo {
-            width: 100px;
-        }
-
         /* Container für die Slideshow */
-        .content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        /* Textcontainer */
-        .text-container {
-            width: 30%;
-            padding: 20px;
-            overflow-y: auto;
-            max-height: 90vh;
-        }
-
-        .text-container.left {
-            text-align: left;
-            margin-right: 10px;
-        }
-
-        .text-container.right {
-            text-align: right;
-            margin-left: 10px;
-        }
-
-        /* Slideshow */
         #slideshow-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative;
             width: 800px;
             height: 600px;
+            margin: 20px auto;
             overflow: hidden;
-            border: 2px solid #fff;
+            border: 2px solid #fff; /* Optionaler Rahmen */
         }
 
-        #current-slide {
+        /* Bild innerhalb der Slideshow */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Aktives Bild */
+        .slide.active {
+            opacity: 1;
         }
     </style>
 </head>
@@ -141,52 +71,52 @@
 
         <!-- Slideshow-Container -->
         <div id="slideshow-container">
-            <img id="current-slide" src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Slideshow Bild">
-        </div>
-
-        <!-- Rechter Textcontainer -->
-        <div class="text-container right">
-            <p>Welcome, however you found your way here!</p>
-            <p>This isn’t your typical portfolio. It’s a space that breaks free from rules – a place where my creativity can breathe. Here, ideas, experiments, and moments come alive and find a home.</p>
-            <p>Many of the things you’ll find here have a documentary quality to them. They reflect life as I see and experience it – in the light of day, but especially at night, when the world takes on a different shape.</p>
-            <p>Sometimes, I go through creative phases where I simply create without a plan, driven by the urge to explore. What emerges is a mix of inspiration, chaos, and expression, all of which find their place here.</p>
-            <p>For me, this space is like a diary. For you? Maybe an invitation to discover. However you ended up here, feel free to watch, feel, or simply think along.</p>
+            <img class="slide active" src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Bild 1">
+            <img class="slide" src="images/202411_Marlon_26_Geburtstag_029.jpg" alt="Bild 2">
+            <img class="slide" src="images/202411_Hafenklang_001.jpg" alt="Bild 3">
+            <img class="slide" src="images/202411_Hafenklang_011.jpg" alt="Bild 4">
+            <img class="slide" src="images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg" alt="Bild 5">
+            <img class="slide" src="images/202410_RBO_Pascal_Lesung_010.jpg" alt="Bild 6">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0034.jpg" alt="Bild 7">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0026.jpg" alt="Bild 8">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0028.jpg" alt="Bild 9">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0030.jpg" alt="Bild 10">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0019.jpg" alt="Bild 11">
+            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0025.jpg" alt="Bild 12">
+            <img class="slide" src="images/202410_RBO_Pascal_Lesung_011.jpg" alt="Bild 13">
+            <img class="slide" src="images/202410_RBO_Pascal_Lesung_024.jpg" alt="Bild 14">
+            <img class="slide" src="images/202411_Marlon_26_Geburtstag_004.jpg" alt="Bild 15">
+            <img class="slide" src="images/202411_Marlon_26_Geburtstag_036.jpg" alt="Bild 16">
+            <img class="slide" src="images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg" alt="Bild 17">
         </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
+    </footer>
+
     <!-- JavaScript für die Slideshow -->
     <script>
-        // Liste der Bilder
-        const images = [
-            "images/202409_Tipico_Ringelheim_Portra_400_019.jpg",
-            "images/202411_Marlon_26_Geburtstag_029.jpg",
-            "images/202411_Hafenklang_001.jpg",
-            "images/202411_Hafenklang_011.jpg",
-            "images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg",
-            "images/202410_RBO_Pascal_Lesung_010.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0034.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0026.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0028.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0030.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0019.jpg",
-            "images/202411_Seehaus_Pallas_Space_No_0025.jpg",
-            "images/202410_RBO_Pascal_Lesung_011.jpg",
-            "images/202410_RBO_Pascal_Lesung_024.jpg",
-            "images/202411_Marlon_26_Geburtstag_004.jpg",
-            "images/202411_Marlon_26_Geburtstag_036.jpg",
-            "images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg"
-        ];
-
+        const slides = document.querySelectorAll('.slide');
         let currentIndex = 0;
-        const slideElement = document.getElementById("current-slide");
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            slideElement.src = images[currentIndex];
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
         }
 
-        // Start der Slideshow mit 0.2 Sekunden Intervall
-        setInterval(nextSlide, 100);
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Start der Slideshow
+        setInterval(nextSlide, 2000); // Wechselt alle 2 Sekunden
     </script>
 </body>
 </html>
