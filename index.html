@@ -42,7 +42,7 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: none; /* Übergang entfernt */
         }
 
         /* Aktives Bild */
@@ -136,7 +136,7 @@
         }
 
         // Start der Slideshow
-        setInterval(nextSlide, 200); // Wechselt alle 2 Sekunden
+        setInterval(nextSlide, 200); // Wechselt alle 200 Millisekunden
     </script>
 </body>
 </html>
