@@ -1,115 +1,192 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slideshow - MAHF Portfolio</title>
-  <style>
-    /* Zentrieren der gesamten Struktur */
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #000; /* Hintergrundfarbe */
-      color: #fff; /* Textfarbe */
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art - MAHF Portfolio</title>
+    
+    <!-- Google Font "Pattaya" einbinden -->
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    
+    <!-- Dein Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Allgemeine Stile für die Seite */
+        body {
+            margin: 0;
+            font-family: 'Pattaya', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+        }
 
-    /* Container für die Slideshow */
-    #slideshow-container {
-      width: 800px; /* Breite der Slideshow */
-      height: 600px; /* Höhe der Slideshow */
-      overflow: hidden;
-      border: 2px solid #fff; /* Rahmen in Weiß */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* Header und Navigation */
+        header {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #333;
+            text-align: center;
+        }
 
-    /* Bild innerhalb der Slideshow */
-    #current-slide {
-      width: 100%; /* Bild füllt die Breite des Containers */
-      height: 100%; /* Bild füllt die Höhe des Containers */
-      object-fit: cover; /* Passt das Bild an, ohne es zu verzerren */
-    }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
 
-    /* Container für den Text */
-    .text-container {
-      width: 30%; /* Breite des Textcontainers */
-      padding: 20px;
-      overflow-y: auto; /* Ermöglicht Scrollen bei zu langem Text */
-      max-height: 90vh; /* Maximalhöhe für den Container */
-    }
+        nav ul li {
+            margin: 0 15px;
+        }
 
-    .text-container.left {
-      text-align: left;
-    }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
 
-    .text-container.right {
-      text-align: right;
-    }
-  </style>
+        nav ul li a.active {
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Logo */
+        .floating-element {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .floating-logo {
+            width: 100px;
+        }
+
+        /* Container für die Slideshow */
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        /* Textcontainer */
+        .text-container {
+            width: 30%;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        .text-container.left {
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        .text-container.right {
+            text-align: right;
+            margin-left: 10px;
+        }
+
+        /* Slideshow */
+        #slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 600px;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+
+        #current-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
-<body>
-  <!-- Linker Textcontainer -->
-  <div class="text-container left">
-    <p>Willkommen, wie auch immer du deinen Weg hierher gefunden hast!</p>
-    <p>Dies ist kein typisches Portfolio. Es ist ein Raum, der sich den Regeln entzieht – ein Ort, an dem meine Kreativität frei atmen kann. Hier leben Ideen, Experimente und Momente, die festgehalten werden wollen.</p>
-    <p>Viele der Dinge, die du hier findest, tragen einen dokumentarischen Charakter. Sie spiegeln das Leben wider, wie ich es sehe, erlebe und festhalte – bei Tag, aber vor allem bei Nacht, wenn die Welt eine andere wird.</p>
-    <p>Manchmal durchlaufe ich Phasen, in denen ich einfach mache – ohne Plan, nur mit dem Drang zu erschaffen. Was dabei entsteht, ist ein Mix aus Inspiration, Chaos und Ausdruck, der hier seinen Platz findet.</p>
-    <p>Für mich ist es wie ein Tagebuch. Für dich? Vielleicht eine Entdeckungsreise. Was auch immer dich hergeführt hat, fühl dich eingeladen, mitzuschauen, mitzufühlen oder einfach mitzudenken.</p>
-  </div>
+<body id="home">
+    <!-- Schwebendes Element -->
+    <div class="floating-element">
+        <img src="logos/MAHF_Signature.png" alt="MAHF Art Logo" class="floating-logo">
+    </div>
 
-  <!-- Slideshow-Container -->
-  <div id="slideshow-container">
-    <img id="current-slide" src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Slideshow Bild">
-  </div>
+    <!-- Header Section -->
+    <header>
+        <!-- Navigationsbereich -->
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html" id="home-link" class="active">Home</a></li>
+                <li><a href="photo.html" id="photo-link">Photo</a></li>
+                <li><a href="art.html" id="art-link">Art</a></li>
+                <li><a href="mahf.html" id="mahf-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Rechter Textcontainer -->
-  <div class="text-container right">
-    <p>Welcome, however you found your way here!</p>
-    <p>This isn’t your typical portfolio. It’s a space that breaks free from rules – a place where my creativity can breathe. Here, ideas, experiments, and moments come alive and find a home.</p>
-    <p>Many of the things you’ll find here have a documentary quality to them. They reflect life as I see and experience it – in the light of day, but especially at night, when the world takes on a different shape.</p>
-    <p>Sometimes, I go through creative phases where I simply create without a plan, driven by the urge to explore. What emerges is a mix of inspiration, chaos, and expression, all of which find their place here.</p>
-    <p>For me, this space is like a diary. For you? Maybe an invitation to discover. However you ended up here, feel free to watch, feel, or simply think along.</p>
-  </div>
+    <!-- Hauptinhalt -->
+    <div class="content">
+        <!-- Linker Textcontainer -->
+        <div class="text-container left">
+            <p>Willkommen, wie auch immer du deinen Weg hierher gefunden hast!</p>
+            <p>Dies ist kein typisches Portfolio. Es ist ein Raum, der sich den Regeln entzieht – ein Ort, an dem meine Kreativität frei atmen kann. Hier leben Ideen, Experimente und Momente, die festgehalten werden wollen.</p>
+            <p>Viele der Dinge, die du hier findest, tragen einen dokumentarischen Charakter. Sie spiegeln das Leben wider, wie ich es sehe, erlebe und festhalte – bei Tag, aber vor allem bei Nacht, wenn die Welt eine andere wird.</p>
+            <p>Manchmal durchlaufe ich Phasen, in denen ich einfach mache – ohne Plan, nur mit dem Drang zu erschaffen. Was dabei entsteht, ist ein Mix aus Inspiration, Chaos und Ausdruck, der hier seinen Platz findet.</p>
+            <p>Für mich ist es wie ein Tagebuch. Für dich? Vielleicht eine Entdeckungsreise. Was auch immer dich hergeführt hat, fühl dich eingeladen, mitzuschauen, mitzufühlen oder einfach mitzudenken.</p>
+        </div>
 
-  <script>
-    // Liste der Bilder
-    const images = [
-      "images/202409_Tipico_Ringelheim_Portra_400_019.jpg",
-      "images/202411_Marlon_26_Geburtstag_029.jpg",
-      "images/202411_Hafenklang_001.jpg",
-      "images/202411_Hafenklang_011.jpg",
-      "images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg",
-      "images/202410_RBO_Pascal_Lesung_010.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0034.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0026.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0028.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0030.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0019.jpg",
-      "images/202411_Seehaus_Pallas_Space_No_0025.jpg",
-      "images/202410_RBO_Pascal_Lesung_011.jpg",
-      "images/202410_RBO_Pascal_Lesung_024.jpg",
-      "images/202411_Marlon_26_Geburtstag_004.jpg",
-      "images/202411_Marlon_26_Geburtstag_036.jpg",
-      "images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg"
-    ];
+        <!-- Slideshow-Container -->
+        <div id="slideshow-container">
+            <img id="current-slide" src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Slideshow Bild">
+        </div>
 
-    let currentIndex = 0;
-    const slideElement = document.getElementById("current-slide");
+        <!-- Rechter Textcontainer -->
+        <div class="text-container right">
+            <p>Welcome, however you found your way here!</p>
+            <p>This isn’t your typical portfolio. It’s a space that breaks free from rules – a place where my creativity can breathe. Here, ideas, experiments, and moments come alive and find a home.</p>
+            <p>Many of the things you’ll find here have a documentary quality to them. They reflect life as I see and experience it – in the light of day, but especially at night, when the world takes on a different shape.</p>
+            <p>Sometimes, I go through creative phases where I simply create without a plan, driven by the urge to explore. What emerges is a mix of inspiration, chaos, and expression, all of which find their place here.</p>
+            <p>For me, this space is like a diary. For you? Maybe an invitation to discover. However you ended up here, feel free to watch, feel, or simply think along.</p>
+        </div>
+    </div>
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % images.length; // Nächstes Bild, Loop bei Ende
-      slideElement.src = images[currentIndex];
-    }
+    <!-- JavaScript für die Slideshow -->
+    <script>
+        // Liste der Bilder
+        const images = [
+            "images/202409_Tipico_Ringelheim_Portra_400_019.jpg",
+            "images/202411_Marlon_26_Geburtstag_029.jpg",
+            "images/202411_Hafenklang_001.jpg",
+            "images/202411_Hafenklang_011.jpg",
+            "images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg",
+            "images/202410_RBO_Pascal_Lesung_010.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0034.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0026.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0028.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0030.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0019.jpg",
+            "images/202411_Seehaus_Pallas_Space_No_0025.jpg",
+            "images/202410_RBO_Pascal_Lesung_011.jpg",
+            "images/202410_RBO_Pascal_Lesung_024.jpg",
+            "images/202411_Marlon_26_Geburtstag_004.jpg",
+            "images/202411_Marlon_26_Geburtstag_036.jpg",
+            "images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg"
+        ];
 
-    // Start der Slideshow mit 0.2 Sekunden Intervall
-    setInterval(nextSlide, 200);
-  </script>
+        let currentIndex = 0;
+        const slideElement = document.getElementById("current-slide");
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slideElement.src = images[currentIndex];
+        }
+
+        // Start der Slideshow mit 0.2 Sekunden Intervall
+        setInterval(nextSlide, 200);
+    </script>
 </body>
 </html>
