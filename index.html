@@ -29,6 +29,78 @@
             </ul>
         </nav>
     </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow mit Position und Größe</title>
+  <style>
+    /* Container für die Slideshow */
+    #slideshow-container {
+      position: absolute; /* Ermöglicht freie Positionierung */
+      top: 50px; /* Y-Position */
+      left: 50px; /* X-Position */
+      width: 500px; /* Breite der Slideshow */
+      height: 300px; /* Höhe der Slideshow */
+      overflow: hidden; /* Verhindert Überlaufen von Bildern */
+      border: 2px solid black; /* Optionaler Rahmen */
+    }
+
+    /* Bild innerhalb der Slideshow */
+    #current-slide {
+      width: 100%; /* Bild passt sich an die Breite des Containers an */
+      height: 100%; /* Bild passt sich an die Höhe des Containers an */
+      object-fit: cover; /* Bild wird skaliert, ohne verzerrt zu werden */
+    }
+
+    /* Steuerelemente */
+    #controls {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Slideshow</h1>
+  
+  <div id="slideshow-container">
+    <img id="current-slide" src="image1.jpg" alt="Image 1">
+  </div>
+
+  <div id="controls">
+    <label for="speed">Geschwindigkeit (ms): </label>
+    <input type="number" id="speed" value="2000" min="500" step="100">
+    <button onclick="startSlideshow()">Start</button>
+    <button onclick="stopSlideshow()">Stop</button>
+  </div>
+
+  <script>
+    const images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"]; // Ersetze diese Liste mit deinen Bilddateinamen
+    let currentIndex = 0;
+    let interval;
+    const slideElement = document.getElementById("current-slide");
+    const speedInput = document.getElementById("speed");
+
+    function showSlide(index) {
+      slideElement.src = images[index];
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
+
+    function startSlideshow() {
+      stopSlideshow(); // Falls die Slideshow läuft, beenden
+      interval = setInterval(nextSlide, Number(speedInput.value));
+    }
+
+    function stopSlideshow() {
+      clearInterval(interval);
+    }
+  </script>
+</body>
+</html>
 
 
     
