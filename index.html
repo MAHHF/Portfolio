@@ -11,26 +11,34 @@
         /* Container für den Hauptinhalt */
         .content {
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: 20px; /* Abstand zwischen den Texten und der Slideshow */
-            margin: 20px;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         /* Textcontainer */
         .text-container {
-            flex: 1; /* Passt sich an die Breite an */
+            width: 100%;
+            max-width: 800px; /* Maximale Breite für größere Bildschirme */
             padding: 10px;
             box-sizing: border-box;
+            text-align: center; /* Zentriert den Text */
         }
 
         /* Container für die Slideshow */
         #slideshow-container {
             position: relative;
-            width: 600px;
-            height: 800px;
+            width: 100%;
+            max-width: 600px; /* Maximale Breite für größere Bildschirme */
+            height: auto;
+            aspect-ratio: 3 / 4; /* Verhältnis für die Höhe der Slideshow */
             overflow: hidden;
             border: 0px solid #fff; /* Optionaler Rahmen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Bild innerhalb der Slideshow */
@@ -48,6 +56,24 @@
         /* Aktives Bild */
         .slide.active {
             opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .text-container {
+                font-size: 14px;
+            }
+
+            #slideshow-container {
+                max-width: 100%;
+                aspect-ratio: 4 / 3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-container {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -136,7 +162,7 @@
         }
 
         // Start der Slideshow
-        setInterval(nextSlide, 200); // Wechselt alle 200 Millisekunden
+        setInterval(nextSlide, 100); // Wechselt alle 2 Sekunden
     </script>
 </body>
 </html>
