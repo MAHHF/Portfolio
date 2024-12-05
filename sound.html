@@ -1,1 +1,111 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound</title>
+  <style>
+    /* Grundlegendes CSS für Parallax-Scrolling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .parallax-section {
+      position: relative;
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .section-content {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .section-content h1, .section-content p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .embed-container {
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="parallax-section" style="background-image: url('your-header-image.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Welcome to My Sound Page</h1>
+      <p>Discover and listen to my favorite playlists from Spotify and SoundCloud</p>
+    </div>
+  </header>
+
+  <!-- Spotify Section -->
+  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Spotify Playlists</h1>
+      <p>Listen to curated Spotify playlists</p>
+      <div class="embed-container">
+        <!-- Beispiel-Spotify-Playlist -->
+        <iframe 
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
+          allow="encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SoundCloud Section -->
+  <section class="parallax-section" style="background-image: url('soundcloud-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>SoundCloud Playlists</h1>
+      <p>Explore tracks and playlists on SoundCloud</p>
+      <div class="embed-container">
+        <!-- Beispiel-SoundCloud-Playlist -->
+        <iframe 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" 
+          allow="autoplay">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="parallax-section" style="background-image: url('footer-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Thanks for Visiting!</h1>
+      <p>Stay tuned for more music and updates</p>
+    </div>
+  </footer>
+</body>
+</html>
