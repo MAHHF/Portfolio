@@ -1,106 +1,79 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  background-color: black;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound - MAHF Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(0, 128, 0, 0.9); /* Grüne Hintergrundfarbe */
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
+    <!-- Schriftart Pattaya einbinden -->
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+</head>
+<body id="sound">
 
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+<!-- Schwebendes Element (Logo nur hier eingefügt) -->
+<div class="floating-element" id="sound-floating">
+    <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
+</div>
 
-nav li {
-  margin-right: 20px;
-}
+<!-- Header Section ohne Logo -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photo.html">Photo</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="sound.html" class="active">Sound</a></li>
+            <li><a href="mahf.html">About</a></li>
+        </ul>
+    </nav>
+</header>
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
+<!-- Sound Section -->
+<section id="sound">
+    <h1>Sound - Meine Musik und Playlists</h1>
 
-nav a.active {
-  text-decoration: underline;
-}
+    <!-- Spotify Playlist Section -->
+    <div class="embed-container">
+        <h2>Meine Spotify Playlist</h2>
+        <iframe src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" 
+                width="100%" height="380" frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+    </div>
 
-.floating-element {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-}
+    <!-- Zweite Spotify Playlist -->
+    <div class="embed-container">
+        <h2>Weitere Spotify Playlist</h2>
+        <iframe src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" 
+                width="100%" height="380" frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+    </div>
 
-.floating-logo {
-  width: 150px; /* Größe des Logos anpassen */
-}
+    <!-- SoundCloud Playlist Section -->
+    <div class="embed-container">
+        <h2>Meine SoundCloud Playlist</h2>
+        <iframe width="100%" height="300" 
+                scrolling="no" frameborder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
 
-.parallax-section {
-  position: relative;
-  padding: 50px 0; /* Platz für Header und Abstand */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
+    <!-- Weitere SoundCloud Playlist -->
+    <div class="embed-container">
+        <h2>Weitere SoundCloud Playlist</h2>
+        <iframe width="100%" height="300" 
+                scrolling="no" frameborder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/154567890&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
+</section>
 
-.section-content {
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
+</footer>
 
-.dark-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.section-content h1, .section-content p {
-  position: relative;
-  z-index: 2;
-}
-
-.embed-container {
-  max-width: 800px; /* Maximalbreite des Containers */
-  width: 100%;
-  margin: 20px auto; /* Zentriert den Container */
-}
-
-iframe {
-  width: 100%; /* Volle Breite des Containers */
-  height: 352px;
-  border: none;
-  border-radius: 12px;
-}
-
-/* Responsive Anpassungen */
-@media (max-width: 768px) {
-  iframe {
-    height: 250px; /* Kleinere Höhe für Tablets und kleinere Geräte */
-  }
-}
-
-@media (max-width: 480px) {
-  iframe {
-    height: 200px; /* Kleinere Höhe für Smartphones */
-  }
-}
+</body>
+</html>
