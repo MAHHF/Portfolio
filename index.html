@@ -4,9 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - MAHF Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparenter schwarzer Hintergrund */
+            color: #fff;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261; /* Hover-Farbe */
+        }
+
+        /* Schwebendes Logo */
+        .floating-logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            z-index: 1001;
+        }
+
+        /* Parallax-Abschnitte */
+        .parallax {
+            position: relative;
+            background-size: cover; /* Skaliert das Bild */
+            background-attachment: fixed; /* Fixiert das Bild beim Scrollen */
+            background-position: center; /* Zentriert das Bild */
+            background-repeat: no-repeat; /* Verhindert Wiederholung */
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Unterschiedliche Bilder für die Abschnitte */
+        .parallax-1 {
+            background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
+        }
+
+        .parallax-2 {
+            background-image: url('images/202411_Seehaus_Pallas_Space_No_0034.jpg');
+        }
+
+        .parallax-3 {
+            background-image: url('images/202410_RBO_Pascal_Lesung_011.jpg');
+        }
+
+        /* Inhalt-Abschnitte */
+        .content-section {
+            position: relative;
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .content-section p {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 10px;
+            }
+
+            .floating-logo {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .floating-logo {
+                top: 10px;
+                right: 10px;
+                width: 80px;
+            }
+
+            .content-section {
+                padding: 20px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 5px;
+            }
+
+            .floating-logo {
+                width: 60px;
+            }
+
+            .content-section {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body id="home">
+
     <!-- Navigation -->
     <nav>
         <ul>
