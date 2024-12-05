@@ -10,25 +10,31 @@
         /* Parallax-Abschnitte */
         .parallax {
             position: relative;
-            background-size: auto; /* Passt das Bild an die Breite/Höhe an */
+            background-size: auto; /* Das Bild in seiner Originalgröße anzeigen */
             background-attachment: fixed; /* Fixiert das Bild beim Scrollen */
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
-            height: 100vh; /* Höhe eines Viewports */
+            height: 100vh; /* Höhe des Viewports */
         }
 
         /* Unterschiedliche Bilder für die Abschnitte */
         .parallax-1 {
             background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
+            background-size: contain; /* Das Bild im Container vollständig anzeigen */
+            background-repeat: repeat-x; /* Wiederholt das Bild horizontal */
         }
 
         .parallax-2 {
             background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
+            background-size: contain;
+            background-repeat: repeat-x;
         }
 
         .parallax-3 {
             background-image: url('images/202411_Hafenklang_001.jpg');
+            background-size: contain;
+            background-repeat: repeat-x;
         }
 
         /* Inhalt-Abschnitte */
