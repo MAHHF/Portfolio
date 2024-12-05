@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Background Scroll Effect</title>
+    <title>Responsive Parallax Scroll Effect</title>
     <style>
         /* Global Styles */
         body, html {
@@ -13,15 +13,63 @@
             overflow-x: hidden;
         }
 
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparenter schwarzer Hintergrund */
+            color: #fff;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261; /* Hover-Farbe */
+        }
+
+        /* Schwebendes Logo */
+        .floating-logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 120px; /* Standardbreite für das Logo */
+            z-index: 1001;
+        }
+
         /* Parallax-Abschnitte */
         .parallax {
             position: relative;
-            background-size: cover; /* Passt das Bild an die Breite/Höhe an */
-            background-attachment: fixed; /* Fixiert das Bild beim Scrollen */
+            background-size: cover;
+            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
-            height: 100vh; /* Höhe eines Viewports */
+            height: 100vh;
         }
 
         /* Unterschiedliche Bilder für die Abschnitte */
@@ -46,14 +94,77 @@
             font-size: 1.2em;
         }
 
-        /* Textfarbe anpassen */
         .content-section p {
             margin: 0;
             color: #333;
         }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 10px; /* Reduzierter Abstand zwischen Navigationselementen */
+            }
+
+            .floating-logo {
+                width: 100px; /* Kleineres Logo für mittelgroße Bildschirme */
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap; /* Navigation auf kleineren Bildschirmen umbrechen */
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px; /* Vertikaler Abstand für Navigationselemente */
+            }
+
+            .floating-logo {
+                top: 10px;
+                right: 10px;
+                width: 80px; /* Noch kleinere Logo-Breite */
+            }
+
+            .content-section {
+                padding: 20px;
+                font-size: 1em; /* Kleinere Schriftgröße */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 5px; /* Weniger Abstand auf kleinen Bildschirmen */
+            }
+
+            .floating-logo {
+                width: 60px; /* Logo auf die kleinste Größe reduziert */
+            }
+
+            .content-section {
+                padding: 15px;
+                font-size: 0.9em; /* Noch kleinere Schriftgröße */
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photo.html">Photo</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="sound.html">Sound</a></li>
+            <li><a href="mahf.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Schwebendes Logo -->
+    <img src="logos/MAHF_Long_Logo.png" alt="MAHF Logo" class="floating-logo">
 
     <!-- Erster Parallax-Abschnitt -->
     <div class="parallax parallax-1"></div>
