@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sound</title>
   <style>
-    /* Grundlegendes CSS für Parallax-Scrolling */
+    /* Grundlegendes CSS für die Seite */
     body, html {
       margin: 0;
       padding: 0;
@@ -20,7 +20,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 128, 0, 0.9); /* Grüne Hintergrundfarbe */
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
@@ -64,10 +64,6 @@
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
-    }
-
-    .parallax-header {
-      background-image: url('your-header-image.jpg');
     }
 
     .section-content {
@@ -123,7 +119,7 @@
   </nav>
 
   <!-- Header Section -->
-  <section class="parallax-section parallax-header">
+  <section class="parallax-section" style="background-image: url('your-header-image.jpg');">
     <div class="dark-overlay"></div>
     <div class="section-content">
       <h1>Welcome to My Sound Page</h1>
