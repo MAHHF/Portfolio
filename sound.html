@@ -1,66 +1,78 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound - MAHF Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pattaya', sans-serif;
+    overflow-x: hidden;
+    background-color: black;
+}
 
-    <!-- Schriftart Pattaya einbinden -->
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
-</head>
-<body id="sound">
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 128, 0, 0.9); /* Grüne Hintergrundfarbe */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
 
-<!-- Schwebendes Element (Logo) -->
-<div class="floating-element" id="sound-floating">
-    <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
-</div>
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-<!-- Header Section mit Navigation -->
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="photo.html">Photo</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="sound.html" class="active">Sound</a></li>
-            <li><a href="mahf.html">About</a></li>
-        </ul>
-    </nav>
-</header>
+nav li {
+    margin-right: 20px;
+}
 
-<!-- Sound Section -->
-<section id="sound">
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
 
-    <!-- Spotify Section -->
-    <div class="embed-container">
-        <h2>Meine Spotify Playlist</h2>
-        <iframe src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"></iframe>
-    </div>
+nav a.active {
+    text-decoration: underline;
+}
 
-    <!-- Zweite Spotify Section -->
-    <div class="embed-container">
-        <h2>Weitere Spotify Playlist</h2>
-        <iframe src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"></iframe>
-    </div>
+.floating-element {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
 
-    <!-- SoundCloud Section -->
-    <div class="embed-container">
-        <h2>Meine SoundCloud Playlist</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" 
-                allow="autoplay"></iframe>
-    </div>
+.floating-logo {
+    width: 150px; /* Größe des Logos anpassen */
+}
 
-</section>
+#sound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 20px; /* Platz für den Header und Abstand zum Rand */
+}
 
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
-</footer>
+.embed-container {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px; /* Abstand zwischen den Playern */
+}
 
-</body>
-</html>
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; /* Abstand zum Player */
+}
+
+iframe {
+    width: 100%;
+    height: 352px;
+    border: none;
+    border-radius: 12px;
+}
