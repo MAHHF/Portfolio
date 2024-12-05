@@ -1,128 +1,173 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo - MAHF Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound</title>
+  <style>
+    /* Grundlegendes CSS für Parallax-Scrolling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background-color: black;
+    }
 
-      <!-- Schriftart Pattaya einbinden -->
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    /* Navigationsstile */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    .floating-element {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .floating-logo {
+      width: 150px; /* Größe des Logos anpassen */
+    }
+
+    .parallax-section {
+      position: relative;
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .section-content {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .section-content h1, .section-content p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .embed-container {
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 352px;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
 </head>
-<body id="photo">
+<body>
+  <!-- Schwebendes Logo -->
+  <div class="floating-element">
+    <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
+  </div>
 
-<!-- Schwebendes Element (Logo nur hier eingefügt) -->
-<div class="floating-element" id="photo-floating">
-    <img src="logos/MAHF_Long_Logo.png" alt="Photo Logo" class="floating-logo">
-</div>
-
-<!-- Header Section ohne Logo -->
-<header>
+  <!-- Header und Navigation -->
+  <header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="photo.html"class="active">Photo</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="mahf.html">About</a></li> 
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="mahf.html">About</a></li>
+        <li><a href="sound.html" class="active">Sound</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- Foto Section -->
-<section id="photo">
-    
+  <!-- Header Section -->
+  <header class="parallax-section" style="background-image: url('your-header-image.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Welcome to My Sound Page</h1>
+      <p>Discover and listen to my favorite playlists from Spotify and SoundCloud</p>
+    </div>
+  </header>
 
-    <!-- Einfache Galerie mit mehreren Bildern -->
-<div class="gallery">
-    <div class="photo-img-container">
-        <img src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Bild 1" class="photo-img">
+  <!-- Spotify Section -->
+  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Spotify Playlist</h1>
+      <p>Listen to my curated Spotify playlist</p>
+      <div class="embed-container">
+        <!-- Eingebetteter Spotify-Player -->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Marlon_26_Geburtstag_029.jpg" alt="Bild 2" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Hafenklang_001.jpg" alt="Bild 3" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Hafenklang_011.jpg" alt="Bild 4" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg" alt="Bild 5" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202410_RBO_Pascal_Lesung_010.jpg" alt="Bild 6" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0034.jpg" alt="Bild 1" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0026.jpg" alt="Bild 2" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0028.jpg" alt="Bild 3" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0030.jpg" alt="Bild 4" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0019.jpg" alt="Bild 5" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Seehaus_Pallas_Space_No_0025.jpg" alt="Bild 6" class="photo-img">
-    </div>
-    
-    <div class="photo-img-container">
-        <img src="images/202410_RBO_Pascal_Lesung_011.jpg" alt="Bild 7" class="photo-img">
-    </div>
-    
-    <div class="photo-img-container">
-        <img src="images/202410_RBO_Pascal_Lesung_024.jpg" alt="Bild 8" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Marlon_26_Geburtstag_004.jpg" alt="Bild 9" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Marlon_26_Geburtstag_036.jpg" alt="Bild 10" class="photo-img">
-    </div>
-    <div class="photo-img-container">
-        <img src="images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg" alt="Bild 11" class="photo-img">
-    </div>
-    <!-- Weitere Bilder hinzufügen -->
-</div>
+  </section>
 
-</section>
+  <!-- SoundCloud Section -->
+  <section class="parallax-section" style="background-image: url('soundcloud-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>SoundCloud Playlists</h1>
+      <p>Explore tracks and playlists on SoundCloud</p>
+      <div class="embed-container">
+        <!-- Beispiel-SoundCloud-Playlist -->
+        <iframe 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" 
+          allow="autoplay">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-<!-- Footer Section -->
-
-<footer>
-    <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
-</footer>
-
-<!-- Masonry.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-
-<!-- Optional: ImagesLoaded (für besseres Layout) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
-
-<script>
-    // Initialisiere Masonry
-    document.addEventListener("DOMContentLoaded", function () {
-        const gallery = document.querySelector('.gallery');
-
-        // Überprüfen, ob die Galerie vorhanden ist
-        if (gallery) {
-            // Nutze ImagesLoaded, um sicherzustellen, dass alle Bilder geladen sind
-            imagesLoaded(gallery, function () {
-                new Masonry(gallery, {
-                    itemSelector: '.photo-img-container', // Jedes Bild als Item
-                    columnWidth: '.photo-img-container', // Spaltenbreite basiert auf dem Bild
-                    percentPosition: true // Responsives Layout
-                });
-            });
-        }
-    });
-</script>
-    
+  <!-- Footer -->
+  <footer class="parallax-section" style="background-image: url('footer-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Thanks for Visiting!</h1>
+      <p>Stay tuned for more music and updates</p>
+    </div>
+  </footer>
 </body>
 </html>
