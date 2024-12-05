@@ -1,178 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sound</title>
-  <style>
-    /* Grundlegendes CSS für die Seite */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      background-color: black;
-    }
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+}
 
-    /* Navigationsstile */
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background-color: rgba(0, 128, 0, 0.9); /* Grüne Hintergrundfarbe */
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 128, 0, 0.9); /* Grüne Hintergrundfarbe */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    nav li {
-      margin-right: 20px;
-    }
+nav li {
+  margin-right: 20px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
-    nav a.active {
-      text-decoration: underline;
-    }
+nav a.active {
+  text-decoration: underline;
+}
 
-    .floating-element {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-    }
+.floating-element {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
 
-    .floating-logo {
-      width: 150px; /* Größe des Logos anpassen */
-    }
+.floating-logo {
+  width: 150px; /* Größe des Logos anpassen */
+}
 
-    .parallax-section {
-      position: relative;
-      height: 100vh;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-    }
+.parallax-section {
+  position: relative;
+  padding: 50px 0; /* Platz für Header und Abstand */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
-    .section-content {
-      position: relative;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
+.section-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
 
-    .dark-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-    .section-content h1, .section-content p {
-      position: relative;
-      z-index: 2;
-    }
+.section-content h1, .section-content p {
+  position: relative;
+  z-index: 2;
+}
 
-    .embed-container {
-      max-width: 80%;
-      margin: 20px auto;
-    }
+.embed-container {
+  max-width: 800px; /* Maximalbreite des Containers */
+  width: 100%;
+  margin: 20px auto; /* Zentriert den Container */
+}
 
-    iframe {
-      width: 100%;
-      height: 352px;
-      border: none;
-      border-radius: 12px;
-    }
-  </style>
-</head>
-<body>
-  <!-- Schwebendes Logo -->
-  <div class="floating-element">
-    <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
-  </div>
+iframe {
+  width: 100%; /* Volle Breite des Containers */
+  height: 352px;
+  border: none;
+  border-radius: 12px;
+}
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="photo.html">Photo</a></li>
-      <li><a href="art.html">Art</a></li>
-      <li><a href="mahf.html">About</a></li>
-      <li><a href="sound.html" class="active">Sound</a></li>
-    </ul>
-  </nav>
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  iframe {
+    height: 250px; /* Kleinere Höhe für Tablets und kleinere Geräte */
+  }
+}
 
-  <!-- Header Section -->
-  <section class="parallax-section" style="background-image: url('your-header-image.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>Welcome to My Sound Page</h1>
-      <p>Discover and listen to my favorite playlists from Spotify and SoundCloud</p>
-    </div>
-  </section>
-
-  <!-- Spotify Section -->
-  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>Spotify Playlist</h1>
-      <p>Listen to my curated Spotify playlist</p>
-      <div class="embed-container">
-        <!-- Eingebetteter Spotify-Player -->
-        <iframe src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Zweite Spotify Section -->
-  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>Spotify Playlist</h1>
-      <p>Listen to my curated Spotify playlist</p>
-      <div class="embed-container">
-        <!-- Eingebetteter Spotify-Player -->
-        <iframe src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- SoundCloud Section -->
-  <section class="parallax-section" style="background-image: url('soundcloud-bg.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>SoundCloud Playlists</h1>
-      <p>Explore tracks and playlists on SoundCloud</p>
-      <div class="embed-container">
-        <!-- Beispiel-SoundCloud-Playlist -->
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <section class="parallax-section" style="background-image: url('footer-bg.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>Thanks for Visiting!</h1>
-      <p>Stay tuned for more music and updates</p>
-    </div>
-  </section>
-</body>
-</html>
+@media (max-width: 480px) {
+  iframe {
+    height: 200px; /* Kleinere Höhe für Smartphones */
+  }
+}
