@@ -15,15 +15,12 @@
     }
 
     /* Navigationsstile */
-    header {
+    nav {
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
       background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    nav {
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
@@ -69,6 +66,10 @@
       background-position: center;
     }
 
+    .parallax-header {
+      background-image: url('your-header-image.jpg');
+    }
+
     .section-content {
       position: relative;
       text-align: center;
@@ -110,39 +111,24 @@
     <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
   </div>
 
-  <!-- Header und Navigation -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="photo.html">Photo</a></li>
-        <li><a href="art.html">Art</a></li>
-        <li><a href="mahf.html">About</a></li>
-        <li><a href="sound.html" class="active">Sound</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="photo.html">Photo</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="mahf.html">About</a></li>
+      <li><a href="sound.html" class="active">Sound</a></li>
+    </ul>
+  </nav>
 
   <!-- Header Section -->
-  <header class="parallax-section" style="background-image: url('your-header-image.jpg');">
+  <section class="parallax-section parallax-header">
     <div class="dark-overlay"></div>
     <div class="section-content">
       <h1>Welcome to My Sound Page</h1>
       <p>Discover and listen to my favorite playlists from Spotify and SoundCloud</p>
     </div>
-  </header>
-
-  <!-- Spotify Section -->
-  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
-    <div class="dark-overlay"></div>
-    <div class="section-content">
-      <h1>Spotify Playlist</h1>
-      <p>Listen to my curated Spotify playlist</p>
-      <div class="embed-container">
-        <!-- Eingebetteter Spotify-Player -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    </div>
   </section>
 
   <!-- Spotify Section -->
@@ -153,11 +139,23 @@
       <p>Listen to my curated Spotify playlist</p>
       <div class="embed-container">
         <!-- Eingebetteter Spotify-Player -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
   </section>
-  
+
+  <!-- Zweite Spotify Section -->
+  <section class="parallax-section" style="background-image: url('spotify-bg.jpg');">
+    <div class="dark-overlay"></div>
+    <div class="section-content">
+      <h1>Spotify Playlist</h1>
+      <p>Listen to my curated Spotify playlist</p>
+      <div class="embed-container">
+        <!-- Eingebetteter Spotify-Player -->
+        <iframe src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- SoundCloud Section -->
   <section class="parallax-section" style="background-image: url('soundcloud-bg.jpg');">
@@ -167,21 +165,18 @@
       <p>Explore tracks and playlists on SoundCloud</p>
       <div class="embed-container">
         <!-- Beispiel-SoundCloud-Playlist -->
-        <iframe 
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" 
-          allow="autoplay">
-        </iframe>
+        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="parallax-section" style="background-image: url('footer-bg.jpg');">
+  <section class="parallax-section" style="background-image: url('footer-bg.jpg');">
     <div class="dark-overlay"></div>
     <div class="section-content">
       <h1>Thanks for Visiting!</h1>
       <p>Stay tuned for more music and updates</p>
     </div>
-  </footer>
+  </section>
 </body>
 </html>
