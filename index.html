@@ -3,167 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art - MAHF Portfolio</title>
-    
-    <!-- Dein Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Fixed Background Scroll Effect</title>
     <style>
-        /* Container für den Hauptinhalt */
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; /* Abstand zwischen den Texten und der Slideshow */
-            padding: 20px;
-            box-sizing: border-box;
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
 
-        /* Textcontainer */
-        .text-container {
-            width: 100%;
-            max-width: 800px; /* Maximale Breite für größere Bildschirme */
-            padding: 10px;
-            box-sizing: border-box;
-            text-align: center; /* Zentriert den Text */
-        }
-
-        /* Container für die Slideshow */
-        #slideshow-container {
+        /* Parallax-Abschnitte */
+        .parallax {
             position: relative;
+            background-size: cover; /* Passt das Bild an die Breite/Höhe an */
+            background-attachment: fixed; /* Fixiert das Bild beim Scrollen */
+            background-position: center;
+            background-repeat: no-repeat;
             width: 100%;
-            max-width: 600px; /* Maximale Breite für größere Bildschirme */
-            height: auto;
-            aspect-ratio: 3 / 4; /* Verhältnis für die Höhe der Slideshow */
-            overflow: hidden;
-            border: 0px solid #fff; /* Optionaler Rahmen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 100vh; /* Höhe eines Viewports */
         }
 
-        /* Bild innerhalb der Slideshow */
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: none; /* Übergang entfernt */
+        /* Unterschiedliche Bilder für die Abschnitte */
+        .parallax-1 {
+            background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
         }
 
-        /* Aktives Bild */
-        .slide.active {
-            opacity: 1;
+        .parallax-2 {
+            background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .text-container {
-                font-size: 14px;
-            }
-
-            #slideshow-container {
-                max-width: 100%;
-                aspect-ratio: 4 / 3;
-            }
+        .parallax-3 {
+            background-image: url('images/202411_Hafenklang_001.jpg');
         }
 
-        @media (max-width: 480px) {
-            .text-container {
-                font-size: 12px;
-            }
+        /* Inhalt-Abschnitte */
+        .content-section {
+            position: relative;
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        /* Textfarbe anpassen */
+        .content-section p {
+            margin: 0;
+            color: #333;
         }
     </style>
 </head>
-<body id="home">
-    <!-- Schwebendes Element -->
-    <div class="floating-element">
-        <img src="logos/MAHF_Long_Logo.png" alt="MAHF Art Logo" class="floating-logo">
+<body>
+
+    <!-- Erster Parallax-Abschnitt -->
+    <div class="parallax parallax-1"></div>
+
+    <!-- Inhalt -->
+    <div class="content-section">
+        <p>Dies ist ein normaler Abschnitt mit Textinhalt. Der Hintergrund darüber scrollt nicht.</p>
     </div>
 
-    <!-- Header Section -->
-    <header>
-        <!-- Navigationsbereich -->
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html" id="home-link" class="active">Home</a></li>
-                <li><a href="photo.html" id="photo-link">Photo</a></li>
-                <li><a href="art.html" id="art-link">Art</a></li>
-                <li><a href="sound.html" id="sound-link">Sound</a></li>
-                <li><a href="mahf.html" id="mahf-link">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Zweiter Parallax-Abschnitt -->
+    <div class="parallax parallax-2"></div>
 
-    <!-- Hauptinhalt -->
-    <div class="content">
-        <!-- Linker Textcontainer -->
-        <div class="text-container">
-            <p>Willkommen, wie auch immer du deinen Weg hierher gefunden hast!</p>
-            <p>Dies ist kein typisches Portfolio. Es ist ein Raum, der sich den Regeln entzieht – ein Ort, an dem meine Kreativität frei atmen kann. Hier leben Ideen, Experimente und Momente, die festgehalten werden wollen.</p>
-            <p>Viele der Dinge, die du hier findest, tragen einen dokumentarischen Charakter. Sie spiegeln das Leben wider, wie ich es sehe, erlebe und festhalte – bei Tag, aber vor allem bei Nacht, wenn die Welt eine andere wird.</p>
-            <p>Manchmal durchlaufe ich Phasen, in denen ich einfach mache – ohne Plan, nur mit dem Drang zu erschaffen. Was dabei entsteht, ist ein Mix aus Inspiration, Chaos und Ausdruck, der hier seinen Platz findet.</p>
-            <p>Für mich ist es wie ein Tagebuch. Für dich? Vielleicht eine Entdeckungsreise. Was auch immer dich hergeführt hat, fühl dich eingeladen, mitzuschauen, mitzufühlen oder einfach mitzudenken.</p>
-        </div>
-
-        <!-- Slideshow-Container -->
-        <div id="slideshow-container">
-            <img class="slide active" src="images/202409_Tipico_Ringelheim_Portra_400_019.jpg" alt="Bild 1">
-            <img class="slide" src="images/202411_Marlon_26_Geburtstag_029.jpg" alt="Bild 2">
-            <img class="slide" src="images/202411_Hafenklang_001.jpg" alt="Bild 3">
-            <img class="slide" src="images/202411_Hafenklang_011.jpg" alt="Bild 4">
-            <img class="slide" src="images/202410_RBO_Fundbuero_MAHF_PITC_Legen_auf_031.jpg" alt="Bild 5">
-            <img class="slide" src="images/202410_RBO_Pascal_Lesung_010.jpg" alt="Bild 6">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0034.jpg" alt="Bild 7">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0026.jpg" alt="Bild 8">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0028.jpg" alt="Bild 9">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0030.jpg" alt="Bild 10">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0019.jpg" alt="Bild 11">
-            <img class="slide" src="images/202411_Seehaus_Pallas_Space_No_0025.jpg" alt="Bild 12">
-            <img class="slide" src="images/202410_RBO_Pascal_Lesung_011.jpg" alt="Bild 13">
-            <img class="slide" src="images/202410_RBO_Pascal_Lesung_024.jpg" alt="Bild 14">
-            <img class="slide" src="images/202411_Marlon_26_Geburtstag_004.jpg" alt="Bild 15">
-            <img class="slide" src="images/202411_Marlon_26_Geburtstag_036.jpg" alt="Bild 16">
-            <img class="slide" src="images/202411_Pascal_Lesung_Ivy_Nola_RBO_023.jpg" alt="Bild 17">
-        </div>
-
-        <!-- Rechter Textcontainer -->
-        <div class="text-container">
-            <p>Hier könnten zusätzliche Informationen oder Eindrücke zu den Bildern oder Projekten stehen. Zum Beispiel, wie bestimmte Arbeiten entstanden sind, oder was mich inspiriert hat.</p>
-            <p>Jedes Bild ist ein Zeugnis einer kreativen Reise, die sich in Momenten und Details zeigt. Ob durch Farben, Formen oder Licht, jedes Foto ist ein Ausdruck meiner Sichtweise und meines Erlebens.</p>
-            <p>Diese Sammlung ist ein Versuch, verschiedene Perspektiven und Einflüsse zu kombinieren, die meine kreative Arbeit prägen. Ein Aufeinandertreffen von Intuition und Technik.</p>
-            <p>Ich lade dich ein, diese Reise mit mir zu teilen, durch die Linse zu blicken und vielleicht das Eine oder Andere zu entdecken, was du vorher nicht bemerkt hast.</p>
-        </div>
+    <!-- Inhalt -->
+    <div class="content-section">
+        <p>Ein weiterer Inhalt, der über den Hintergrundbildern scrollt.</p>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 MAHF. Alle Rechte vorbehalten.</p>
-    </footer>
+    <!-- Dritter Parallax-Abschnitt -->
+    <div class="parallax parallax-3"></div>
 
-    <!-- JavaScript für die Slideshow -->
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        // Start der Slideshow
-        setInterval(nextSlide, 200); // Wechselt alle 2 Sekunden
-    </script>
 </body>
 </html>
