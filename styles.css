@@ -153,18 +153,24 @@ nav a:hover {
 
         /* Unterschiedliche Bilder für die Abschnitte */
         .parallax-1 {
-            background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
+            background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
             background-size: contain; /* Das Bild im Container vollständig anzeigen */
             background-repeat: repeat-x; /* Wiederholt das Bild horizontal */
         }
 
         .parallax-2 {
-            background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
+            background-image: url('images_home/MAHF_home_Text.png');
             background-size: contain;
             background-repeat: repeat-x;
         }
 
         .parallax-3 {
+            background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
+            background-size: contain;
+            background-repeat: repeat-x;
+        }
+
+        .parallax-4 {
             background-image: url('images/202411_Hafenklang_001.jpg');
             background-size: contain;
             background-repeat: repeat-x;
@@ -403,7 +409,7 @@ footer.fixed.visible {
     }
 
     #photo .photo-img {
-        width: 100; /* Bilder in voller Breite des Bildschirms */
+        width: 100%; /* Bilder in voller Breite des Bildschirms */
         height: auto;
         max-width: none; /* Keine Begrenzung der maximalen Breite */
         margin: 0; /* Keine Abstände zwischen Bildern */
