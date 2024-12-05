@@ -156,7 +156,7 @@ nav a:hover {
 /* Parallax-Abschnitte */
 .parallax {
     position: relative;
-    background-size: cover; /* Bildgröße an den Viewport anpassen */
+    background-size: auto; /* Bildgröße an den Viewport anpassen */
     background-attachment: fixed; /* Bild fixiert beim Scrollen */
     background-position: center;
     background-repeat: no-repeat;
@@ -167,14 +167,20 @@ nav a:hover {
 /* Unterschiedliche Bilder für die Abschnitte */
 .parallax-1 {
     background-image: url('images/202409_Tipico_Ringelheim_Portra_400_019.jpg');
+    background-size: contain; /* Das Bild im Container vollständig anzeigen */
+    background-repeat: repeat-x; /* Wiederholt das Bild horizontal */
 }
 
 .parallax-2 {
     background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 .parallax-3 {
     background-image: url('images/202411_Hafenklang_001.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 
