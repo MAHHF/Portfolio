@@ -1,4 +1,3 @@
-/* Allgemeine Stileinstellungen */
 * {
     margin: 0;
     padding: 0;
@@ -15,29 +14,28 @@ body {
     min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
     padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
     cursor: url('logos/MAHF_Cursor.png'), auto;
-    overflow-x: hidden; /* Kein horizontales Scrollen */
-    max-width: 100vw; /* Begrenzung der Breite */
 }
 
 /* Cursoränderung beim Klicken auf Links (aktiv) */
 a:active {
-    cursor: url('logos/MAHF_Cursor_active.png'), pointer;
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor im aktiven Zustand */
 }
 
 /* Cursoränderung, wenn der gesamte Body aktiv ist (z.B. beim Klicken irgendwo im Body) */
 body:active {
-    cursor: url('logos/MAHF_Cursor_active.png'), auto;
+    cursor: url('logos/MAHF_Cursor_active.png'), auto; /* Benutzerdefinierter Cursor für aktiven Body */
 }
 
 /* Cursor ändert sich beim Hover über Links */
 a:hover {
-    cursor: url('logos/MAHF_Cursor_active.png'), pointer;
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor für Hover-Effekt */
 }
 
 /* Cursor ändert sich beim Hover über Buttons */
 button:hover {
-    cursor: url('logos/MAHF_Cursor_active.png'), pointer;
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor für Hover-Effekt bei Buttons */
 }
+
 
 /* Spezifische Seiten-Hintergrundfarben */
 #home {
@@ -61,60 +59,63 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: rgba(89, 255, 39, 0);
+    width: 100%; /* Header auf volle Breite setzen */
+    height: 100px; /* Feste Höhe des Headers */
+    background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    justify-content: space-between; /* Stellt sicher, dass Logo und Navigation Platz haben */
+    padding: 0 20px; /* Etwas Platz an den Seiten */
     z-index: 10;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
 }
 
 /* Logo Styling */
 header .logo {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
     display: flex;
     align-items: center;
 }
 header .logo img {
-    height: 100%;
-    width: auto;
-    max-height: 90px;
+    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
+    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
+    max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
 }
+
 
 /* Navigation Styling */
 nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
+    display: flex; /* Flexbox aktivieren */
+    justify-content: flex-start; /* Die Navigation wird am linken Rand ausgerichtet */
+    align-items: center; /* Optional: Vertikale Zentrierung */
+    width: auto; /* Verhindert, dass die Navigation zu breit wird */
 }
 
 nav ul {
-    display: flex;
+    display: flex; /* Die Listenelemente in einer Reihe darstellen */
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0; /* Entfernt Margins */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Abstand zwischen den Listenelementen */
 }
 
+/* Standard-Link-Stile */
 nav a {
-    color: #59ff27;
+    color: #59ff27; /* Schriftfarbe auf Grün ändern */
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
 
+/* **Aktiver Link mit eigener Schriftart und Farbe** */
 nav a.active {
-    font-family: inherit;
-    color: #59ff27;
-    text-decoration: none;
-    font-size: 1.6rem;
+    font-family: inherit; /* Übernimmt die Schriftart vom Eltern-Element, z. B. body */
+    color: #59ff27; /* Lila Farbton für aktiven Link */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    font-size: 1.6rem; /* Größere Schriftgröße für den aktiven Punkt */
 }
 
 nav a:hover {
@@ -124,18 +125,18 @@ nav a:hover {
 
 /* Navigation Styling für die #art Seite */
 #art nav a {
-    color: #000000;
-    font-size: 18px;
+    color: #000000; 
+    font-size: 18px; /* Beibehaltung der Schriftgröße */
 }
 
 #art nav a.active {
-    color: #A600D8;
-    font-weight: bold;
+    color: #A600D8; /* Farbe für den aktiven Link */
+    font-weight: bold; /* Fettgedruckter Text */
     font-size: 1.6rem;
 }
 
 #art nav a:hover {
-    color: #d3d3d3;
+    color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
 }
 
 /* Basis-Stile für Parallax-Elemente */
@@ -145,78 +146,247 @@ nav a:hover {
     height: 100vh; /* Volle Höhe des Viewports */
     background-attachment: fixed;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-image: var(--parallax-image); /* Nutzt eine CSS-Variable */
 }
 
 
-
-/* Floating Element */
+/* Schwebendes Element */
 .floating-element {
     position: fixed;
     right: 0;
     top: 750px;
-    background-color: rgba(89, 255, 39);
+    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
     color: black;
     padding: 20px;
+    border-radius: 0;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
     z-index: 1000;
     width: 300px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 90px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
+    max-width: 350px;
+    transition: width 0.2s ease;
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+}
+
+/* Logo im schwebenden Element */
+.floating-logo {
+    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
+    object-fit: contain; /* Verhindert Verzerrungen */
+}
+
+.floating-element:hover {
+    width: 350px; /* Vergrößert das Element beim Hover */
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://example.com/your-image.jpg') no-repeat center center/cover;
-    height: 100vh;
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
+    height: 100vh; /* Volle Höhe des Bildschirms */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    position: relative;
 }
 
-/* Footer Styling */
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* Footer immer am unteren Rand der Seite */
 footer.fixed {
     position: fixed;
-    bottom: 0;
+    bottom: 0; /* Footer soll immer am unteren Rand des Viewports bleiben */
     left: 0;
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    padding: 10px 0;
+    width: 100%; /* Breite des Footers soll den gesamten Viewport abdecken */
+    background-color: #000000; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    padding: 10px 0; /* Vertikales Padding für den Footer */
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    display: flex; /* Flexbox für die Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    text-align: center; /* Text im Footer zentrieren */
 }
 
-/* Responsive Design */
+/* Option für die Änderung der Textfarbe */
+footer.fixed.color-change {
+    color: #A600D8; /* Beispiel für eine grüne Textfarbe */
+}
+
+/* Option für die Änderung der Textgröße */
+footer.fixed.large-text {
+    font-size: 12px; /* Beispiel für eine größere Schriftgröße */
+}
+
+/* Footer sichtbar, wenn der Benutzer unten angekommen ist */
+footer.fixed.visible {
+    bottom: 0; /* Der Footer wird sichtbar, wenn er am unteren Rand des Viewports ist */
+}
+
+
+/* Galerie Anpassung auf der "photo" Seite */
+#photo .gallery {
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
+    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
+    padding: 20px;
+}
+
+#photo .photo-img-container {
+    position: relative; /* Erforderlich für den overflow */
+    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
+    max-width: 400px; /* Maximale Breite der Bilder */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    margin: 10px; /* Abstand zwischen den Bildern */
+    border-radius: 0px; /* Abgerundete Ecken */
+    overflow: hidden; /* Verhindert das Überlappen des Bildes */
+}
+
+#photo .photo-img {
+    width: 100%; /* Skaliert die Bilder auf die volle Breite des Containers */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
+}
+
+/* 
+#photo .photo-img:hover {
+    transform: skew(35deg, 20deg) scale(2.9); 
+    filter: blur(0px); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+*/
+
+
+/* Galerie-Stile für die #art-Seite */
+#art .gallery {
+    display: flex;
+    flex-direction: column; /* Bilder vertikal anordnen */
+    align-items: center; /* Bilder horizontal zentrieren */
+    justify-content: flex-start; /* Beginnt den Inhalt am oberen Rand */
+    min-height: 100vh; /* Stellt sicher, dass der Container mindestens die Höhe des Viewports einnimmt */
+    padding: 20px;
+    box-sizing: border-box; /* Sorgt dafür, dass Padding nicht das Layout beeinflusst */
+}
+
+#art .gallery-item {
+    width: 80%; /* Breite der Galerie-Elemente anpassen */
+    margin: 60px 0; /* Abstand zwischen den Bildern */
+    text-align: center; /* Text unter den Bildern zentrieren */
+}
+
+#art .gallery-item img {
+    width: 100%; /* Das Bild passt sich der Breite des Containers an */
+    max-width: 650px; /* Maximale Bildbreite einstellen */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    object-fit: contain; /* Das Bild wird vollständig innerhalb des Containers angezeigt */
+    border-radius: 0px; /* Abgerundete Ecken für die Bilder */
+}
+
+/* Stil für den Text unter den Bildern */
+#art .gallery-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    padding: 5px 10px;
+    background-color: #FFFDF8;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Stile nur für die #MAHF-Seite */
+#MAHF .centered-container {
+    display: flex; /* Flexbox-Layout aktivieren */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    flex-direction: column; /* Stapelt Bild und Text vertikal */
+    height: 100vh; /* Füllt die gesamte Bildschirmhöhe */
+    text-align: justify; /* BLOCKSATZ */
+    /* Stil für den Textbereich in der About-Sektion */
+    max-width: 600px; /* Setzt die maximale Breite des Textbereichs auf 600px */
+    margin: 0 auto; /* Zentriert das Element horizontal */
+    font-size: 18px; /* Setzt die Schriftgröße */
+    color: #59ff27; /* Setzt die Textfarbe auf Blau */
+    line-height: 1.6; /* Setzt den Zeilenabstand für besseren Lesefluss */
+}
+
+#MAHF .centered-image {
+    width: 600px; /* Anpassbare Breite über CSS-Variable */
+    max-width: 100%; /* Responsiv sicherstellen */
+    margin-bottom: 20px; /* Abstand zum Text */
+}
+
+
+
+/* Responsive Design für mobile Geräte */
 @media screen and (max-width: 768px) {
-    nav {
-        width: 100%;
-        flex-direction: column; /* Navigation untereinander */
-        align-items: center;
+ nav {
+        width: 100%; /* Die Navigation nimmt 100% der Breite des Bildschirms ein */
+        display: flex; /* Aktiviert Flexbox */
+        justify-content: center; /* Zentriert die Navigationselemente horizontal */
+        align-items: center; /* Optional: Vertikale Zentrierung */
+        padding: 0; /* Entfernt extra Padding */
     }
 
     nav ul {
-        flex-direction: column;
+        display: flex; /* Listenelemente in einer Reihe anordnen */
+        justify-content: center; /* Listenelemente zentrieren */
+        padding: 0; /* Entfernt Padding von den Listenelementen */
+        margin: 0; /* Entfernt Margin, um sicherzustellen, dass nichts verspringt */
     }
 
     nav ul li {
-        margin: 10px 0; /* Abstand zwischen Navigationselementen */
+        margin-left: 20px; /* Abstand zwischen den Listenelementen */
+        margin-right: 20px; /* (Optional) Etwas Abstand rechts hinzufügen, falls gewünscht */
     }
-
+    
+    /* Galerie für mobile Ansicht */
     #photo .gallery {
-        justify-content: center;
-        padding: 0;
+        display: flex;
+        flex-wrap: wrap; /* Bilder umbrechen */
+        justify-content: center; /* Bilder zentrieren */
+        padding: 0; /* Entfernt äußeren Abstand */
     }
 
+    #photo .photo-img {
+        width: 100%; /* Bilder in voller Breite des Bildschirms */
+        height: auto;
+        max-width: none; /* Keine Begrenzung der maximalen Breite */
+        margin: 0; /* Keine Abstände zwischen Bildern */
+        border-radius: 0; /* Ecken nicht abrunden */
+        object-fit: contain;
+    }
+
+    /* Positioniere das schwebende Element höher für mobile Ansicht */
     .floating-element {
-        top: 500px;
+        top: 500px; /* Setze den top-Wert auf eine kleinere Zahl für mobile Geräte */
+    }
+
+    /* Logo im schwebenden Element */
+    .floating-logo {
+        max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+        max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
+        object-fit: contain; /* Verhindert Verzerrungen */
     }
 }
