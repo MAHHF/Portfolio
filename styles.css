@@ -376,6 +376,9 @@ footer.fixed.visible {
         background-position: center; /* Bild zentrieren */
         background-repeat: repeat; /* Hintergrund wiederholen */
         height: auto; /* Höhe an den Inhalt anpassen */
+        background-image: var(--parallax-image); /* Stelle sicher, dass die Variable gesetzt ist */
+}
+
     }
     
     /* Galerie für mobile Ansicht */
