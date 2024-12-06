@@ -366,7 +366,7 @@ footer.fixed.visible {
     }
 
     nav ul li {
-        margin-left: 5px; /* Abstand zwischen den Listenelementen */
+        margin-left: 2px; /* Abstand zwischen den Listenelementen */
         margin-right: 0; /* (Optional) Etwas Abstand rechts hinzufügen, falls gewünscht */
     }
 
