@@ -84,7 +84,7 @@ header .logo img {
 
 #art .floating-logo {
     max-width: 450%; /* Vergrößert die Breite des Logos */
-    max-height: 450f%; /* Vergrößert die Höhe des Logos */
+    max-height: 450%; /* Vergrößert die Höhe des Logos */
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
