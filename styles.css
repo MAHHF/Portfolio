@@ -138,38 +138,18 @@ nav a:hover {
     color: #d3d3d3;
 }
 
-/* Parallax-Abschnitte */
+/* Basis-Stile für Parallax-Elemente */
 .parallax {
     position: relative;
-    background-size: auto;
+    width: 100%;
+    height: 100vh; /* Volle Höhe des Viewports */
     background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
-    width: 100%;
-    height: 100vh;
+    background-size: cover;
+    background-image: var(--parallax-image); /* Nutzt eine CSS-Variable */
 }
 
-/* Unterschiedliche Bilder für die Abschnitte */
-.parallax-1 {
-    background-image: url('images/202411_Marlon_26_Geburtstag_029.jpg');
-    background-size: contain;
-    background-repeat: repeat-x;
-}
-
-.parallax-2 {
-    background-image: url('images_home/MAHF_home_Text.png');
-    background-size: contain;
-    background-repeat: repeat-x;
-}
-
-/* Inhalt-Abschnitte */
-.parallax .content-section {
-    position: relative;
-    padding: 15px;
-    background-color: rgba(89, 255, 39);
-    text-align: justify;
-    font-size: 1.2em;
-}
 
 /* Bilder und Inhalte */
 img {
