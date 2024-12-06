@@ -93,7 +93,7 @@ header .logo img {
 nav {
     position: fixed;
     top: 50px;
-    left: 0;
+    left: 40px;
     width: 100%;
     z-index: 1000; /* Höherer z-index als der Parallax-Effekt */
 }
