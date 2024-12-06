@@ -396,8 +396,6 @@ nav a {
     .floating-element {
         right: 0; /* Positioniert das Element am rechten Rand */
         top: 500px; /* Passt die vertikale Position an */
-        width: 50vw; /* Breite des Elements auf 50% der Bildschirmbreite */
-        height: auto; /* Höhe proportional zur Breite */
         transform: scale(0.7); /* Skaliert das Element auf 70% seiner Originalgröße */
     }
 
