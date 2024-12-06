@@ -145,17 +145,17 @@ nav a:hover {
     color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
 }
 
-/* Basis-Stile für Parallax-Elemente */
 .parallax {
     position: relative;
     width: 100%; /* Breite des Containers */
     height: 100vh; /* Höhe des Viewports */
     background-attachment: fixed; /* Parallax-Effekt */
-    background-position: center; /* Zentrierung des Bildes */
-    background-repeat: repeat; /* Verhindert Wiederholung des Bildes */
-    background-size: 100% auto; /* Originalgröße des Bildes */
+    background-position: center; /* Zentriert das Bild */
+    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
+    background-size: contain; /* Zeigt das gesamte Bild ohne Zuschneiden */
     background-image: var(--parallax-image); /* Bild über CSS-Variable */
 }
+
 
 
 
