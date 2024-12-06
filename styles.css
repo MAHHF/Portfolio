@@ -151,7 +151,7 @@ nav a:hover {
     height: 100vh; /* Höhe des Viewports */
     background-attachment: fixed; /* Parallax-Effekt */
     background-position: center; /* Zentriert das Bild */
-    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
+    background-repeat: repeat; /* Verhindert Wiederholung des Bildes */
     background-size: contain; /* Zeigt das gesamte Bild ohne Zuschneiden */
     background-image: var(--parallax-image); /* Bild über CSS-Variable */
 }
