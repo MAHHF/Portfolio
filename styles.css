@@ -91,10 +91,11 @@ header .logo img {
 
 /* Navigation Styling */
 nav {
-    display: flex; /* Flexbox aktivieren */
-    justify-content: flex-start; /* Die Navigation wird am linken Rand ausgerichtet */
-    align-items: center; /* Optional: Vertikale Zentrierung */
-    width: auto; /* Verhindert, dass die Navigation zu breit wird */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Höherer z-index als der Parallax-Effekt */
 }
 
 nav ul {
