@@ -356,14 +356,15 @@ footer.fixed.visible {
         padding: 0; /* Entfernt extra Padding */
     }
 
-    @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .parallax {
-        height: 50vh; /* Kürze die Höhe für kleinere Bildschirme */
-        background-size: contain; /* Immer noch Deckung für das Bild */
+        background-attachment: scroll; /* Sicherstellen, dass der Parallax-Effekt auf mobilen Geräten scrollt */
+        background-size: contain; /* Bild soll weiterhin vollständig angezeigt werden */
+        background-position: center; /* Zentriert das Bild */
     }
 }
 
-    
+
 
     nav ul {
         display: flex; /* Listenelemente in einer Reihe anordnen */
