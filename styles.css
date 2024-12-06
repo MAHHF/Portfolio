@@ -360,7 +360,7 @@ footer.fixed.visible {
 
     nav ul {
         display: flex; /* Listenelemente in einer Reihe anordnen */
-        justify-content: center; /* Listenelemente zentrieren */
+        justify-content: flex start; /* Listenelemente zentrieren */
         padding: 0; /* Entfernt Padding von den Listenelementen */
         margin: 0; /* Entfernt Margin, um sicherzustellen, dass nichts verspringt */
     }
