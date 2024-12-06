@@ -91,9 +91,9 @@ header .logo img {
 
 /* Navigation Styling */
 nav {
-    position: sticky;
+    position: fixed;
     top: 50px;
-    left: 40px;
+    left: 0;
     width: 100%;
     z-index: 1000; /* Höherer z-index als der Parallax-Effekt */
 }
