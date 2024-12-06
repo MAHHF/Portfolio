@@ -151,11 +151,6 @@ nav a:hover {
 }
 
 
-/* Bilder und Inhalte */
-img {
-    max-width: 100%; /* Bilder passen sich an den Container an */
-    height: auto; /* Proportional skalieren */
-}
 
 /* Floating Element */
 .floating-element {
