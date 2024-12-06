@@ -356,15 +356,6 @@ footer.fixed.visible {
         padding: 0; /* Entfernt extra Padding */
     }
 
-@media screen and (max-width: 768px) {
-    .parallax {
-        background-attachment: scroll; /* Sicherstellen, dass der Parallax-Effekt auf mobilen Geräten scrollt */
-        background-size: contain; /* Bild soll weiterhin vollständig angezeigt werden */
-        background-position: center; /* Zentriert das Bild */
-    }
-}
-
-
 
     nav ul {
         display: flex; /* Listenelemente in einer Reihe anordnen */
@@ -376,6 +367,15 @@ footer.fixed.visible {
     nav ul li {
         margin-left: 20px; /* Abstand zwischen den Listenelementen */
         margin-right: 20px; /* (Optional) Etwas Abstand rechts hinzufügen, falls gewünscht */
+    }
+
+       /* Responsive-Version für den Parallax-Effekt */
+    .parallax {
+        background-attachment: scroll; /* Parallax-Effekt bei mobilen Geräten deaktivieren */
+        background-size: contain; /* Hintergrundbild vollständig anzeigen */
+        background-position: center; /* Bild zentrieren */
+        background-repeat: repeat; /* Hintergrund wiederholen */
+        height: auto; /* Höhe an den Inhalt anpassen */
     }
     
     /* Galerie für mobile Ansicht */
