@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Schriftarten importieren */
-@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Standard Hintergrundfarbe */
@@ -362,10 +359,11 @@ footer.fixed.visible {
     @media screen and (max-width: 768px) {
     .parallax {
         height: 50vh; /* Kürze die Höhe für kleinere Bildschirme */
-        background-size: cover; /* Immer noch Deckung für das Bild */
+        background-size: contain; /* Immer noch Deckung für das Bild */
     }
 }
 
+    
 
     nav ul {
         display: flex; /* Listenelemente in einer Reihe anordnen */
