@@ -371,7 +371,7 @@ footer.fixed.visible {
 
        /* Responsive-Version für den Parallax-Effekt */
     .parallax {
-        background-attachment: scroll; /* Parallax-Effekt bei mobilen Geräten deaktivieren */
+        background-attachment: fixed;
         background-size: contain; /* Hintergrundbild vollständig anzeigen */
         background-position: center; /* Bild zentrieren */
         background-repeat: repeat; /* Hintergrund wiederholen */
