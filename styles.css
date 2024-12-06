@@ -91,7 +91,7 @@ header .logo img {
 
 /* Navigation Styling */
 nav {
-    position: fixed;
+    position: sticky;
     top: 50px;
     left: 40px;
     width: 100%;
@@ -358,6 +358,14 @@ footer.fixed.visible {
         align-items: center; /* Optional: Vertikale Zentrierung */
         padding: 0; /* Entfernt extra Padding */
     }
+
+    @media screen and (max-width: 768px) {
+    .parallax {
+        height: 50vh; /* Kürze die Höhe für kleinere Bildschirme */
+        background-size: cover; /* Immer noch Deckung für das Bild */
+    }
+}
+
 
     nav ul {
         display: flex; /* Listenelemente in einer Reihe anordnen */
