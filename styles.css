@@ -83,8 +83,8 @@ header .logo img {
 }
 
 #art .floating-logo {
-    max-width: 300%; /* Vergrößert die Breite des Logos */
-    max-height: 300%; /* Vergrößert die Höhe des Logos */
+    max-width: 450%; /* Vergrößert die Breite des Logos */
+    max-height: 450f%; /* Vergrößert die Höhe des Logos */
     object-fit: contain; /* Verhindert Verzerrungen */
 }
 
@@ -152,8 +152,8 @@ nav a:hover {
     height: 100vh; /* Volle Höhe des Viewports */
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: auto;
     background-image: var(--parallax-image); /* Nutzt eine CSS-Variable */
 }
 
