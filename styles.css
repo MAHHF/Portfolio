@@ -82,6 +82,12 @@ header .logo img {
     max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
 }
 
+#art .floating-logo {
+    max-width: 300%; /* Vergrößert die Breite des Logos */
+    max-height: 300%; /* Vergrößert die Höhe des Logos */
+    object-fit: contain; /* Verhindert Verzerrungen */
+}
+
 
 /* Navigation Styling */
 nav {
