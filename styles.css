@@ -153,7 +153,7 @@ nav a:hover {
     background-attachment: fixed; /* Parallax-Effekt */
     background-position: center; /* Zentrierung des Bildes */
     background-repeat: repeat; /* Verhindert Wiederholung des Bildes */
-    background-size: auto; /* Originalgröße des Bildes */
+    background-size: 100% auto; /* Originalgröße des Bildes */
     background-image: var(--parallax-image); /* Bild über CSS-Variable */
 }
 
