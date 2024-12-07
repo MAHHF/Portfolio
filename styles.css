@@ -366,6 +366,7 @@ footer.fixed.visible {
     bottom: 100px;
     width: 600px;
     height: 80px;
+    z-index: 2;
     display: flex;
     justify-content: space-around; /* Gleichmäßiger Abstand zwischen den Knöpfen */
     align-items: center;
