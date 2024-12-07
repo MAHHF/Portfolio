@@ -387,18 +387,6 @@ footer.fixed.visible {
 }
 
 
-.prev-button svg {
-    transform: scale(); /* Skaliert das SVG um 80% */
-}
-.play-button svg {
-    transform: scale(0.2); /* Skaliert das SVG um 80% */
-}
-.pause-button svg {
-    transform: scale(0.2); /* Skaliert das SVG um 80% */
-}
-.play-button svg {
-    transform: scale(); /* Skaliert das SVG um 80% */
-}
 
 
 
