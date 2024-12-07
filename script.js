@@ -3,13 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const playPauseButton = document.getElementById('play-pause');
     const progressBar = document.getElementById('progress-bar');
     const soundcloudEmbed = document.getElementById('soundcloud-embed');
+    const soundcloudIframe = document.getElementById('soundcloud-player');
 
     let isPlaying = false;
 
-    // Dynamisch Content laden
+    // Initialize SoundCloud Widget API if iframe is present
+    let widget;
+    if (soundcloudIframe) {
+        widget = SC.Widget(soundcloudIframe);
+    }
+
+    // Function to load the audio or SoundCloud player
     function loadPlayer(source, isSoundCloud = false) {
         if (isSoundCloud) {
-            // SoundCloud-Embed anzeigen
+            // Show SoundCloud embed and hide local audio
             audio.style.display = 'none';
             soundcloudEmbed.style.display = 'block';
             soundcloudEmbed.innerHTML = `
@@ -22,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     src="https://w.soundcloud.com/player/?url=${encodeURIComponent(source)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                 </iframe>`;
         } else {
-            // Lokale Datei abspielen
+            // Show local audio and hide SoundCloud embed
             soundcloudEmbed.style.display = 'none';
             audio.style.display = 'block';
             audio.src = source;
         }
     }
 
-    // Play/Pause Button
+    // Play/Pause Button Event
     playPauseButton.addEventListener('click', () => {
         if (soundcloudEmbed.style.display === 'block') {
             alert('Steuerung von SoundCloud-Links erfolgt direkt im eingebetteten Player.');
@@ -45,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Update Progress Bar für lokale Datei
+    // Update Progress Bar for local audio
     audio.addEventListener('timeupdate', () => {
         if (audio.duration) {
             const progress = (audio.currentTime / audio.duration) * 100;
@@ -53,10 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Beispielaufrufe
-    // Lokale MP3-Datei laden
-    // loadPlayer('your-audio-file.mp3');
+    // Initialize SoundCloud Widget API events if the widget is set
+    if (widget) {
+        widget.bind(SC.Widget.Events.PLAY_PROGRESS, (event) => {
+            const progress = (event.currentPosition / event.duration) * 100;
+            progressBar.style.width = progress + '%';
+        });
 
-    // SoundCloud-Track laden
+        widget.bind(SC.Widget.Events.READY, () => {
+            widget.getCurrentSound((sound) => {
+                document.querySelector('.player-title').textContent = sound.title || 'SoundCloud Track';
+                document.querySelector('.player-artist').textContent = sound.user.username || 'Unbekannter Künstler';
+            });
+        });
+    }
+
+    // Example calls to load different types of audio
+    // loadPlayer('your-audio-file.mp3');
     loadPlayer('https://soundcloud.com/artist-name/track-name', true);
 });
