@@ -352,17 +352,15 @@ footer.fixed.visible {
     justify-content: flex-end; /* Steuerungselemente am unteren Rand */
     width: 100vw; /* Volle Breite */
     height: 100vh; /* Volle Höhe */
-    margin: 0;
-    padding: 20px;
     background: #1c1c1c;
     color: white;
     border-radius: 0; /* Kein abgerundeter Rand für den Vollbildmodus */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden; /* Verhindert, dass Inhalte über den Container hinausgehen */
+    overflow: hidden; /* Verhindert Scrollen innerhalb des Containers */
 }
 
-/* Play/Pause Button */
+/* Player Controls */
 .player-controls {
     position: absolute;
     bottom: 100px; /* Abstand zur unteren Kante */
@@ -371,8 +369,10 @@ footer.fixed.visible {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Verhindert Scrollen innerhalb der Steuerung */
 }
 
+/* Weitere Stile für den Player */
 .play-button {
     width: 80px;
     height: 80px;
@@ -421,6 +421,7 @@ footer.fixed.visible {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
 }
+
 
 
 
