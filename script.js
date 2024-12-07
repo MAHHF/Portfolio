@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+    const player = document.getElementById('custom-player');
+    if (player.requestFullscreen) {
+        player.requestFullscreen();
+    }
+});
+
     // Play/Pause Button Event
     playPauseButton.addEventListener('click', () => {
         if (soundcloudEmbed.style.display === 'block') {
