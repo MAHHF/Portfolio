@@ -34,21 +34,28 @@
     <h1>Sound - Meine Musik und Playlists</h1>
 
     <!-- Custom Player -->
-    <div id="custom-player">
-        <div class="player-controls">
-            <button id="play-pause" class="play-button"></button>
-        </div>
-        <div class="player-info">
-            <span class="player-title">Unbekannter Titel</span>
-            <span class="player-artist">Unbekannter Künstler</span>
-        </div>
-        <div class="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
-        <audio id="audio"></audio>
-       <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1968500683&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/heimlichaufsc" title="Heimlich Musik" target="_blank" style="color: #cccccc; text-decoration: none;">Heimlich Musik</a> · <a href="https://soundcloud.com/heimlichaufsc/heimlich-podcast-106-by-ryan-haeng-live" title="Heimlich Podcast #106 by ryan hæng (LIVE)" target="_blank" style="color: #cccccc; text-decoration: none;">Heimlich Podcast #106 by ryan hæng (LIVE)</a></div>
-        <div id="soundcloud-embed" style="display: none;"></div>
+ <div id="custom-player">
+    <div class="player-controls">
+        <button id="play-pause" class="play-button"></button>
     </div>
+    <div class="player-info">
+        <span class="player-title">SoundCloud Track</span>
+        <span class="player-artist">Unbekannter Künstler</span>
+    </div>
+    <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+    <iframe 
+        id="soundcloud-player" 
+        width="100%" 
+        height="166" 
+        scrolling="no" 
+        frameborder="no" 
+        style="display: none;" 
+        src="https://soundcloud.com/heimlichaufsc/heimlich-podcast-106-by-ryan-haeng-live">
+    </iframe>
+</div>
+
 
 </section>
 
