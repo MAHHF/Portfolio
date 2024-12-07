@@ -453,7 +453,7 @@ footer.fixed.visible {
 #progress-bar {
     width: 0%;
     height: 100%;
-    background: #ff5722; /* Warme Akzentfarbe */
+    background: #A600D8; /* Warme Akzentfarbe */
     transition: width 0.1s linear;
 }
 
