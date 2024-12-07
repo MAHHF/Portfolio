@@ -352,8 +352,8 @@ footer.fixed.visible {
     justify-content: flex-end; /* Steuerungselemente am unteren Rand */
     width: 100vw; /* Volle Breite */
     height: 100vh; /* Volle Höhe */
-    background: #1c1c1c;
-    color: white;
+    background: #000000;
+    color: #59ff27;
     border-radius: 0; /* Kein abgerundeter Rand für den Vollbildmodus */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -376,7 +376,7 @@ footer.fixed.visible {
 .play-button {
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, #d3d3d3 0%, #59ff27 50%);
+    background: radial-gradient(circle, #d3d3d3 30%, #59ff27 70%);
     border: none;
     border-radius: 50%;
     cursor: pointer;
