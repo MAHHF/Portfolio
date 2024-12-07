@@ -420,7 +420,11 @@ footer.fixed.visible {
     height: 100%;
     z-index: -1; /* Hinter dem Player */
     opacity: 0.7; /* Optional, um den Effekt subtiler zu gestalten */
+    display: block; /* Canvas soll sichtbar sein */
+    border: 1px solid #ccc; /* Eine Option, um zu sehen, ob der Canvas geladen wird */
 }
+
+
 
 /* Optionale FontAwesome-Integration */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
