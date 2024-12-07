@@ -362,8 +362,8 @@ footer.fixed.visible {
 /* Play/Pause Button */
 .player-controls {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 600px;
+    height: 600px;
     margin: 10px;
 }
 
