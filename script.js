@@ -2,13 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('audio');
     const playPauseButton = document.getElementById('play-pause');
     const progressBar = document.getElementById('progress-bar');
-    const soundcloudEmbed = document.getElementById('soundcloud-embed');
     const soundcloudIframe = document.getElementById('soundcloud-player');
 
     let isPlaying = false;
+    let widget;
 
     // Initialize SoundCloud Widget API if iframe is present
-    let widget;
     if (soundcloudIframe) {
         widget = SC.Widget(soundcloudIframe);
     }
@@ -18,34 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isSoundCloud) {
             // Show SoundCloud embed and hide local audio
             audio.style.display = 'none';
-            soundcloudEmbed.style.display = 'block';
-            soundcloudEmbed.innerHTML = `
-                <iframe 
-                    width="100%" 
-                    height="300" 
-                    scrolling="no" 
-                    frameborder="no" 
-                    allow="autoplay" 
-                    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(source)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-                </iframe>`;
+            soundcloudIframe.style.display = 'block';
+            soundcloudIframe.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(source)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`;
         } else {
             // Show local audio and hide SoundCloud embed
-            soundcloudEmbed.style.display = 'none';
+            soundcloudIframe.style.display = 'none';
             audio.style.display = 'block';
             audio.src = source;
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    // Request fullscreen for the custom player
     const player = document.getElementById('custom-player');
-    if (player.requestFullscreen) {
+    if (player && player.requestFullscreen) {
         player.requestFullscreen();
     }
-});
 
     // Play/Pause Button Event
     playPauseButton.addEventListener('click', () => {
-        if (soundcloudEmbed.style.display === 'block') {
+        if (soundcloudIframe.style.display === 'block') {
             alert('Steuerung von SoundCloud-Links erfolgt direkt im eingebetteten Player.');
         } else {
             if (isPlaying) {
