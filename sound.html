@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound - MAHF Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Schriftart Pattaya einbinden -->
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
 </head>
 <body id="sound">
@@ -16,7 +14,7 @@
     <img src="logos/MAHF_Long_Logo.png" alt="Sound Logo" class="floating-logo">
 </div>
 
-<!-- Header Section ohne Logo -->
+<!-- Header Section -->
 <header>
     <nav>
         <ul>
@@ -30,16 +28,14 @@
 </header>
 
 <!-- Sound Section -->
-<!-- Sound Section -->
 <section id="sound">
-    <!-- Custom Player -->
     <div id="custom-player">
         <div class="player-controls">
-
-               <!-- Previous Button -->
+            <!-- Previous Button -->
             <svg class="control-button prev-button" width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
+            
             <!-- Play Button -->
             <svg class="control-button play-button" width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -57,33 +53,96 @@
             </svg>
         </div>
         <div class="player-info">
-            <span class="player-title">SoundCloud Track</span>
-            <span class="player-artist">Unbekannter Künstler</span>
+            <span class="player-title">Titel der Audiodatei</span>
+            <span class="player-artist">Künstler</span>
         </div>
         <div class="progress-bar-container">
             <div id="progress-bar"></div>
         </div>
-        <iframe 
-            id="soundcloud-player" 
-            width="100%" 
-            height="166" 
-            scrolling="no" 
-            frameborder="no" 
-            style="display: none;" 
-            src="sounds/Lärz.m4a">
-        </iframe>
+        
+        <!-- Audio-Element -->
+        <audio id="audio-player" controls>
+            <source src="sounds/Lärz.m4a" type="audio/mpeg">
+            Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
 
+        <!-- Canvas für die Visualisierung -->
         <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
-
     </div>
 </section>
 
+<footer></footer>
 
-<!-- Footer Section -->
-<footer>
-</footer>
-
-<!-- Verlinkung zur script.js-Datei -->
 <script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('audio-player');
+        const playButton = document.querySelector('.play-button');
+        const pauseButton = document.querySelector('.pause-button');
+        const progressBar = document.getElementById('progress-bar');
+        const canvas = document.getElementById('ultrasound-spectrogram');
+        const ctx = canvas.getContext('2d');
+
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const analyser = audioContext.createAnalyser();
+        const source = audioContext.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioContext.destination);
+
+        analyser.fftSize = 1024;
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+
+        canvas.width = window.innerWidth;
+        canvas.height = 200; // Eine feste Höhe für die Visualisierung
+
+        function drawUltrasound() {
+            requestAnimationFrame(drawUltrasound);
+            analyser.getByteFrequencyData(dataArray);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const barWidth = (canvas.width / bufferLength) * 2.5;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                const value = dataArray[i];
+                const y = (value / 256) * canvas.height;
+                ctx.strokeStyle = `rgba(${value}, ${255 - value}, 255, 0.8)`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(x, canvas.height / 2);
+                ctx.lineTo(x, canvas.height / 2 - y);
+                ctx.stroke();
+                x += barWidth + 1;
+            }
+        }
+
+        // Start der Visualisierung, wenn das Audio abgespielt wird
+        audio.addEventListener('play', () => {
+            audioContext.resume().then(() => {
+                drawUltrasound();
+            });
+        });
+
+        // Play/Pause Button Event
+        playButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+        pauseButton.addEventListener('click', () => {
+            if (!audio.paused) {
+                audio.pause();
+            }
+        });
+
+        // Fortschrittsanzeige aktualisieren
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + '%';
+        });
+    });
+</script>
 </body>
 </html>
