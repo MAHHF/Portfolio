@@ -349,59 +349,86 @@ footer.fixed.visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Steuerungselemente am unteren Rand */
-    width: 100vw; /* Volle Breite */
-    height: 100vh; /* Volle Höhe */
-    background: #1d1d1d; /* Dunkelgrau für den Hintergrund */
-    color: #e0e0e0; /* Helles Grau für den Text */
-    border-radius: 0; /* Kein abgerundeter Rand für den Vollbildmodus */
+    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #59ff27;
+    border-radius: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden; /* Verhindert Scrollen innerhalb des Containers */
+    overflow: hidden;
 }
 
 /* Player Controls */
 .player-controls {
     position: absolute;
-    bottom: 40px; /* Abstand zur unteren Kante */
-    width: 480px; /* Breite der Steuerung */
-    height: 60px; /* Höhe der Steuerung */
+    bottom: 100px;
+    width: 600px;
+    height: 80px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Gleichmäßiger Abstand zwischen den Knöpfen */
     align-items: center;
-    background: #2c2c2c; /* Etwas dunklerer Hintergrund für die Steuerung */
-    border: 1px solid #444; /* Rand, der den klassischen Look unterstützt */
-    border-radius: 8px; /* Sanfte Rundungen für die Steuerung */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Dezenter Schatten */
+    overflow: hidden;
 }
 
-/* Steuerungsknöpfe */
+/* Style for each button */
 .control-button {
     width: 50px;
     height: 50px;
-    background-color: #4e4e4e; /* Dunkelgrauer Hintergrund */
-    border: none;
+    background-color: #333; /* Dunkles Grau für den Hintergrund */
+    border: 2px solid #bbb; /* Silberfarbene Umrandung */
     border-radius: 50%; /* Runde Form */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-family: 'Helvetica', sans-serif; /* Klassische Schriftart */
-    font-size: 20px; /* Klare, gut lesbare Größe */
-    color: #fff; /* Weiße Farbe für die Symbole */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); /* Vertiefter Effekt */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Vertiefter Effekt */
     transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .control-button:hover {
-    background-color: #5a5a5a; /* Etwas hellere Farbe beim Hover */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+    background-color: #444; /* Etwas hellere Farbe beim Hover */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .control-button:active {
-    background-color: #6c6c6c; /* Noch dunkler beim Klicken */
-    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.5);
+    background-color: #555; /* Noch dunkler beim Klicken */
+    box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.5);
 }
+
+/* Symbols */
+.play-symbol::before {
+    content: '▶';
+    font-family: 'FontAwesome'; /* Falls du FontAwesome nutzt */
+    font-size: 30px;
+    color: #fff;
+}
+
+.pause-symbol::before {
+    content: '||';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+    color: #fff;
+}
+
+.prev-symbol::before {
+    content: '◁';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+    color: #fff;
+}
+
+.next-symbol::before {
+    content: '▷';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Optionale FontAwesome-Integration */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 
 /* Symbol Container für Steuerungsknöpfe */
 .control-icon {
