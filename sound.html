@@ -61,21 +61,21 @@
         </div>
         
         <!-- Audio-Element -->
-       <!-- Audio-Element ohne das controls-Attribut -->
-<audio id="audio-player">
-    <source src="sounds/Lärz.m4a" type="audio/mpeg">
-    Ihr Browser unterstützt das Audio-Element nicht.
-</audio>
-
+        <audio id="audio-player">
+            <source src="sounds/Lärz.m4a" type="audio/mpeg">
+            Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
 
         <!-- Canvas für die Visualisierung -->
-        <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
+        <canvas id="ultrasound-spectrogram" width="100%" height="200"></canvas>
     </div>
 </section>
 
 <footer></footer>
 
-<script src="script.js"></script>
+<!-- Three.js Bibliothek -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const audio = document.getElementById('audio-player');
@@ -145,6 +145,34 @@
             progressBar.style.width = progress + '%';
         });
     });
+
+    // Three.js für 3D-Spektrum
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Erstellen eines Materials mit einem Farbverlauf
+    const geometry = new THREE.PlaneGeometry(5, 5, 50, 50);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0xffffff,
+        side: THREE.DoubleSide,
+        wireframe: false
+    });
+
+    const plane = new THREE.Mesh(geometry, material);
+    scene.add(plane);
+
+    camera.position.z = 10;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        plane.rotation.x += 0.01;
+        plane.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
 </script>
 </body>
 </html>
