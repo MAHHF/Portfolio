@@ -33,41 +33,22 @@
 <section id="sound">
     <h1>Sound - Meine Musik und Playlists</h1>
 
-    <!-- Spotify Playlist Section -->
-    <div class="embed-container">
-        <h2>Meine Spotify Playlist</h2>
-        <iframe src="https://open.spotify.com/embed/playlist/4ARjRDQbiv5L9aWxG7Jlwa?utm_source=generator&theme=0" 
-                width="100%" height="380" frameborder="0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"></iframe>
+<div id="custom-player">
+    <div class="player-controls">
+        <button id="play-pause" class="play-button"></button>
     </div>
+    <div class="player-info">
+        <span class="player-title">Unbekannter Titel</span>
+        <span class="player-artist">Unbekannter Künstler</span>
+    </div>
+    <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+    <audio id="audio" src="your-audio-file.mp3"></audio>
+</div>
 
-    <!-- Zweite Spotify Playlist -->
-    <div class="embed-container">
-        <h2>Weitere Spotify Playlist</h2>
-        <iframe src="https://open.spotify.com/embed/playlist/5JKO1VIvgglvaFB3i9s1KR?utm_source=generator&theme=0" 
-                width="100%" height="380" frameborder="0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"></iframe>
-    </div>
 
-    <!-- SoundCloud Playlist Section -->
-    <div class="embed-container">
-        <h2>Meine SoundCloud Playlist</h2>
-        <iframe width="100%" height="300" 
-                scrolling="no" frameborder="no" 
-                allow="autoplay" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/128280402&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    </div>
-
-    <!-- Weitere SoundCloud Playlist -->
-    <div class="embed-container">
-        <h2>Weitere SoundCloud Playlist</h2>
-        <iframe width="100%" height="300" 
-                scrolling="no" frameborder="no" 
-                allow="autoplay" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/154567890&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    </div>
+    
 </section>
 
 <!-- Footer Section -->
