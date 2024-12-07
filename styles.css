@@ -370,7 +370,7 @@ footer.fixed.visible {
 .play-button {
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, #ff5722 0%, #e64a19 70%);
+    background: radial-gradient(circle, #ff5722 0%, #59ff27 70%);
     border: none;
     border-radius: 50%;
     cursor: pointer;
