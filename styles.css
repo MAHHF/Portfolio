@@ -377,8 +377,8 @@ footer.fixed.visible {
     width: 50px;
     height: 50px;
  /*   background-color: #333; /* Dunkles Grau für den Hintergrund */
-    border: 2px solid #bbb; /* Silberfarbene Umrandung */
-    border-radius: 50%; /* Runde Form */
+  /*  border: 2px solid #bbb; /* Silberfarbene Umrandung */
+  /*  border-radius: 50%; /* Runde Form */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,15 +388,13 @@ footer.fixed.visible {
 
 
 
-
-
 .control-button:hover {
-    background-color: #444; /* Etwas hellere Farbe beim Hover */
+    background-color: #3de115; /* Etwas hellere Farbe beim Hover */
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .control-button:active {
-    background-color: #555; /* Noch dunkler beim Klicken */
+    background-color: #34b30f; /* Noch dunkler beim Klicken */
     box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
