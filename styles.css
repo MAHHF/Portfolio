@@ -413,18 +413,19 @@ footer.fixed.visible {
     stroke: #aaa; /* Noch heller beim Klicken */
 }
 
+/*
 #ultrasound-spectrogram {
     position: absolute;
     top: 500;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Hinter dem Player */
-    opacity: ; /* Optional, um den Effekt subtiler zu gestalten */
-    display: block; /* Canvas soll sichtbar sein */
-    border: 0px solid #ccc; /* Eine Option, um zu sehen, ob der Canvas geladen wird */
+    z-index: 0; 
+    opacity: ; 
+    display: block; 
+    border: 0px solid #ccc;  
 }
-
+*/
 
 
 /* Optionale FontAwesome-Integration */
