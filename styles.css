@@ -369,11 +369,11 @@ footer.fixed.visible {
     display: flex;
     justify-content: space-around; /* Gleichmäßiger Abstand zwischen den Knöpfen */
     align-items: center;
-    overflow: hidden;
 }
 
-/* Style for each button */
+/* SVG Button Styling */
 .control-button {
+    cursor: pointer;
     width: 50px;
     height: 50px;
     background-color: #333; /* Dunkles Grau für den Hintergrund */
@@ -382,7 +382,6 @@ footer.fixed.visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Vertiefter Effekt */
     transition: background-color 0.2s, box-shadow 0.2s;
 }
@@ -397,34 +396,20 @@ footer.fixed.visible {
     box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Symbols */
-.play-symbol::before {
-    content: '▶';
-    font-family: 'FontAwesome'; /* Falls du FontAwesome nutzt */
-    font-size: 30px;
-    color: #fff;
+/* Icon Color */
+.control-button svg {
+    stroke: #fff; /* Weiße Farbe für die Icons */
+    transition: stroke 0.2s;
 }
 
-.pause-symbol::before {
-    content: '||';
-    font-family: 'FontAwesome';
-    font-size: 30px;
-    color: #fff;
+.control-button:hover svg {
+    stroke: #ddd; /* Heller beim Hover */
 }
 
-.prev-symbol::before {
-    content: '◁';
-    font-family: 'FontAwesome';
-    font-size: 30px;
-    color: #fff;
+.control-button:active svg {
+    stroke: #aaa; /* Noch heller beim Klicken */
 }
 
-.next-symbol::before {
-    content: '▷';
-    font-family: 'FontAwesome';
-    font-size: 30px;
-    color: #fff;
-}
 
 /* Optionale FontAwesome-Integration */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
