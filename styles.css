@@ -376,7 +376,7 @@ footer.fixed.visible {
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background-color: #333; /* Dunkles Grau für den Hintergrund */
+ /*   background-color: #333; /* Dunkles Grau für den Hintergrund */
     border: 2px solid #bbb; /* Silberfarbene Umrandung */
     border-radius: 50%; /* Runde Form */
     display: flex;
@@ -385,6 +385,22 @@ footer.fixed.visible {
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Vertiefter Effekt */
     transition: background-color 0.2s, box-shadow 0.2s;
 }
+
+
+.prev-button svg {
+    transform: scale(); /* Skaliert das SVG um 80% */
+}
+.play-button svg {
+    transform: scale(0.2); /* Skaliert das SVG um 80% */
+}
+.pause-button svg {
+    transform: scale(0.2); /* Skaliert das SVG um 80% */
+}
+.play-button svg {
+    transform: scale(); /* Skaliert das SVG um 80% */
+}
+
+
 
 .control-button:hover {
     background-color: #444; /* Etwas hellere Farbe beim Hover */
@@ -467,9 +483,6 @@ footer.fixed.visible {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
 }
-
-
-
 
 
 
