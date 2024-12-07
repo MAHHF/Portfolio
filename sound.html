@@ -61,10 +61,12 @@
         </div>
         
         <!-- Audio-Element -->
-        <audio id="audio-player" controls>
-            <source src="sounds/Lärz.m4a" type="audio/mpeg">
-            Ihr Browser unterstützt das Audio-Element nicht.
-        </audio>
+       <!-- Audio-Element ohne das controls-Attribut -->
+<audio id="audio-player">
+    <source src="sounds/Lärz.m4a" type="audio/mpeg">
+    Ihr Browser unterstützt das Audio-Element nicht.
+</audio>
+
 
         <!-- Canvas für die Visualisierung -->
         <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
