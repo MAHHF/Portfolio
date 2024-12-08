@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('audio-player');
+    const canvas = document.getElementById('ultrasound-spectrogram');
+    const ctx = canvas.getContext('2d');
+    const audio = new Audio('path-to-your-audio-file.mp3'); // Deine Audiodatei hier einfügen
     const playButton = document.querySelector('.play-button');
     const pauseButton = document.querySelector('.pause-button');
     const progressBar = document.getElementById('progress-bar');
-    const canvas = document.getElementById('ultrasound-spectrogram');
-    const ctx = canvas.getContext('2d');
 
+    // Audio Context und Analyser initialisieren
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const analyser = audioContext.createAnalyser();
     const source = audioContext.createMediaElementSource(audio);
@@ -16,12 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
+    // Canvas-Größe einstellen
     canvas.width = window.innerWidth;
-    canvas.height = 200; // Feste Höhe für die Visualisierung
+    canvas.height = 200;
 
     function drawUltrasound() {
         requestAnimationFrame(drawUltrasound);
         analyser.getByteFrequencyData(dataArray);
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         const barWidth = (canvas.width / bufferLength) * 2.5;
@@ -40,39 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function animatePulses() {
-        analyser.getByteFrequencyData(dataArray);
-        
-        // Durchschnittswert berechnen
-        let average = 0;
-        for (let i = 0; i < dataArray.length; i++) {
-            average += dataArray[i];
-        }
-        average /= dataArray.length;
-
-        // Anpassung der Pulsgröße basierend auf der Lautstärke
-        const scale = 1 + (average / 256); // Berechneter Skalierungsfaktor
-        const pulses = document.querySelectorAll('.pulse');
-        pulses.forEach((pulse) => {
-            pulse.style.transform = `scale(${scale})`;
-            pulse.style.opacity = 0.5 + (scale - 1) * 0.5; // Ändern der Transparenz
-        });
-
-        requestAnimationFrame(animatePulses);
-    }
-
-    // Start der Animation, wenn das Audio abgespielt wird
-    audio.addEventListener('play', () => {
-        audioContext.resume().then(() => {
-            drawUltrasound();
-            animatePulses();
-        });
-    });
-
-    // Play/Pause Button Event
+    // Play/Pause-Funktionalität
     playButton.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
+            audioContext.resume().then(() => {
+                drawUltrasound();
+            });
         }
     });
 
@@ -86,5 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('timeupdate', () => {
         const progress = (audio.currentTime / audio.duration) * 100;
         progressBar.style.width = progress + '%';
+    });
+
+    // Audio automatisch abspielen und das Spektrogramm starten
+    audio.addEventListener('play', () => {
+        audioContext.resume().then(() => {
+            drawUltrasound();
+        });
     });
 });
