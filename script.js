@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Zentrierung
+        // Fixe Zentrierung, mit 400px vom oberen Rand
         const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        const centerY = 400; // Fixe Position 400px vom Top
 
         // Berechnung des durchschnittlichen Frequenzwerts für den Radius
         const averageFrequency = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
