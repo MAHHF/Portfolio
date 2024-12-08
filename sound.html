@@ -53,27 +53,23 @@
             </svg>
         </div>
         <div class="player-info">
-            <span class="player-title">Lärz Rec.</span>
-            <span class="player-artist">MAHF</span>
+            <span class="player-title">Titel der Audiodatei</span>
+            <span class="player-artist">Künstler</span>
         </div>
         <div class="progress-bar-container">
             <div id="progress-bar"></div>
         </div>
         
         <!-- Audio-Element -->
-        <audio id="audio-player">
-            <source src="sounds/Lärz.m4a" type="audio/mpeg">
-            Ihr Browser unterstützt das Audio-Element nicht.
-        </audio>
+       <!-- Audio-Element ohne das controls-Attribut -->
+<audio id="audio-player">
+    <source src="sounds/Lärz.m4a" type="audio/mpeg">
+    Ihr Browser unterstützt das Audio-Element nicht.
+</audio>
 
-    
-    </div>
 
-    <!-- Container für pulsierende Formen -->
-    <div id="visualization-container">
-        <div class="pulse"></div>
-        <div class="pulse"></div>
-        <div class="pulse"></div>
+        <!-- Canvas für die Visualisierung -->
+        <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
     </div>
 </section>
 
@@ -147,33 +143,6 @@
         audio.addEventListener('timeupdate', () => {
             const progress = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = progress + '%';
-        });
-
-        // Neue Funktionalität für pulsierende Formen
-        const pulses = document.querySelectorAll('.pulse');
-
-        function animatePulses() {
-            analyser.getByteFrequencyData(dataArray);
-            let average = 0;
-            for (let i = 0; i < dataArray.length; i++) {
-                average += dataArray[i];
-            }
-            average /= dataArray.length;
-
-            // Die Größe der pulsierenden Formen anpassen
-            const scale = 1 + (average / 256);
-            pulses.forEach((pulse, index) => {
-                pulse.style.transform = `scale(${scale})`;
-            });
-
-            requestAnimationFrame(animatePulses);
-        }
-
-        // Animation starten, wenn das Audio abgespielt wird
-        audio.addEventListener('play', () => {
-            audioContext.resume().then(() => {
-                animatePulses();
-            });
         });
     });
 </script>
