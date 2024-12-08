@@ -445,7 +445,7 @@ footer.fixed.visible {
 /* Styling für pulsierende Formen */
 .pulsing-shape {
     position: absolute;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    background: radial-gradient(circle, rgba(89, 255, 39, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
     border-radius: 50%;
     pointer-events: none; /* Interaktionen verhindern */
     animation: pulse 2s infinite ease-in-out;
