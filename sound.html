@@ -67,15 +67,20 @@
         </audio>
 
         <!-- Canvas für die Visualisierung -->
-        <canvas id="ultrasound-spectrogram" width="100%" height="200"></canvas>
+        <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
+    </div>
+
+    <!-- Container für pulsierende Formen -->
+    <div id="visualization-container">
+        <div class="pulse"></div>
+        <div class="pulse"></div>
+        <div class="pulse"></div>
     </div>
 </section>
 
 <footer></footer>
 
-<!-- Three.js Bibliothek -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
+<script src="script.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const audio = document.getElementById('audio-player');
@@ -144,35 +149,34 @@
             const progress = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = progress + '%';
         });
+
+        // Neue Funktionalität für pulsierende Formen
+        const pulses = document.querySelectorAll('.pulse');
+
+        function animatePulses() {
+            analyser.getByteFrequencyData(dataArray);
+            let average = 0;
+            for (let i = 0; i < dataArray.length; i++) {
+                average += dataArray[i];
+            }
+            average /= dataArray.length;
+
+            // Die Größe der pulsierenden Formen anpassen
+            const scale = 1 + (average / 256);
+            pulses.forEach((pulse, index) => {
+                pulse.style.transform = `scale(${scale})`;
+            });
+
+            requestAnimationFrame(animatePulses);
+        }
+
+        // Animation starten, wenn das Audio abgespielt wird
+        audio.addEventListener('play', () => {
+            audioContext.resume().then(() => {
+                animatePulses();
+            });
+        });
     });
-
-    // Three.js für 3D-Spektrum
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    // Erstellen eines Materials mit einem Farbverlauf
-    const geometry = new THREE.PlaneGeometry(5, 5, 50, 50);
-    const material = new THREE.MeshStandardMaterial({
-        color: 0xffffff,
-        side: THREE.DoubleSide,
-        wireframe: false
-    });
-
-    const plane = new THREE.Mesh(geometry, material);
-    scene.add(plane);
-
-    camera.position.z = 10;
-
-    function animate() {
-        requestAnimationFrame(animate);
-        plane.rotation.x += 0.01;
-        plane.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-    animate();
 </script>
 </body>
 </html>
