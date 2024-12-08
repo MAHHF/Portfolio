@@ -1,65 +1,539 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('audio-player');
-    const playButton = document.querySelector('.play-button');
-    const pauseButton = document.querySelector('.pause-button');
-    const canvas = document.getElementById('visualizer-canvas');
-    const ctx = canvas.getContext('2d');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const analyser = audioContext.createAnalyser();
-    const source = audioContext.createMediaElementSource(audio);
-    source.connect(analyser);
-    analyser.connect(audioContext.destination);
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Standard Hintergrundfarbe */
+    color: #333;
+    min-height: 100vh; /* Sicherstellen, dass der Body immer die volle Höhe des Viewports hat */
+    padding-bottom: 50px; /* Platz für den Footer am unteren Rand */
+    cursor: url('logos/MAHF_Cursor.png'), auto;
+}
 
-    analyser.fftSize = 512;
-    const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
+/* Cursoränderung beim Klicken auf Links (aktiv) */
+a:active {
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor im aktiven Zustand */
+}
 
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+/* Cursoränderung, wenn der gesamte Body aktiv ist (z.B. beim Klicken irgendwo im Body) */
+body:active {
+    cursor: url('logos/MAHF_Cursor_active.png'), auto; /* Benutzerdefinierter Cursor für aktiven Body */
+}
+
+/* Cursor ändert sich beim Hover über Links */
+a:hover {
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor für Hover-Effekt */
+}
+
+/* Cursor ändert sich beim Hover über Buttons */
+button:hover {
+    cursor: url('logos/MAHF_Cursor_active.png'), pointer; /* Benutzerdefinierter Cursor für Hover-Effekt bei Buttons */
+}
+
+
+/* Spezifische Seiten-Hintergrundfarben */
+#home {
+    background-color: #000000;
+}
+#photo {
+    background-color: #000000;
+}
+#art {
+    background-color: #FFFDF8;
+}
+#MAHF {
+    background-color: #000000;
+}
+#sound {
+    background-color: #000000;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Header auf volle Breite setzen */
+    height: 100px; /* Feste Höhe des Headers */
+    background-color: rgba(89, 255, 39, 0); /* 20% transparente grüne Farbe */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Stellt sicher, dass Logo und Navigation Platz haben */
+    padding: 0 20px; /* Etwas Platz an den Seiten */
+    z-index: 10;
+    box-sizing: border-box; /* Verhindert, dass Padding den Platzbedarf erhöht */
+}
+
+/* Logo Styling */
+header .logo {
+    flex-shrink: 0; /* Verhindert, dass das Logo schrumpft */
+    display: flex;
+    align-items: center;
+}
+header .logo img {
+    height: 100%; /* Skalieren des Logos auf die Höhe des Headers */
+    width: auto; /* Stellt sicher, dass das Logo nicht verzerrt wird */
+    max-height: 90px; /* Verhindert, dass das Logo größer als der Header wird */
+}
+
+#art .floating-logo {
+    max-width: 450%; /* Vergrößert die Breite des Logos */
+    max-height: 450%; /* Vergrößert die Höhe des Logos */
+    object-fit: contain; /* Verhindert Verzerrungen */
+}
+
+
+/* Navigation Styling */
+nav {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Höherer z-index als der Parallax-Effekt */
+}
+
+nav ul {
+    display: flex; /* Die Listenelemente in einer Reihe darstellen */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Entfernt Margins */
+}
+
+nav ul li {
+    margin-left: 20px; /* Abstand zwischen den Listenelementen */
+}
+
+/* Standard-Link-Stile */
+nav a {
+    color: #59ff27; /* Schriftfarbe auf Grün ändern */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* **Aktiver Link mit eigener Schriftart und Farbe** */
+nav a.active {
+    font-family: inherit; /* Übernimmt die Schriftart vom Eltern-Element, z. B. body */
+    color: #59ff27; /* Lila Farbton für aktiven Link */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    font-size: 1.6rem; /* Größere Schriftgröße für den aktiven Punkt */
+}
+
+nav a:hover {
+    color: #A600D8;
+    text-decoration: none;
+}
+
+/* Navigation Styling für die #art Seite */
+#art nav a {
+    color: #000000; 
+    font-size: 18px; /* Beibehaltung der Schriftgröße */
+}
+
+#art nav a.active {
+    color: #A600D8; /* Farbe für den aktiven Link */
+    font-weight: bold; /* Fettgedruckter Text */
+    font-size: 1.6rem;
+}
+
+#art nav a:hover {
+    color: #d3d3d3; /* Farbe beim Hover (z.B. Orange) */
+}
+
+.parallax {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Breite des Containers */
+    height: 100vh; /* Höhe des Viewports */
+    background-attachment: fixed; /* Parallax-Effekt */
+    background-position: center; /* Zentriert das Bild */
+    background-repeat: repeat; /* Verhindert Wiederholung des Bildes */
+    background-size: contain; /* Zeigt das gesamte Bild ohne Zuschneiden */
+    background-image: var(--parallax-image); /* Bild über CSS-Variable */
+}
+
+
+
+
+/* Schwebendes Element */
+.floating-element {
+    position: fixed;
+    right: 0;
+    top: 750px;
+    background-color: rgba(89, 255, 39); /* Transparenter Grünton */
+    color: black;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    height: 90px; /* Höhe anpassen, um Platz für das Logo zu schaffen */
+    max-width: 350px;
+    transition: width 0.2s ease;
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+}
+
+/* Logo im schwebenden Element */
+.floating-logo {
+    max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+    max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
+    object-fit: contain; /* Verhindert Verzerrungen */
+}
+
+.floating-element:hover {
+    width: 350px; /* Vergrößert das Element beim Hover */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Setze hier dein Bild ein */
+    height: 100vh; /* Volle Höhe des Bildschirms */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente Hintergrundfarbe für den Text */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* Footer immer am unteren Rand der Seite */
+footer.fixed {
+    position: fixed;
+    bottom: 0; /* Footer soll immer am unteren Rand des Viewports bleiben */
+    left: 0;
+    width: 100%; /* Breite des Footers soll den gesamten Viewport abdecken */
+    background-color: #000000; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    padding: 10px 0; /* Vertikales Padding für den Footer */
+    z-index: 1000;
+    display: flex; /* Flexbox für die Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    text-align: center; /* Text im Footer zentrieren */
+}
+
+/* Option für die Änderung der Textfarbe */
+footer.fixed.color-change {
+    color: #A600D8; /* Beispiel für eine grüne Textfarbe */
+}
+
+/* Option für die Änderung der Textgröße */
+footer.fixed.large-text {
+    font-size: 12px; /* Beispiel für eine größere Schriftgröße */
+}
+
+/* Footer sichtbar, wenn der Benutzer unten angekommen ist */
+footer.fixed.visible {
+    bottom: 0; /* Der Footer wird sichtbar, wenn er am unteren Rand des Viewports ist */
+}
+
+
+/* Galerie Anpassung auf der "photo" Seite */
+#photo .gallery {
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch für die Bilder */
+    justify-content: space-around; /* Verteilt die Bilder gleichmäßig */
+    padding: 20px;
+}
+
+#photo .photo-img-container {
+    position: relative; /* Erforderlich für den overflow */
+    width: 100%; /* Skaliert die Bilder auf die volle Breite ihres Containers */
+    max-width: 400px; /* Maximale Breite der Bilder */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    margin: 10px; /* Abstand zwischen den Bildern */
+    border-radius: 0px; /* Abgerundete Ecken */
+    overflow: hidden; /* Verhindert das Überlappen des Bildes */
+}
+
+#photo .photo-img {
+    width: 100%; /* Skaliert die Bilder auf die volle Breite des Containers */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    object-fit: cover; /* Beibehaltung der Bildproportionen und Füllung des Containers */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergangseffekt */
+}
+
+/* 
+#photo .photo-img:hover {
+    transform: skew(35deg, 20deg) scale(2.9); 
+    filter: blur(0px); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+*/
+
+
+/* Galerie-Stile für die #art-Seite */
+#art .gallery {
+    display: flex;
+    flex-direction: column; /* Bilder vertikal anordnen */
+    align-items: center; /* Bilder horizontal zentrieren */
+    justify-content: flex-start; /* Beginnt den Inhalt am oberen Rand */
+    min-height: 100vh; /* Stellt sicher, dass der Container mindestens die Höhe des Viewports einnimmt */
+    padding: 20px;
+    box-sizing: border-box; /* Sorgt dafür, dass Padding nicht das Layout beeinflusst */
+}
+
+#art .gallery-item {
+    width: 80%; /* Breite der Galerie-Elemente anpassen */
+    margin: 60px 0; /* Abstand zwischen den Bildern */
+    text-align: center; /* Text unter den Bildern zentrieren */
+}
+
+#art .gallery-item img {
+    width: 100%; /* Das Bild passt sich der Breite des Containers an */
+    max-width: 650px; /* Maximale Bildbreite einstellen */
+    height: auto; /* Höhe bleibt im Verhältnis zur Breite */
+    object-fit: contain; /* Das Bild wird vollständig innerhalb des Containers angezeigt */
+    border-radius: 0px; /* Abgerundete Ecken für die Bilder */
+}
+
+/* Stil für den Text unter den Bildern */
+#art .gallery-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    padding: 5px 10px;
+    background-color: #FFFDF8;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Stile nur für die #MAHF-Seite */
+#MAHF .centered-container {
+    display: flex; /* Flexbox-Layout aktivieren */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    flex-direction: column; /* Stapelt Bild und Text vertikal */
+    height: 100vh; /* Füllt die gesamte Bildschirmhöhe */
+    text-align: justify; /* BLOCKSATZ */
+    /* Stil für den Textbereich in der About-Sektion */
+    max-width: 600px; /* Setzt die maximale Breite des Textbereichs auf 600px */
+    margin: 0 auto; /* Zentriert das Element horizontal */
+    font-size: 18px; /* Setzt die Schriftgröße */
+    color: #59ff27; /* Setzt die Textfarbe auf Blau */
+    line-height: 1.6; /* Setzt den Zeilenabstand für besseren Lesefluss */
+}
+
+#MAHF .centered-image {
+    width: 600px; /* Anpassbare Breite über CSS-Variable */
+    max-width: 100%; /* Responsiv sicherstellen */
+    margin-bottom: 20px; /* Abstand zum Text */
+}
+
+/* Player Container */
+#custom-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #59ff27;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Player Controls */
+.player-controls {
+    position: absolute;
+    bottom: 100px;
+    width: 600px;
+    height: 80px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around; /* Gleichmäßiger Abstand zwischen den Knöpfen */
+    align-items: center;
+}
+
+/* SVG Button Styling */
+.control-button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+ /*   background-color: #333; /* Dunkles Grau für den Hintergrund */
+  /*  border: 2px solid #bbb; /* Silberfarbene Umrandung */
+  /*  border-radius: 50%; /* Runde Form */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Vertiefter Effekt */
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+.control-button:hover {
+    background-color: #3de115; /* Etwas hellere Farbe beim Hover */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.control-button:active {
+    background-color: #34b30f; /* Noch dunkler beim Klicken */
+    box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Color */
+.control-button svg {
+    stroke: #fff; /* Weiße Farbe für die Icons */
+    transition: stroke 0.2s;
+}
+
+.control-button:hover svg {
+    stroke: #ddd; /* Heller beim Hover */
+}
+
+.control-button:active svg {
+    stroke: #aaa; /* Noch heller beim Klicken */
+}
+
+#ultrasound-spectrogram {
+    position: absolute;
+    top: 200;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Hinter dem Player */
+    opacity: ; /* Optional, um den Effekt subtiler zu gestalten */
+    display: block; /* Canvas soll sichtbar sein */
+    border: 0px solid #ccc; /* Eine Option, um zu sehen, ob der Canvas geladen wird */
+}
+
+
+
+/* Optionale FontAwesome-Integration */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+/* Symbol Container für Steuerungsknöpfe */
+.control-icon {
+    width: 24px; /* Größe der Symbole */
+    height: 24px; /* Größe der Symbole */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Größe der Schrift/Symbols */
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #A600D8; /* Warme Akzentfarbe */
+    transition: width 0.1s linear;
+}
+
+/* Player Info */
+.player-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.player-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.player-artist {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+/* Responsive Design für mobile Geräte */
+@media screen and (max-width: 768px) {
+ nav {
+        width: 100%; /* Die Navigation nimmt 100% der Breite des Bildschirms ein */
+        display: flex; /* Aktiviert Flexbox */
+        justify-content: flex-start; /* Zentriert die Navigationselemente horizontal */
+        align-items: center; /* Optional: Vertikale Zentrierung */
+        padding: 0; /* Entfernt extra Padding */
+        top: 50px;
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
 
-    function drawVisualizer() {
-        requestAnimationFrame(drawVisualizer);
-        analyser.getByteFrequencyData(dataArray);
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-
-        const averageFrequency = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
-        const radius = (Math.min(centerX, centerY) * averageFrequency) / 256;
-
-        const gradient = ctx.createRadialGradient(centerX, centerY, radius * 0.5, centerX, centerY, radius);
-        gradient.addColorStop(0, 'rgba(255, 0, 255, 0.7)');
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
-        ctx.fill();
+    nav ul {
+        display: flex; /* Listenelemente in einer Reihe anordnen */
+        justify-content: flex-start; /* Listenelemente zentrieren */
+        padding: 0; /* Entfernt Padding von den Listenelementen */
+        margin: 0; /* Entfernt Margin, um sicherzustellen, dass nichts verspringt */
     }
 
-    // Start visualization on audio play
-    audio.addEventListener('play', () => {
-        audioContext.resume().then(() => {
-            drawVisualizer();
-        });
-    });
+    nav ul li {
+        margin-left: 2px; /* Abstand zwischen den Listenelementen */
+        margin-right: 0; /* (Optional) Etwas Abstand rechts hinzufügen, falls gewünscht */
+    }
 
-    // Play/Pause Button Events
-    playButton.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
-        }
-    });
+nav a {
+        font-size: 14px; /* Kleinere Schriftgröße */
+        padding: 8px 15px; /* Anpassung des Innenabstands */
+    }
+    
+    /* Galerie für mobile Ansicht */
+    #photo .gallery {
+        display: flex;
+        flex-wrap: wrap; /* Bilder umbrechen */
+        justify-content: center; /* Bilder zentrieren */
+        padding: 0; /* Entfernt äußeren Abstand */
+    }
 
-    pauseButton.addEventListener('click', () => {
-        if (!audio.paused) {
-            audio.pause();
-        }
-    });
-});
+    #photo .photo-img {
+        width: 100%; /* Bilder in voller Breite des Bildschirms */
+        height: auto;
+        max-width: none; /* Keine Begrenzung der maximalen Breite */
+        margin: 0; /* Keine Abstände zwischen Bildern */
+        border-radius: 0; /* Ecken nicht abrunden */
+        object-fit: contain;
+    }
+
+    /* Positioniere das schwebende Element höher für mobile Ansicht */
+    .floating-element {
+        right: 0; /* Positioniert das Element am rechten Rand */
+        top: 500px; /* Passt die vertikale Position an */
+        transform: scale(0.7); /* Skaliert das Element auf 70% seiner Originalgröße */
+    }
+
+    /* Logo im schwebenden Element */
+    .floating-logo {
+        max-width: 100%; /* Logo passt sich an die Breite des Containers an */
+        max-height: 100%; /* Verhindert, dass das Logo die Höhe überschreitet */
+        object-fit: contain; /* Verhindert Verzerrungen */
+    }
+}
