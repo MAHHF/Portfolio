@@ -67,9 +67,11 @@
     Ihr Browser unterstützt das Audio-Element nicht.
 </audio>
 
+<canvas id="visualizer-canvas"></canvas>
 
         <!-- Canvas für die Visualisierung -->
-        <canvas id="ultrasound-spectrogram" width="100%" height="100%"></canvas>
+        <canvas id="visualizer-canvas"></canvas>
+
     </div>
 </section>
 
@@ -78,73 +80,71 @@
 <script src="script.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const audio = document.getElementById('audio-player');
-        const playButton = document.querySelector('.play-button');
-        const pauseButton = document.querySelector('.pause-button');
-        const progressBar = document.getElementById('progress-bar');
-        const canvas = document.getElementById('ultrasound-spectrogram');
-        const ctx = canvas.getContext('2d');
+    const audio = document.getElementById('audio-player');
+    const playButton = document.querySelector('.play-button');
+    const pauseButton = document.querySelector('.pause-button');
+    const canvas = document.getElementById('visualizer-canvas');
+    const ctx = canvas.getContext('2d');
 
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const analyser = audioContext.createAnalyser();
-        const source = audioContext.createMediaElementSource(audio);
-        source.connect(analyser);
-        analyser.connect(audioContext.destination);
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const analyser = audioContext.createAnalyser();
+    const source = audioContext.createMediaElementSource(audio);
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
 
-        analyser.fftSize = 1024;
-        const bufferLength = analyser.frequencyBinCount;
-        const dataArray = new Uint8Array(bufferLength);
+    analyser.fftSize = 512;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
 
+    function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = 200; // Eine feste Höhe für die Visualisierung
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-        function drawUltrasound() {
-            requestAnimationFrame(drawUltrasound);
-            analyser.getByteFrequencyData(dataArray);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    function drawVisualizer() {
+        requestAnimationFrame(drawVisualizer);
+        analyser.getByteFrequencyData(dataArray);
 
-            const barWidth = (canvas.width / bufferLength) * 2.5;
-            let x = 0;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
 
-            for (let i = 0; i < bufferLength; i++) {
-                const value = dataArray[i];
-                const y = (value / 256) * canvas.height;
-                ctx.strokeStyle = `rgba(${value}, ${255 - value}, 255, 0.8)`;
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(x, canvas.height / 2);
-                ctx.lineTo(x, canvas.height / 2 - y);
-                ctx.stroke();
-                x += barWidth + 1;
-            }
-        }
+        const averageFrequency = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
+        const radius = (Math.min(centerX, centerY) * averageFrequency) / 256;
 
-        // Start der Visualisierung, wenn das Audio abgespielt wird
-        audio.addEventListener('play', () => {
-            audioContext.resume().then(() => {
-                drawUltrasound();
-            });
-        });
+        const gradient = ctx.createRadialGradient(centerX, centerY, radius * 0.5, centerX, centerY, radius);
+        gradient.addColorStop(0, 'rgba(255, 0, 255, 0.7)');
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-        // Play/Pause Button Event
-        playButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+    }
 
-        pauseButton.addEventListener('click', () => {
-            if (!audio.paused) {
-                audio.pause();
-            }
-        });
-
-        // Fortschrittsanzeige aktualisieren
-        audio.addEventListener('timeupdate', () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = progress + '%';
+    // Start visualization on audio play
+    audio.addEventListener('play', () => {
+        audioContext.resume().then(() => {
+            drawVisualizer();
         });
     });
+
+    // Play/Pause Button Events
+    playButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+        }
+    });
+
+    pauseButton.addEventListener('click', () => {
+        if (!audio.paused) {
+            audio.pause();
+        }
+    });
+});
+
 </script>
 </body>
 </html>
